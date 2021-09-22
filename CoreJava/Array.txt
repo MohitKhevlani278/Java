@@ -1,0 +1,30 @@
+Array :-
+- An array is a collection of similar types of data
+
+
+Declare :- 
+//Single Dimensional Array
+1) dataType[] arrayName;
+   arrayName = new dataType[ArraySize];
+2) dataType[] arrayName = new dataType[ArraySize];
+
+//MultiDimensional Array :- Array of Array means each element array is an array itself
+1) dataType[][] arrayName = new dataType[ArraySize][ArraySize];
+
+
+Initialize :- 
+dataType[] arrayName = {1,2,3}; 
+- value same type as dataType compiler automatically specifies size of array
+
+//Initialize array with indexno start from 0 end with n-1
+arrayName[0] = 12;
+arrayName[1] = 14; 
+
+
+Access :- 
+//We can access arraywith it indexNo
+Ex :- System.out.println(arrayName[0]);
+
+//Through Loops where length property get size of array
+for (int i = 0; i < arrayName.length; i++){ arrayName[i];}
+for ( i : arrayName ){a;}

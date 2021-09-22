@@ -1,0 +1,283 @@
+1#
+
+Q-1
+1)Remote method invocation
+2)invoke()
+3)stage 4 :-
+  loading / initlizing / request handling / destroying
+  1)init 2)service 3)destroy
+
+
+Q-2 
+1)
+ - Skeleton Object
+ - The skeleton object passes the request from the stub object to the remote object. It performs following tasks
+ - It calls the desired method on the real object present on the server.
+ - It forwards the parameters received from the stub object to the method.
+ Task :-
+ - Unmarshalling the parameters.
+ - Invoking the real object’s required method which is on the server.
+ - Capturing the value returned or exception returned by the invoked call on the server.
+ - Marshaling this value.
+ - Sending the package along with the value in the form of marshaled back to the stub on the client on the machine A.
+ - The return value or exception from the server is unmarshalled by the stub and becomes the return value of the RMI.
+ - If the exception is thrown by the remote method then the stub object rethrows to the caller.
+
+2)
+ - HttpSession object is used to store entire session with a specific client. 
+ - We can store, retrieve and remove attribute from HttpSession object. 
+ - Any servlet can have access to HttpSession object throughout the getSession() method of the HttpServletRequest object. 
+  
+ Works :-
+  - On client's first request, the Web Container generates a unique session ID and gives it back to the client with response. 
+  - This is a temporary session created by web container.
+  - The client sends back the session ID with each request. 
+  - Making it easier for the web container to identify where the request is coming from.
+  - The Web Container uses this ID, finds the matching session with the ID and associates the session with the request. 
+
+ syntax :-
+  Httpsession session = request.getSession(); 
+
+ Methods			Description
+ 1) getCreationTime()		returns the time when the session was created, measured in milliseconds since midnight January 1, 1970 GMT.
+ 2) getId()			returns a string containing the unique identifier assigned to the session.
+ 3) getLastAccessedTime()	returns the last time the client sent a request associated with the session
+ 4) getMaxInactiveInterval()	returns the maximum time interval, in seconds.
+ 5) invalidate()		destroy the session
+ 6) boolean isNew()		returns true if the session is new else false
+ 7) setMaxInactiveInterval(int interval) :- Specifies the time, in seconds,after servlet container will invalidate the session. 
+ 
+
+3) 
+  - A servlet life cycle can be defined as the entire process from its creation till the destruction. The following are the paths followed by a servlet.
+  - The servlet is initialized by calling the init() method.
+  - The servlet calls service() method to process a client's request.(doget/dopost)
+  - The servlet is terminated by calling the destroy() method.
+  - finally, servlet is garbage collected by the garbage collector of the JVM.
+
+4)
+  - The UnicastRemoteObject class defines a non-replicated remote object whose references are valid only while the server process is alive. 
+  - The UnicastRemoteObject class provides support for point-to-point active object references (invocations, parameters, and results) using TCP streams.
+  - Objects that require remote behavior should extend RemoteObject, typically via UnicastRemoteObject. If UnicastRemoteObject is not extended, the implementation 
+    class must then assume the responsibility for the correct semantics of the hashCode, equals, and toString methods inherited from the Object class, 
+    so that they behave appropriately for remote objects.
+
+
+Q-3
+1)
+ - The HttpServlet class provides specialized methods that handle the various types of HTTP requests. 
+ - A servlet developer typically overrides one of these methods. 
+ - These methods are doDelete( ), doGet( ), doHead( ), doOptions( ), doPost( ), doPut( ), and doTrace( ).
+ 
+Handling HTTP POST Requests :-
+
+ Here we will develop a servlet that handles an HTTP POST request. 
+ The servlet is invoked when a form on a web page is submitted. 
+ The example contains two files. 
+ A web page is defined in ColorPost.html, and a servlet is defined in ColorPostServlet.java.
+
+ The HTML source code for ColorPost.html is shown in the following listing. 
+ It is identical to ColorGet.html except that the method parameter for the form tag explicitly specifies that the POST method should be used, 
+ and the action parameter for the form tag specifies a different servlet.
+
+ <html>
+ <body>
+ <form name="Form1" method="post" action="http://localhost:8080/examples/servlets/servlet/ColorPostServlet">
+  <B>Color:</B>
+  <select name="color" size="1"> 
+   <option value="Red">Red</option> 
+   <option value="Green">Green</option> 
+   <option value="Blue">Blue</option> </select>
+  <input type=submit value="Submit"> </form>
+  </body>
+  </html>
+
+  The source code for ColorPostServlet.java is shown in the following listing. 
+  The doPost( ) method is overridden to process any HTTP POST requests that are sent to this servlet. 
+  It uses the getParameter( ) method of HttpServletRequest to obtain the selection that was made by the user. 
+  A response is then formulated.
+
+  import java.io.*; 
+  import javax.servlet.*;
+  import javax.servlet.http.*;
+	public class ColorPostServlet extends HttpServlet {
+		public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String color = request.getParameter("color"); 
+		response.setContentType("text/html"); 
+		PrintWriter pw = response.getWriter(); 
+		pw.println("<B>The selected color is: "); pw.println(color);
+		pw.close(); 
+		}
+	}
+	Compile the servlet and perform the same steps as described in the previous section to test it.
+
+
+
+
+
+	2#
+
+Q-1
+2)remote object
+3)baki
+4)Servlets are the Java programs that runs on the Java-enabled web server or application server. 
+  - They are used to handle the request obtained from the web server, process the request, produce the response, then send response back to the web server.
+
+Q-2
+1)
+ - Hidden form field is used to store session information of a client. 
+ - In this method, we create a hidden form which passes the control to the servlet whose path is given in the form action area. 
+
+2) 
+ - skeleton for a remote object is a server-side entity that dispatches calls to the actual remote object implementation.
+
+Q-4
+2)
+  - create table
+  - Create a form in HTML file, where take all the inputs required to insert data into the database. 
+  - Specify the servlet name in it, with the POST method as security is important aspects in database connectivity
+  <!DOCTYPE html>
+	<html>
+	<head>
+		<title>Insert Data</title>
+	</head>
+	<body>
+	<!-- Give Servlet reference to the form as an instances
+	GET and POST services can be according to the problem statement-->
+	<form action="./InsertData" method="post">
+		<p>ID:</p>
+		<!-- Create an element with mandatory name attribute,
+		so that data can be transfer to the servlet using getParameter() -->
+		<input type="text" name="id"/>
+		<br/>
+		<p>String:</p>
+		<input type="text" name="string"/>
+		<br/><br/><br/>
+		<input type="submit"/>
+		</form>
+	</body>
+	</html>
+	
+	import java.io.IOException;
+	import java.io.PrintWriter;
+	import java.sql.Connection;
+	import java.sql.PreparedStatement;
+	import javax.servlet.ServletException;
+	import javax.servlet.annotation.WebServlet;
+	import javax.servlet.http.HttpServlet;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+
+     //Servlet file	
+     public class InsertData extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+		{
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			PreparedStatement st = con.prepareStatement("insert into demo values(?, ?)");
+			st.setInt(1, Integer.valueOf(request.getParameter("id")));
+			st.setString(2, request.getParameter("string"));
+			st.executeUpdate();
+			st.close();
+			con.close();
+			PrintWriter out = response.getWriter();
+			out.println("<html><body><b>Successfully Inserted" + "</b></body></html>");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+	3#
+
+Q-1
+1)
+ - In computing, the Java Remote Method Invocation is a Java API that performs remote method invocation, the object-oriented equivalent of remote 
+   procedure calls, with support for direct transfer of serialized Java classes and distributed garbage-collection
+
+3)getInitParameter(String name) 
+4)java.rmi.Remote
+
+Q-2
+1) 
+ - A stub for a remote object acts as a client's local representative or proxy for the remote object. 
+ - The caller invokes a method on the local stub which is responsible for carrying out the method call on the remote object. 
+ - In RMI, a stub for a remote object implements the same set of remote interfaces that a remote object implements.
+  
+  When a stub's method is invoked, it does the following:
+ - initiates a connection with the remote JVM containing the remote object,
+ - marshals (writes and transmits) the parameters to the remote JVM,
+ - waits for the result of the method invocation,
+ - unmarshals (reads) the return value or exception returned, and
+ - returns the value to the caller.
+
+2)
+ - web. xml defines mappings between URL paths and the servlets that handle requests with those paths. 
+ - The web server uses this configuration to identify the servlet to handle a given request and call the class method that corresponds to the request method
+
+Q-3
+1)
+ - RMI stands for Remote Method Invocation. 
+ - It is a mechanism that allows an object residing in one system (JVM) to access/invoke an object running on another JVM.
+ - RMI is used to build distributed applications; it provides remote communication between Java programs. It is provided in the package java.rmi.
+ 
+ Diagram :-  
+
+ Architecture of an RMI Application :-
+ - In an RMI application, we write two programs, a server program (resides on the server) and a client program (resides on the client).
+ - Inside the server program, a remote object is created and reference of that object is made available for the client (using the registry).
+ - The client program requests the remote objects on the server and tries to invoke its methods.	
+
+  Let us now discuss the components of this architecture.
+  1)Transport Layer − This layer connects the client and the server. It manages the existing connection and also sets up new connections.
+  2)Stub − A stub is a representation (proxy) of the remote object at client. It resides in the client system; it acts as a gateway for the client program.
+  3)Skeleton − This is the object which resides on the server side. stub communicates with this skeleton to pass request to the remote object.
+  4)RRL(Remote Reference Layer) − It is the layer which manages the references made by the client to the remote object.
+
+  Working of an RMI Application
+  - When the client makes a call to the remote object, it is received by the stub which eventually passes this request to the RRL.
+  - When the client-side RRL receives the request, it invokes a method called invoke() of the object remoteRef. 
+  - It passes the request to the RRL on the server side.
+  - The RRL on the server side passes the request to the Skeleton (proxy on the server) which finally invokes the required object on the server. 
+  - The result is passed all the way back to the client.
+
+  Goals of RMI :-
+  - To minimize the complexity of the application.
+  - To preserve type safety.
+  - Distributed garbage collection.
+  - Minimize the difference between working with local and remote objects
+
+2)
+CounterServlet.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CounterServlet extends HttpServlet
+{
+     //Instance variable used for counting hits on this servlet
+     private int iHitCounter;
+
+     //init method just initializes the hitCounter to zero
+     public void init() throws ServletException
+     {
+          iHitCounter = 0;
+     }
+     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+     {
+          PrintWriter out =  response.getWriter();
+          out.println("<form><fieldset style='width:15%'>");
+          out.println("<h3>Welcome to my website !</h3><hr>");
+          out.println("You are visitor number: "+ (++iHitCounter));
+          out.println("</fieldset></form>");
+     }
+     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+     {
+          doGet(request, response);
+     }
+}

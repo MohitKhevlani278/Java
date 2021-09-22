@@ -1,0 +1,250 @@
+History :-
+- Java was orignally developed by sun microsystems which was initiated by the James Goshling and released in 
+  1995 as core components of sun microsystem java platform.
+- Java is WORA(Write Once Run Anywhere)
+- James initialized java project in june 1991 for setTop box
+- Initially language called 'oak'(tree outside) than 'Green' than 'Java'choose from random word
+- 13 November,2006 sun released much as free and open source software under GPL license
+
+Feature :-
+1)Object Oriented :- 
+2)Platform independent:- Java byte code interpreted by any machine which has jvm 
+3)Simple              :- Syntax is easy to learn and you master in oop it would be more easy language
+4)Secure              :- Built-in Feature that enables us to develop virus-free systems
+5)Architecture-Neural :- Compiled code executable on many processor with java run time 
+6)Portable            :- Architecture-Neural and no implementation dependent makes java portable 
+7)Robust              :- Java eliminated error during compile time or runtime which maintains workflows 
+8)Multi-thread        :- Perform many task simultaneously , lightweight Process
+9)High-performance    :- Using Just-In-Time Compiler enables performance
+10)Dynamic            :- Carry extensive amount of runtime information that used to verify and resolve access
+                         to objects on runtime
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Java JDK, JVM, and JRE  :-      
+1) What is jvm?
+- When you run the Java program, Java compiler first compiles your Java code to bytecode.
+- Then, the JVM translates bytecode into native machine code (set of instructions that a computer's 
+  CPU executes directly).
+- Java is a platform-independent language. It's because when you write Java code, it's ultimately written 
+  for JVM but not your physical machine 
+- Since JVM ​executes the Java bytecode which is platform-independent, Java is platform-independent.
+- JVM is platform-dependent because it install on specific machine os
+- JVM in details :- https://dzone.com/articles/jvm-architecture-explained
+
+2) What is JRE?
+- JRE (Java Runtime Environment) is a software package that provides Java class libraries, Java Virtual Machine
+  (JVM), and other components that are   required to run Java applications
+- JRE is the superset of JVM.
+
+3) What is JDK?
+- JDK (Java Development Kit) is a software development kit required to develop applications in Java. 
+- When you download JDK, JRE is also downloaded with it.
+- In addition to JRE, JDK also contains a number of development tools (compilers, JavaDoc, Java Debugger, etc)
+
+Image show :- https://cdn.programiz.com/sites/tutorial2program/files/jdk-jre-jvm.jpg
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Variable :-
+- variable is a location in memory (storage area) to hold data.
+- To indicate the storage area, each variable should be given a unique name (identifier)
+
+Variable Declare Rules :-
+- Start with letters, _ , $
+- Not start with number
+- Not allows whitespace and special Symbols
+
+Types :-
+1)Instance Variables (Non-Static Fields) - declared inside class but outside method
+2)Class Variables (Static Fields)        - declared inside class but outside method with static keyword
+3)Local Variables   - declared inside method                     
+4)Parameters        - declared in method parameter 
+
+Note :- 
+- Java is a statically-typed language so all variables must be declared before they can be used
+- We cannot change the data type of a variable in Java within the same scope.
+
+Null - Null is not object or neither a type it is special value
+     - Every reference variable in java has by default value is null / case-sensitive
+     - In java, null is associated in java.lang.NullPointerException              
+     - During autoboxing and unboxing compiler simply throws Nullpointer exception if a value is assigned to primitive type
+     - Cannot call non-static method with null value otherwise nullpointer exception is generate but static variable does
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Java Literals :-
+- Represents Fixed Value(Declare variables with values)
+
+Types :-
+1)Boolean - True or False
+2)Integer - Without any fractional part or exponation part(binary(0b),decimal(27),octal(027),Hexadecimal(0x27)) 
+3)Float   - float(3.4f) , double(3.3445e2)
+4)Character - unicode character enclosed inside single quotes('a')Use :- escape sequences(\n,\b,\r,\t,\\,\',\'")
+5)String  - sequence of characters enclosed inside double-quotes("Java")
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Java Identifier And Keyword:-
+- Identifiers are the name given to variables, classes, methods, etc
+
+Rules :-
+- Case-sensitive and not be a keyword
+- Start with letters, _ , $
+- Not start with number
+- Not allows whitespace and special Symbols
+
+Keyword :-
+- Keywords are predefined, reserved words used in Java programming that have special meanings to the compiler
+
+Keywords List :-
+abstract	    assert	    boolean	    break	    byte
+case	        catch	    char	    class	    const
+continue    	default	    do	        double	    else
+enum	        extends	    final	    finally	    float
+for	            goto	    if	        implements	import
+instanceof  	int	        interface	long	    native
+new	            package	    private	    protected	public
+return      	short	    static	    strictfp	super
+switch      	synchronized this	    throw	    throws
+transient	    try	        void	    volatile	while
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+DataType :-
+- Data types specify the type of data that can be stored inside variables in Java
+
+1)Primitive datatype :- 
+- Predefined by language and named by keyword 
+- Default value is 0
+
+
+ Datatype :-          Range of bytes     Sizebytes     
+ byte  B1 = 100;    -128 to 127                 1       
+ short B2 = 20;     -32768 to 327676            2       
+ int   B3 = 20;     -2,147,483,648 to 7         4      
+ long  B4 = 45;     -9,223,372,036,854,775,808 to 7 
+ float B5 = 3.3f;    6 to 7 decimal             4       
+ double B6 = 7.44d;  15 decimal                 8       
+ boolean B7 = false; true or false              1bit   
+ char B8 = 'F';                                 2     
+
+2)Non-Primitive type :- 
+- Reference variables are created using defined constructors of the classes Used to access object
+- Declared for specific type so value can't Change
+- default value is null
+Ex :- String, Array, Class, Object
+
+
+Type Casting :-
+- A method or process that converts a data type into another data type in both ways manually and automatically. 
+- The automatic conversion is done by the compiler and manual conversion performed by the programmer
+- Assign a value of one primitive data type to another type
+
+1)Widening casting(automatically) :- 
+- convert a smaller type to a larger type
+Ex :- byte -> short -> char -> int -> long -> float -> double 
+
+2)Narrowing casting(Manually) :-
+- convert a larger type to a smaller type
+Ex :- double -> float -> long -> int -> char -> short -> byte
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Operators :-
+- Operators are symbols that perform operations on variables and values
+1)Arithmatic :- + , - , * , / , %   
+2)Assignment :- = , += , -= , *= , /= , %= , &= , |= , ^= , >>= , <<=
+3)Realtional :- == , != , > , <  , >= , <=
+4)Logical    :- && , || , !
+5)Unary      :- -, +, ++ , -- , !(Logical Complement Operator):inverts the value of a boolean
+6)Ternary    :- Condition ? If(true) : If(false) 
+7)Bitwise    :- &, |, ^(XOR), ~(Complement Operator), << , >> , >>>(unsigned)
+8)instanceOf :- Check type if an object is instance of class, a subclass or interface(result =str instanceof String)
+9)New       :- The new operator instantiates a class by dynamically allocating(allocation at run time) 
+
+10)Operators Precedence :-
+- Category	            Operator	                                             Associativity
+    Postfix	            expression++ expression--	                            Left to right
+    Unary	            ++expression –-expression +expression –expression ~ !	  Right to left
+    Multiplicative	    * / %	                                                Left to right
+    Additive	        + -	                                                    Left to right
+    Shift	            << >> >>>	                                              Left to right
+    Relational	        < > <= >= instanceof	                                Left to right
+    Equality	        == !=	                                                  Left to right
+    Bitwise AND	        &	                                                    Left to right
+    Bitwise XOR	        ^	                                                    Left to right
+    Bitwise OR	        |	                                                    Left to right
+    Logical AND	        &&	                                                  Left to right
+    Logical OR	        ||      	                                            Left to right
+    Conditional	        ?:      	                                            Right to left
+    Assignment	    = += -= *= /= %= ^= |= <<= >>= >>>=	                      Right to left
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Java Input and Output :-
+1)Output :-
+- method to print data in java
+- System is a class 
+- out is public static field: accept user data 
+  1)System.out.print()  - Print string inside quotes 
+  2)System.out.println()- Same work like print but add new line in the end 
+  3)System.out.printf() - Provides formatting same as c/c++
+
+2)Input :-
+- Get Input from user we use Scanner class which we import from java.util.Scanner 
+Syntax :- Scanner usrInput = new Scanner(System.in);
+ usrInput.nextInt(); - Take integer value from user
+
+More Method :- 
+- nextFloat(), nextDouble(), nextLong, nextByte(), nextFloat()
+- next()Read input upto whitespace, does not read the newline character in your input created by hitting "Enter"
+- nextLine()read a line of text , returns after reading that newline
+- nextBigInteger, nextBigDecimal() requires import from java.math. package
+- System.in take standard input from the user
+- Close() method to close the object
+- Scanner class reads an entire line and divides the line into tokens which use for compiler to process the input
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Java Expressions, Statements, Blocks and comment
+
+Java Expressions :-
+- A Java expression consists of variables, operators, literals, and method calls
+
+Java Statements :-
+- In Java, each statement is a complete unit of execution
+  Ex :- int score = 9*5;
+- convert an expression into a statement by terminating the expression with a " ; " 
+  These are known as expression statements
+
+Java Blocks :-
+- A block is a group of statements (zero or more) that is enclosed in curly braces { }
+
+Java Comment :-
+- Comments are a portion of the program that are completely ignored by Java compilers helps progrmmers to 
+  understand the code
+
+Type :-
+1)Single line :- //
+2)Multi-Line  :- /*
+                  *
+                  */
+

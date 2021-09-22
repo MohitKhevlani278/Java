@@ -1,0 +1,65 @@
+ConditionStatement :-
+
+Simple If :-
+ if(condtion){}
+        
+If..Else.. :-
+ if(condtion){}
+ else{}
+
+Else-if :-
+ if(condtion1){}
+ else if(condtion2){}
+ else{}
+
+Ternary operator or short-hand :-
+ var = (condition) ? expressionTrue : expressionFalse;
+
+Switch :-
+- expression evaluated once then compared with the values of each case statement
+- if is a match , associated block of code is executed otherwise default block executed
+- no duplicate case statement allowed
+
+switch(expression)  
+{
+    case n:
+     //code block
+     break;
+    
+    default:
+     //code block
+}
+
+
+Loops :- execute block of code as long as condition is true , to save time, reduce errors, make code readable
+        
+While Loops :- 
+    while(condition){
+        increment/decrement
+    }
+        
+do..while loop :- execute one time statement
+    do{
+     //code block
+     increment/decrement
+    }while(condition)
+        
+For loop :-     
+    for (initialization ; condition ; increment/decrement)
+    {
+        //code block
+    } 
+
+For..each loop :-
+    for(type variableName : arrayName){ }
+
+Loops Control Statement :-
+break    :- terminates the loop immediately, and the control of the program moves to the next statement 
+            following the loop
+         - We can use the label break statement to terminate the outermost loop as well   
+         Ex :- break second: (This is label use)
+
+continue :- skips the current iteration of a loop and go next iteration
+
+Note :- Java does not support goto but we can use  " label: " instead of goto
+      - Label declare starting point of the loop 

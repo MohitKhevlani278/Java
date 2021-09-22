@@ -1,0 +1,301 @@
+Q-1 
+1#
+1)
+ - JDBC-ODBC bridge driver
+ - Native-API driver (partially java driver)
+ - Network Protocol driver (fully java driver)
+ - Thin driver (fully java driver)
+
+2)Java Database connectivity
+
+3)Open Database connectivity
+
+Q-2
+
+1)
+ executeQuery()		execute()
+ - use to execute the SQL statements which retrieve some data from database.
+ - returns a ResultSet object which contains the result returned by query.
+ - use to execute select query.
+ Ex: SELECT
+ 
+ executeUpdate()
+ - used to execute SQL statements which update or modify database.
+ - This method returns an int value which represent number of rows affected by the query. 	
+ - use to execute non select query
+ Ex:INSERT, UPDATE, DELETE, CREATE, ALTER 
+
+ execute()
+ - use for any kind of SQL statements.
+ - This will be 0 for statement which are returning nothing.	
+ - This method return a Boolean value. 
+ - TRUE indicates that query returned a ResultSet object and FALSE indicate returned an int value or returned nothing.
+ - This method is use to execute select and non select queries.
+ Ex : any Type of SQL statements
+
+
+2)
+ 1)Thick Client :- 
+ - A thick client is one of the components in client-server computing architecture that is connected to the server through a network 
+   connection and doesn’t consume any of the server's computing resources to execute applications.
+ - A thick client may also be known as a heavy, fat or rich client
+ - If Driver require some extra Component (like ODBC Driver OR Vendor specific Native Libraries OR Middleware Server), 
+   such Type of Driver is called Thick Driver.
+ Ex :-  Type-1, Type-2 and Type-3 Drivers 
+ 
+ 2)Thin Client :-
+ - A thin client is a networked computer with few locally stored programs and a heavy dependence on network resources. 
+ - It may have very limited resources of its own, perhaps operating without auxiliary drives, CD-R/W/DVD drives or even software applications.
+ - If Driver won’t require any extra Component to communicate with Database, such type of Driver is called Thin Driver.
+ Ex :- Type-4 Driver 
+
+
+3)
+ - JDBC or Java Database Connectivity is a specification from Sun microsystems that provides a standard abstraction(that is API or Protocol) for 
+   java applications to communicate with various databases. 
+ - The classes and interfaces of JDBC allows application to send request made by users to the specified database.
+ 
+ Purpose :-
+ - Enterprise applications that are created using the JAVA EE technology need to interact with databases to store application-specific information. 
+ - So, interacting with a database requires efficient database connectivity which can be achieved by using the ODBC(Open database connectivity) driver. 
+ - This driver is used with JDBC to interact or communicate with various kinds of databases such as Oracle, MS Access, Mysql and SQL server database. 
+
+ Component :- 4 main 
+ 1)JDBC API :-  It provides various methods and interfaces for easy communication with the database.
+   		Two Package :- 1)java.sql.*;  2)javax.sql.*;   
+ 2)JDBC Driver manager :- It loads database-specific driver in an application to establish a connection with a database. 
+			  It is used to make a database-specific call to the database to process the user request.
+ 3)JDBC Test suite :- It is used to test the operation(such as insertion, deletion, updation) being performed by JDBC Drivers.
+ 4)JDBC-ODBC Bridge Drivers :- It connects database drivers to the database.This bridge translates JDBC method call to the ODBC function call.
+  			       It makes the use of (sun.jdbc.odbc) package that includes native library to access odbc characteristics
+
+ Architecture :-
+ 1)Application: It is a java applet or a servlet which communicates with a data source.
+ 2)The JDBC API: The JDBC API allows Java programs to execute SQL statements and retrieve results.
+   important classes and interfaces :-DriverManager, Driver, Connection, Statement, PreparedStatement, CallableStatement, ResultSet, SQL data
+ 3)DriverManager: It plays an important role in the JDBC architecture.
+		  It uses some database-specific drivers to effectively connect enterprise applications to databases.
+ 4)JDBC drivers: To communicate with a data source through JDBC, you need a JDBC driver that intelligently communicates with the respective data source. 
+
+ Type of architecture :- 2tier & 3tier
+ 1)Two-Tier Model :-
+ - A java application communicates directly to the data source. 
+ - The JDBC driver enables the communication between the application and the data source. 
+ - When a user sends a query to the data source, the answers for those queries are sent back to the user in the form of results.
+ - The data source can be located on a different machine on a network to which a user is connected. 
+ - This is known as a client/server configuration, where the user’s machine acts as a client and the machine having the data source running acts
+   as the server.
+
+ 2)Three-tier model: 
+ - In this, the user’s queries are sent to middle-tier services, from which the commands are again sent to the data source. 
+ - The results are sent back to the middle tier, and from there to the user.
+ - This type of model is found very useful by management information system directors.
+
+
+4)
+- Containers are the interface between a component and the low-level, platform-specific functionality that supports the component.
+- Before it can be executed, a web, enterprise bean, or application client component must be assembled into a Java EE module and deployed
+  into its container.
+- The assembly process involves specifying container settings for each component in the Java EE application and for the Java EE application
+  itself. 
+- Container settings customize the underlying support provided by the Java EE server, including such services as security, transaction 
+  management, Java Naming and Directory Interface (JNDI) API lookups, and remote connectivity. 
+- The container also manages nonconfigurable services, such as enterprise bean and servlet lifecycles, database connection resource pooling, 
+  data persistence, and access to the Java EE platform APIs
+ 
+  The server and containers are as follows:
+  1)Java EE server: The runtime portion of a Java EE product. A Java EE server provides EJB and web containers.
+  2)EJB container: Manages the execution of enterprise beans for Java EE applications. 
+		   Enterprise beans and their container run on the Java EE server.
+  3)Web container: Manages the execution of web pages, servlets, and some EJB components for Java EE applications.
+		   Web components and their container run on the Java EE server.
+  4)Application client container: Manages the execution of application client components.
+			          Application clients and their container run on the client.
+  5)Applet container: Manages the execution of applets. 
+		      Consists of a web browser and a Java Plug-in running on the client together.
+ 
+
+Q-3
+
+1)
+ - DatabaseMetaData interface provides methods to get meta data of a database such as database product name, database product version, 
+   driver name, name of total number of tables, name of total number of views etc. 
+ 
+  Commonly used methods of DatabaseMetaData interface :-
+  1)public String getDriverName()    : it returns the name of the JDBC driver.
+  2)public String getDriverVersion() : it returns the version number of the JDBC driver.
+  3)public String getUserName()      : it returns the username of the database.
+  4)public String getDatabaseProductName() : it returns the product name of the database.
+  5)public String getDatabaseProductVersion() : it returns the product version of the database.
+  6)public ResultSet getTables(String catalog, String schemaPattern, String tableNamePattern, String[] types) : 
+    it returns the description of the tables of the specified catalog. 
+    The table type can be TABLE, VIEW, ALIAS, SYSTEM TABLE, SYNONYM etc
+
+  Example :-
+  -import java.sql.*;  
+   class Dbmd{  
+		public static void main(String args[]){  
+		try{  
+			Class.forName("oracle.jdbc.driver.OracleDriver");  
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
+			DatabaseMetaData dbmd=con.getMetaData();  
+			System.out.println("Driver Name: "+dbmd.getDriverName());  
+			System.out.println("Driver Version: "+dbmd.getDriverVersion());  
+			System.out.println("UserName: "+dbmd.getUserName());  
+			System.out.println("Database Product Name: "+dbmd.getDatabaseProductName());  
+			System.out.println("Database Product Version: "+dbmd.getDatabaseProductVersion());  
+			con.close();  
+		}
+		catch(Exception e){ System.out.println(e);}  
+		}			  
+	}	  
+
+2)
+ - The metadata means data about data 
+ - If you have to get metadata of a table like total number of column, column name, column type etc. ,
+ - ResultSetMetaData interface is useful because it provides methods to get metadata from the ResultSet object.
+
+ #Commonly used methods of ResultSetMetaData interface :-
+   Method						Description
+   public int getColumnCount()			it returns the total number of columns in the ResultSet object.
+   public String getColumnName(int index)	it returns the column name of the specified column index.
+   public String getColumnTypeName(int index)	it returns the column type name for the specified index.
+   public String getTableName(int index)	it returns the table name for the specified column index.
+
+ How to get the object of ResultSetMetaData:
+ Syntax: public ResultSetMetaData getMetaData()throws SQLException  
+
+ #Example of ResultSetMetaData interface :
+  import java.sql.*;  
+  class Rsmd{  
+	public static void main(String args[]){  
+		try{  
+			Class.forName("oracle.jdbc.driver.OracleDriver");  
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
+  			PreparedStatement ps=con.prepareStatement("select * from emp");  
+			ResultSet rs=ps.executeQuery();  
+			ResultSetMetaData rsmd=rs.getMetaData();  
+  			System.out.println("Total columns: "+rsmd.getColumnCount());  
+			System.out.println("Column Name of 1st column: "+rsmd.getColumnName(1));  
+			System.out.println("Column Type Name of 1st column: "+rsmd.getColumnTypeName(1));  
+  			con.close();  
+			}catch(Exception e){ System.out.println(e);}  
+		}  
+	}	  
+
+
+			
+					2#
+
+Q-1 :-
+1)data source name
+4)J2EE is a platform-independent, Java-centric environment from Sun for developing, building and deploying Web-based enterprise app online
+
+Q-2
+1)N-tier architecture is a client-server architecture concept in software engineering where the presentation, processing and data management 
+  functions are both logically and physically separated. 
+2)A Connection is the session between java application and database.
+  1)public void commit(): saves the changes made since the previous commit/rollback permanent.
+  2)public void rollback(): Drops all changes made since the previous commit/rollback
+
+Q-4
+1)Java EE 5 APIs
+
+  1) Enterprise JavaBeans Technology		
+  - An Enterprise JavaBeans component, or enterprise bean, is a body of code having fields and methods to implement modules of business logic. 
+  - You can think of an enterprise bean as a building block that can be used alone or with other enterprise beans to execute business logic on the J2EE
+    server.
+
+  2) Java Servlet Technology :-
+  - A servlet class extends the capabilities of servers that host applications that are accessed by way of a request-response programming model. 
+
+  3) JavaServer Pages Technology :-
+  - lets you put snippets of servlet code directly into a text-based document
+
+  4) Java Message Service API
+  - allows J2EE application components to create, send, receive, and read messages. 
+  - It enables distributed communication that is loosely coupled, reliable, and asynchronous
+
+  5) Java Transaction API :-
+  - The Java Transaction API (JTA) provides a standard interface for demarcating transactions. 
+  - The J2EE architecture provides a default auto commit to handle transaction commits and rollbacks
+
+  6) JavaMail API :-
+  - The JavaMail API send email notifications 
+  - has two parts: an application-level interface used by the application components to send mail, and a service provider interface. 
+ 
+  7) JavaBeans Activation Framework :-
+  - JAF provides standard services to determine the type of an arbitrary piece of data, encapsulate access to it, discover the operations available
+    on it, and create the appropriate JavaBeans component to perform those operations.
+
+  8) Java API for XML Processing :-
+  - JAXP enables applications to parse and transform XML documents independent of a particular XML processing implementation.
+ 
+  9) Java API for XML BASED RPC  (XML Web Services (JAX-WS)) Fullform :- Java Architecture for XML Binding (JAXB)
+  -  uses the SOAP(standard object access protocol)standard and HTTP, so client programs can make XML-based remote procedure calls(RPCs)over the Internet.
+  -  also support wsdl(web service descriptor language) and provide authentication
+
+  10) SOAP with Attachments API for Java :-
+  -  a low-level API on which JAX-RPC depends
+  -  SAAJ enables the production and consumption of messages that conform to the SOAP with attachments note
+
+  11) Java API for XML Registries(JAXR):-
+  -  lets you access business and general-purpose registries over the Web. 
+  -  JAXR supports the ebXML Registry and Repository standards and the emerging UDDI specifications
+
+  12) J2EE Connector Architecture :-
+  - used by J2EE tools vendors and system integrators to create resource adapters that support access to enterprise information systems that can be 
+    plugged in to any J2EE product.
+  
+  13) Java Database Connectivity API :-
+  -   invoke SQL commands from Java programing language methods
+ 
+  14) Java Naming and Directory Interface :-(JNDI)
+  -  provides applications with methods for performing standard directory operations, such as associating attributes with objects and searching for 
+     objects using their attributes
+
+  15) Java Authentication and Authorization Service :-(JAAS)
+  -  JAAS is a Java programing language version of the standard Pluggable Authentication Module (PAM) framework, which extends the Java 2 Platform 
+     security architecture to support user-based authorization
+
+
+
+		3#
+Q-1
+2)DriverManager class
+3)false / callable statement used
+
+Q-2
+1)Enterprise software, also known as enterprise application software, is computer software used to satisfy the needs of an organization rather than 
+  individual users
+  characteristics :- 
+  - widesprad performance 
+  - scalability
+  - performance
+
+2)
+  1) Statement  –  Used to execute normal SQL queries.
+  2) PreparedStatement  –  Used to execute dynamic or parameterized SQL queries.
+  3) CallableStatement  –  Used to execute the stored procedures.
+
+Q-4
+1)ResultSet interface
+
+ - The object of ResultSet maintains a cursor pointing to a row of a table. Initially, cursor points to before the first row.
+ - By default, ResultSet object can be moved forward only and it is not updatable.
+ - But we can make this object to move forward and backward direction by passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE in 
+   createStatement(int,int) method as well as we can make this object as updatable by:
+   Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);  
+
+ Commonly used methods of ResultSet interface
+ 1) public boolean next():	       	move the cursor to the one row next from the current position.
+ 2) public boolean previous():		move the cursor to the one row previous from the current position.
+ 3) public boolean first():		move the cursor to the first row in result set object.
+ 4) public boolean last():		move the cursor to the last row in result set object.
+ 5) public boolean absolute(int row):	move the cursor to the specified row number in the ResultSet object.
+ 6) public boolean relative(int row):	move the cursor to the relative row number in the ResultSet object, it may be positive or negative.
+ 7) public int getInt(int columnIndex):	 	return the data of specified column index of the current row as int.
+ 8) public int getInt(String columnName):	return the data of specified column name of the current row as int.
+ 9) public String getString(int columnIndex):	return the data of specified column index of the current row as String.
+ 10) public String getString(String columnName):return the data of specified column name of the current row as String.
+

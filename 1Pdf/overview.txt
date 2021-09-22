@@ -1,0 +1,246 @@
+#1)JAVA Basic :-
+- Develpoed James Goshling at Sunmicrosystem and released in 1995 
+- Why AVA not fully oop ? -> Because support primitive datatype
+- ava Has no pointers
+- Java all code in class and object
+- We Pass non-primitve type always reference in function so not bad memory allocation
+ 
+#2)Some Feature :-
+- Simple
+- Platform-independent
+- Support oop
+- Robust
+- Multi-thread
+- Not require pre-processor directives
+- WORA(Write once run anywhere)
+
+#3) Naming Convention Rules :-
+
+ class/interface :-Topcapital //First character is capital
+ method 		 :- getRequest    //First character is small each internal word is capitalized
+ constant	   :- MAX_VALUE     //All letters are uppercase 
+ Variable    :- int a = 10;		//No whitespace,symbols and start with digit //Allow underscore and $ at start of variable 
+ package     :- java.io.*;		//all package names in lowercase	
+
+
+#4)Java Virtual Machine(JVM):-
+
+ JVM :-
+ - Acts as a runtime engine to run java application and call main method
+ - Part of JRE(Java Runtime Enviroment)
+
+ 
+ JDK = JRE + DEVELOPMENT TOOLS  (PLATFORM INDEPENDENT)
+ JRE = JVM + LIBRARY CLASS 	(JVM PLATFORM DEPENDENT)
+ -jvmimg1(How Jvm Works see it)
+ 
+ Basic Jvm Working Cycle :-
+ .java -> javac ->.class(same class name) with bytecode(run any machine) -> jvm -> machine code 
+ 
+ Diffrent Jvm Components Helps to Run Java :-
+ 
+ ##1)JVM ClassLoader:-
+	
+ 1)ClassLoader :-
+ - Responsible for three activites 
+ 
+ 	1)Loading
+	2)Linking
+	3)Initalization
+
+	1)Loading :-
+ 	- read .class file ,generate corresponding binary data and save it in the method area
+	- After loading .class file,Jvm create object of type class to represent this file in heap memory 
+	- Note object of type class predefined in java.lang package so we can get classname, parentclass name, methodname and etc. 
+ 	- every loaded class file have only one object of that class is created
+  
+  	2)Linking :-
+	- Perform verification,preparation,and resolution(optionally)
+	- Verifiacation : Check correctness in programme , Done by bytecodeverifier , if fails generate runtime error which already in java.lang.VerifyError      
+	- Preparation   : JVM allocates memory for class variables and initializing the memory to default values                             
+	- Resolution    : Process of replacing symbolic references from the type with direct references 
+	                  done by seraching into method area to locate referenced entity
+
+	3)Initalization :-
+ 	- executed from top to bottom and all static variable are assigned with their values defined into the code
+	  
+	  There are 3 class loader for Initalization:-
+	  
+	  1)Bootstrap class loader :-
+ 	  2)Extension class loader :-
+ 	  3)System/application class loader :- 
+	 
+	   1)Bootstrap class loader :- 
+	   - capable of loading trusted class / load core java api classes present in "JAVA_HOME/jre/lib" dir  
+       - is known as bootstrapPath implmented in native language like c/c++
+	 
+ 	   2)Extension class loader :-
+	   - child class of bootstrap loader class 
+	   - loads extension class present in "JAVA_HOME/jre/lib/ext" or any other dir specified by  java.ext.dirs system property
+	   - implemented by sun.misc.Launcher$ExtClassLoader Class
+
+	   3)System/Application class loader :-
+	   - child of extension class loader Responsible for load classes from application classpath 
+	   - internally uses enviroment variable which mapped to java.class.path 
+	   - implemented by sun.misc.Launcher$AppClassLoader Class
+
+    NOTE :- Jvm follow Delegation-hierachy prinicple to load classes 
+				
+			       			 req							req
+	 System class loader --------> extension class loader -------->bootstrap class loader ---> if a class found bootstrap path class loaded otherwise  
+        |         														|
+       	|	 extension move to system class loader ---<- <- Move Back to the extension class loader 
+		(if system class loader fail load at starting)		path not found move to extension class
+			|
+		error : java.lang.ClassNotFoundException
+
+
+ ##2)JVM MEMORY :-
+
+  1)Methodarea  :- all class level information are stored like classname,variable,method etc 
+  				-  one method area per jvm and it is a shared resource
+  2)HeapArea    :- Information of all object is stored per jvm has one Heap area and it is a shared resource
+  3)Stackarea   :- For every thread jvm create run-time stack which is stored hear
+				-  Every block of this stack is called activation record/stack frame which stored method calls
+				-  all local variable are stored with its corresponding frame
+				-  after thread terminate jvm destroy run-time stack and it is not shared resource
+  4)PcRegister  :- Store current execution instruction of thread and each thrad have separate registers
+  5)NativeMethodStack :- For every thread it's created that store thread native information
+ 	
+  Note :- jvmmemoryimg2
+ 
+ ##3)EXECUTE ENGINE :-
+  
+  - Execute the ".class"(bytecode) 
+  - It read the bytecode linebyline and uses data and information present in various memory area and execute instrutions
+  
+  3 parts :-
+  1)Interpreter:- Interpretes bytecode line by line and executes 
+  				- disadvantage when method call multiple time interpretation required every time
+  2)JIT(JUSTINTIME)  :- Compiles entire bytecode and convert into native code so whenever interpreter call method repeated jit provide direct native code for that part
+  3)GarbageCollector :- It destroys un-referenced objects / free heap memory by destroying unreachable object 
+
+
+ ##4)JAVA NATIVE INTERFACE (JNI):-
+ - Interacts with native method libraries and provide native libraries(c/c++)required for execution 
+ - enable jvm to calls native libraries (c/c++)
+ 
+#5)JVM STACK AREA :-
+  - Every thread jvm create a separate stack at the time of creation thread creation 
+  - Perform 2 Operations :- pushes and pops the stack
+  - And stack for a particular thread may be termed as run-time stack
+  - Every method call stored corresponding runtime stack
+  - After all methods call stack empty and it becomes destroyed just before thread terminate
+  - data stored in stack corresponding thread and not available to the remaining threads 
+  - Each entry in the stack is called StackFrame or ActivationRecord
+
+  Structure :-
+  - When JVM invoke a java method check class data to determine the number of words
+  - required by the method in the local variables array and operand stack
+  - It Create stackframe of the proper size for invoked method and pushes it onto the java stack
+  1)LocalVariable Array :
+  2)Operand Array :
+  3)FrameData :
+
+  ##1)LocalVariable Array :
+  - parts of the stack frame is organized as zero-based array of words
+  - It contains all parameters and local variables of the method.
+  - Each slot or entry in the array is of 4 Bytes
+  - Byte, short, and char values will be converted to int type before storing and occupy 1 slot
+  - JVM gives 1 slot for Boolean values in the local variable array
+
+  ##2)Operand Stack :
+  - storing intermediate calculation’s results
+  
+  ##3)FrameData :-
+  - contains all symbolic references and normal method returns related to that particular method
+  - contains a reference to the Exception table which provides the corresponding catch block information in the case of exceptions
+
+#6)JVM SHUTDOWNHOOK :-	
+ - a special construct that allows developers to plug in a piece of code to be executed when the JVM is shutting down
+ - Runtime.getRuntime().addShutdownHook(Thread) method
+
+
+
+#7)JAVACLASS FILE
+ - Containing javabytecode and .classs extension that enable to run in jvm
+ - compiler convert .java to .class
+ - if one or more class available in .java each class has different class file 
+
+ ClassFile Structure :-
+ {
+     magic_number;
+     access_flags;     
+     this_class;
+     super_class;   
+     ( minor_version;       / major_version;)
+     ( constant_pool_count; / constant_pool[];)
+     ( interfaces_count;    /  interfaces[];)
+     ( fields_count;        / fields[];)
+     ( methods_count;       / methods[];)
+     (a ttributes_count;    / attributes[];)
+ }
+ ##1)magic_number :- first 4byte code predefined value that jvm identified whether compiler file valid or not 
+					 value in hexadecimalformat / if remove anycharcter in .class error show
+ ##2)Minor/majorversion :- represent .class file version / jvm check version whether compiler generated current files or not 
+			      		   denote by m(minor) and M(Major) / java.lang.unsupportedClassVeriosn error if not match 
+
+ ##3)Constant_pool 		   :- represents no. of information about constant parent in constant pool file
+ ##4)Constant_pool_count[] :- no. of constant parent in constant pool
+							  when java file compiled,all reference to variable and methods are stored in class's constant pool as a symbolic reference
+ ##5)access_flags  :- information about modifiers that declare in class file
+ ##6)this_class    :- fully qualified name of the class file
+ ##7)super_class   :- fully qualified name of the immediate super class of current class (this_class will be sample class and super_class will be object class)
+ ##8)interface     :- return interface information implemented by current class
+ ##9)interface_count :- no of interface implemented
+ ##10)fields 	   :- static variable information present in class file
+ ##11)fields_count :- no of field present
+ ##12)method       :- return information about all methods
+ ##13)method_count :- no of methods
+ ##14)attributes   :- information aboutall attributes
+ ##15)attributes_count :-no of attributes
+
+
+#8 DIFFERNCE BETWEEN JDK,JRE,JVM :-
+
+ JDK :- Used to create java application conatin jre,interpreter/loader,javac,archiver(jar),javadoc and other tools
+ JRE :- JAVA RTE(RUNTIME ENVIROMENT) provide minimum requirements for executing java application that conatin JVM,core classes,supporting files
+ JVM :-   
+    - Specification where working of java virtual machine specified and  provided by sun and other
+    - an implementation is computer program that meets the requirments of the jvm specification
+    - Runtime instance when you write java command on the command prompt to run the java class,an instance jvm is created
+
+ DIFFERNCE :- 
+ - Jdk provide develop and execute java program /  include development tools,jre (note :-jdk only used by java developer)
+ - JRE provide package only run program not develop 
+ - JVM is inbuilt in both / when you run program from jdk or jre jvm exectue line by line program known as interpreter
+
+ HOW JDK AND JRE WORKS :-
+  
+  What does jre consists of? 
+  1)Deployment technology :- java web-start and java plug-in
+  2)UserInterfaceToolkit  :- awt, swing, java2d, accessibility, image i/o, printservice, sound, dragandDrop , Inputmethods
+  3)IntegrationLibraries  :- interfaceDefinationLanguage(IDL), JDBC, JNDI(NAMINGDIRECTORY AND INTERFACE), RMI, RMI-IIOP(Over internet-inter-Orb protocol , scripting
+  4)OtherBaseLibraries    :- InternationalSupport , I/O , ExetensionMechanisam , JNI(NATIVE INTERFACE, JMX(JAVA MANAGEMENT EXETENSION), Serilization, Security, 
+  							 Networking, Math, Override mechanisam, Xml processing (XMLJAXP)	  
+  5)LangandUtil Baselibrariies :- including lang and util, management, versioning, zip, instrument, reflection, Collections, Concurrency Utilities, Java Archive (JAR), 
+  								  Logging, Preferences API, Ref Objects and Regular Expressions. 
+  6)JVM	:- JAVA hotspotclient,server virtual machine
+
+  HOW DOES JRE WORKS :-
+   .java -> .class    -> classloader/bytecode verifier -> interpreter -> runtime -> hardware	
+	          \-/
+		LOAD FROM HARDDISK,NETWORK OR OTHER RESOURCES
+    compile       -> RUNTIME
+
+
+  Interaction between jdk and jre :-
+								/ JRE 
+  javasourcecode -> jdk(java compiler) ->java bytecode -> ( jvm (jit) ) 
+							(Hardware platform)
+
+
+
+
+
+  

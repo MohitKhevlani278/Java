@@ -1,0 +1,349 @@
+OOP :-
+Oop is all about creating object that contain both data and methods
+Adavantage :-
+- faster and easier
+- provides clear structure
+- keey code DRY(DO NOT REPEAT) means reducing repetition of code
+- easier to maintain , modify, debug
+- full resuable app with less code and shorter develpoment time
+
+Field in Oop `:-
+- Class
+- Object
+- Instance
+- Method
+- Message Passing
+- Inheritance
+- Polymorphisam
+- Encapsulate
+- Abstraction
+
+
+#1)Object :-
+- Instance of class which hase state and behavior
+- So method operate on the internal state of an object and object-to-object communication done via method
+- new keyword is used to create object 
+- u can create multiple objects of same class
+- ClassName objectname = new ClassName();
+ 
+
+
+#2)Class :-
+- A class is blueprint which individual objects are created
+- Variable in class in know as attribute
+- Method known as behavior
+- Access attribute Ex :- Object.Attribute
+- modify attribute Ex :- Object.Attribute = new value (If final keyword use can't modify value)
+- declare method in class Ex :- static or non-static datatype methodname(){}
+- access static method :- methodname();
+- non-static method    :- objectofclass.methodname();
+                
+
+Types of variables stored :-
+1)Local variable :-
+- Defined inside methods, constructor or block 
+- Declared and initialized within methods and destroyed when method is completed work
+- Cannot be able to used access modifiers
+
+2)Instance variable :-
+- Declared within class but outside methods
+- Accessed inside any methods, constructor or block of that particular class
+- When space allocated for object instances variable initialized(when object create with new keyword)
+- Default is access specifier by default(Recommended make is private) 
+- Access by creating object / Accessed directly by calling the variable name inside the class
+- Each object have own copy  
+- Change in one variable can't affect other
+
+
+3)Class variable :-
+- known as class variable declared using static keyword inside class but outside the method  
+- Static variables are rarely used other than being declared as constants(constants has access modifiers/Value Not Change)
+- Stored in static memory Created when program start and destroyed when program stops
+- Assign value during declartion or within constructor(In spcial static initializer block)
+- Access :- classname.Variablename
+- One copy only for all object  
+- Change in one variable affect all
+- When declared public static final, then variables name(constant)are all in uppercase
+
+
+#3)Construtor :-
+- 
+- Each time new object is created at least one constructor is invoked
+
+
+       Constructors :- used to initialize object
+                     - called when object created
+                     - all class have construtor by default if you not create java create one for us,but then not able to set initial value for object attributes
+                     - take paramter used to initialize attribute
+                
+
+Rules :-
+- Cannot have return type  
+- Can have more than one constructor
+- Not need to invoke explicitly it is automatically invoked at instantiation 
+- constructor name same as class name
+- we can use access modifiers with constructor 
+- constructor can be overloaded 
+- If we not explicitly write constructor for class java compiler builds a default constructor for that class
+- constructor not inherited
+- The first statement in a constructor must call to this() or super()
+
+
+#4)Methods :-
+- Method is a collection of statements that are grouped together to perform an operation (like function)
+
+Syntax :- Modifier returnsType methodName (parameter){}
+Ex     :- public static int valueAge(int age){}
+modifier      − It defines the access type of the method and it is optional to use.
+returnType    − Method may return a value.
+nameOfMethod  − This is the method name. The method signature consists of the method name and the parameter list.
+Parameter     − The list of parameters, it is the type, order, and number of parameters of a method. 
+              - These are optional, method may contain zero parameters.
+              - Parameters can be passed by value or by reference.
+method body   − The method body defines what the method does with the statements.
+static        - means method belong to the  class and not an object of the
+
+
+Recursion :- 
+- function call itself - used to break complicated problems into simple problems are easier to solve 
+- every Recursive have a halting condition,where function stop call iteself
+        
+         
+this :-
+- this is a keyword in Java which is used as a reference to the object of the current class, with in an instance method or a constructor. 
+- Using this you can refer the members of a class such as constructors, variables and methods.
+- Differentiate the instance variables from local variables if they have same names, within a constructor or a method.
+- Call one type of constructor (parametrized constructor or default) from other in a class. 
+- It is known as explicit constructor invocation.
+Note − The keyword this is used only within instance methods or constructors
+
+
+Variable Arguments(var-args) :-
+- Pass no of same type arguments to the method
+Syntax :- typeName... parameterName
+
+
+finalize :-
+- a method that will be called just before an object's final destruction by the garbage collector
+- used to ensure that an object terminates cleanly
+- The Java runtime calls that method whenever it is about to recycle an object of that class
+- Inside the finalize( ) method, you will specify those actions that must be performed before an object is destroyed.
+Syntax :- accessmodifier returnsType finalize(){}
+
+
+
+#5)Access modifiers :-
+- Set access levels for classes, variables, methods, and constructors
+Modifiers :- Divided into two group 
+   1)Access    Modifier :- Control the access level
+   2)NonAccess Modifier :- do not control the access level but provides other functionality
+
+   1)Access Modifier :-default ,public,private,protected
+   1)public  :- Accesible by any other class
+   2)default :- only accessible by classes in the same package,used when not specfiy modifiers
+   3)private :- only accessible within declared class
+   4)protected :- accessible same package and subclasses
+          
+   2)Non-Access Modifier :-final , abstract ,static , transient, synchronized, volatile
+   1)final     :- cannot inherit by other class/or in variable declare than value can;t change
+   2)static    :- attribute and method belongs to class rather than object
+   3)abstract  :- used by subclass,only be used for method,not have a body,body provided by subclass
+   4)transient :- attribute and method are skipper when serializing the object containing them
+   5)synchronized :- method can only be accessible by one thread at a time
+   6)volatile  :- not cached thread-locally,and is always read from the "main memory"
+
+1)Default Access modifiers :-
+- We do not explicitly declare an access modifier
+- A variable or method declared without any access control modifier is available to any other class in the same package. 
+- The fields in an interface are implicitly public static final and the methods in an interface are by default public
+
+
+2)Private Access modifiers :-
+- Private can only be accessed within the declared class itself
+- Most restrictive access level
+- Class and interfaces cannot be private.
+- Variables that are declared private can be accessed outside the class, if public getter methods are present in the class
+- Object encapsulates itself and hides data from the outside world (using this keyword)
+- Make variable available we use getFormat() and setFormat() methods
+
+
+3)Public Access modifier :-
+- Accessed from any other class
+- Public class we are trying to access is in a different package, then the public class still needs to be imported. 
+- Because of class inheritance, all public methods and variables of a class are inherited by its subclasses.
+
+
+4)Protected Access modifier :-
+- accessed only by the subclasses in other package or any class within the package of the protected members' class
+- cannot be applied to class and interfaces
+- methods and fields in a interface cannot be declared protected
+- gives the subclass a chance to use the helper method or variable, while preventing a nonrelated class from trying to use it
+
+
+Access Control and inheritance :-
+- Methods declared public in a superclass also must be public in all subclasses.
+- Methods declared protected in a superclass must either be protected or public in subclasses; they cannot be private.
+- Methods declared private are not inherited at all, so there is no rule for them
+
+
+
+#5)Non-Access modifiers :-
+- The static modifier for creating class methods and variables
+- The final modifier for finalizing the implementations of classes, methods, and variables
+- The abstract modifier for creating abstract classes and methods
+- The synchronized and volatile modifiers, which are used for threads
+
+1)Static :-
+ Static Variable :-
+ - static keyword is used to create variables that will exist independently of any instances created for the class. 
+ - Only one copy of the static variable exists
+ - known as class variables Local variables cannot be declared static
+
+ Static Methods :-
+ - Static methods do not use any instance variables of any object of the class they are defined in. 
+ - Static methods take all the data from parameters and compute something from those parameters, with no reference to variables
+ - accessed using the class name followed by a dot and the name of the variable or method
+
+
+2)Final :-
+ Final Variable :-
+ - Explicitly initialized only once
+ - A reference variable declared final can never be reassigned to refer to an different object
+ - data within the object can be changed
+ - So, the state of the object can be changed but not the reference
+ - final modifier often is used with static to make the constant a class variable
+
+ Final Methods :-
+ - Cannot be overloaded by any subclasses
+ - Main use that content of the method should not be changed by any outsider
+ 
+ Final Class :-
+ - prevent the class from being subclassed. 
+ - If a class is marked as final then no class can inherit any feature from the final class.
+ 
+
+3)Abstract Methods :-
+- Method declared without any implementation
+- Methods body (implementation) is provided by the subclass 
+- Abstract methods can never be final or strict.
+- Class that extends an abstract class must implement all the abstract methods of the super class, 
+  unless the subclass is also an abstract class
+- one or more abstract methods, then the class must be declared abstract
+- abstract class does not need to contain abstract methods
+
+
+4)Synchronized :-
+- used to indicate that a method can be accessed by only one thread at a time
+- applied with any of the four access level modifiers
+
+
+5)Transient :-
+- indicate the JVM to skip the particular variable when serializing the object containing it
+- This modifier is included in the statement that creates the variable, preceding the class or data type of the variable
+
+
+6)Volatile :-
+- Tells JVM thread accessing the variable must always merge its own private copy of the variable with the master copy in the memory.
+- Accessing a volatile variable synchronizes all the cached copied of the variables in the main memory. 
+- Volatile can only be applied to instance variables, which are of type object or private. 
+- A volatile object reference can be null.
+
+
+
+
+
+
+Other Rules :-
+1)Files Declared Rules :-
+- Only one public class per source file 
+- Source file can have multiple non-public classes
+- Package statement should be top if class defined in package
+
+
+
+
+                   
+    
+        Nested Class / inner class :-
+        - A class within a class
+        - purpose to group classes that belongs together,make code more readable and maintainable
+        - access inner class -> create obj of outer class,than create obj of inner class
+        - Ex :- outerclass.innerclass innerclassobj = outerclassobj.new innerclass(); 
+        - Inner class can be private or protected,if you don't want outside object access innerclass make it private
+        - static innerclass means you can access it without creating object of outer class (line 3 direct execute)
+        - static innerclass not hae access to members of the outer class
+        - Normal innerclass can access attributes and methods of the outer class
+
+        Abstract Class and Methods :- 
+        - Data abstraction process of hiding certain details and showing only essntial information to the user
+        - Achieve either abstract classes or interface
+        - abstract keyword use which is non-access modifier,used for classes and methods
+            abstract class :- restricted class that cannot be used to create object(to acces it,must be inherited from another class)
+            abstract method :- canonly be used in abstract class,does not have a body(body provide by the subclass which inherit)
+        - use to achieve security
+
+        Interface :- 
+        - A completely "Abstract class" is used to group related methods with empty bodies   
+        - access interface methods,must  be "implemented" by another class with the implementes keyword(instead of extends)
+        - interface method body provide by implement class
+        - interface cannot be used to create object
+        - on implementation of an interface,you must override all its methods
+        - interface attribute are by default public,static,final
+        - cannot containing construtor(as it cannot be used to create object)
+        - java have not mulitple-inheritance but it can be achieve with interface,because the class can implement mulitple interface
+
+
+
+
+##1)Wrapper Class :-
+- A Wrapper class is a class whose object wraps or contains primitive data types
+- Wrap a primitive value into a wrapper class object
+
+Needs :-
+- Objects are needed if we wish to modify the arguments passed into a method (because primitive types are passed by value)
+- Data structures in the Collection framework such as ArrayList and Vector, store only objects not primitive types.
+- An object is needed to support synchronization in multithreading
+
+Type :-  See in Images
+
+Autoboxing :- 
+- Automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing.
+
+Unboxing :- 
+- It is just the reverse process of autoboxing. 
+- Automatically converting an object of a wrapper class to its corresponding primitive type is known as unboxing.
+
+
+
+
+7)MATH method :-
+- All come with math package start with MATH.
+
+Syntax :-                   Description 
+abs(variable);   - Returns the absolute value of the argument
+ceil(variable);  - Returns the lowest no value
+floor(variable); - Returns the highest no value
+round(variable); - Returns the round figure values
+rint()
+min()
+max()            
+exp()
+log()
+pow()
+sqrt()
+sin()
+cos()
+tan()
+toDegrees()
+toRadians()
+random()
+
+
+
+
+
+
+
+
+
+
