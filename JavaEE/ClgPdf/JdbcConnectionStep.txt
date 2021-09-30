@@ -16,10 +16,10 @@
 	}
 
 3) Connect to the database 
-	getConnection() - is used to establish a connection to a database, it returns connection object. it throws SQLException.
-
+	getConnection() - is used to establish a connection to a database, it returns connection object. 
+					  it throws SQLException.
 	Connection con=getConnection("Protocol:subprotocol:Source/Dsn");
-
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
 
 4) create and executing statement
 	

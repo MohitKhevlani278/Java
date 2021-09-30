@@ -355,7 +355,8 @@ Common Technologies in AOP :-
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-STRUCT FARMEWORK :-                         
+STRUCT FARMEWORK :-       
+
 
 Introduction Of Strcut Farmware :-
 - Struts is an open-source web application framework for developing Java EE web applications. 
@@ -363,3 +364,49 @@ Introduction Of Strcut Farmware :-
 - It was originally created by Craig McClanahan and donated to the Apache Foundation in May, 2000. 
 - Formerly located under the Apache Jakarta Project and known as Jakarta Struts, it became a top level Apache project in 2005.
 
+
+Processing Action Object :-
+- Action objects handle the request from and responds to the client (generally a web browser). 
+- ActionServlet receives the request
+- Requests from the client are sent to the controller in the form of Actions defined in the struts-config.xml configuration file
+- Action objects have access to the applications controller servlet and also access to the servlet’s methods. 
+- Bundles all the request values into a JavaBean class which extends Struts ActionForm class
+- Decides which action class to invoke to process the request
+- Action class is a part of the controller and is responsible for communicating with the model layer
+- The model code returns an ActionForward to the controller output page to send to the client
+- Information is passed between model and view in the form of special JavaBeans
+- A powerful custom tag library allows it to read and write the content of these beans from the presentation layer without the need 
+  for any embedded Java code
+- Struts also supports internationalization, provides facilities for the validation of data submitted by web forms, and includes a
+  template mechanism called “Tiles” which allows the presentation layer to be composed from independent header, 
+  footer, and content components.
+
+
+Architecture :-
+- Struct develop robust web application with the help of MVC architecture.
+
+ Components Of Architecture :-
+ Request     :- Provided by the application developer that is used to be mapped to a particular URI
+ Response    :- Used to transfer the control to another resource which will be responsible for completing the response
+ Tag library :- Helps developers to create the interactive form based applications with server pages
+
+ 
+ Struts Controller Components :-
+ - User send http request which ActionServlet receives it intercepts the URL based on the Struts Configuration files, 
+ - It gives handling of the request to the Action class. 
+ - Action class is a part of the controller and is responsible for communicating with the model layer.
+
+ Struts View Components :-
+ - Responsible for accepting the input from them and displaying information to the user with the help of the model components. 
+ - Mostly we use the JavaServer Pages (JSP) for the view presentation. 
+ - To extend the capability of the view we can use the Custom tags, java script etc.
+
+ Struts Model Component :-
+ - Model component provides a model of the business logic behind a Struts program
+ - Model components are generally a java class
+ - It provides interfaces to databases or back-ends systems
+
+ Diagram :- https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
+ 
+
+ 
