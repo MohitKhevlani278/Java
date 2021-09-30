@@ -1,0 +1,365 @@
+Introduction Of Spring Framework :-
+- Spring is an open source lightweight framework that allows Java EE 7 developers to build simple, reliable, and scalable 
+  enterprise applications
+- Uses various new techniques such as Aspect-Oriented Programming (AOP), Plain Old Java Object (POJO), and dependency injection (DI)
+- The Spring framework is a collection of sub-frameworks, also called layers, such as Spring AOP. 
+- Spring Object-Relational Mapping (Spring ORM). Spring Web Flow, and Spring Web MVC
+- First released in 2004 
+
+
+Features :-
+1)IoC container(Inversion of Control) :-
+- Core container that uses the DI or IoC pattern to implicitly provide an object reference in a class during runtime
+- This pattern acts as an alternative to the service locator pattern
+- The IoC container contains assembler code that handles the configuration management of application objects.
+- org.springframework.beans and org.springframework.context which helps in providing the functionality of the IoC container
+
+2)Data Access Framework :-
+- Allows the developers to use persistence APIs, such as JDBC and Hibernate, for storing persistence data in database.
+
+3)Spring MVC Framework :-
+- Allows you to build Web applications based on MVC architecture
+- form handling and form validating features of the Spring MVC framework can be easily integrated with all popular view 
+  technologies such as ISP, Jasper Report, FreeMarker, and Velocity.
+
+4)Transaction Management :-
+- Provides Java Transaction API (JTA) for global transactions managed by an application server and local transactions managed by 
+  using the JDBC Hibernate, Java Data Objects (JDO), or other data access APIs.
+- Develpoe wide range of transactions using Spring’s declarative and programmatic transaction management.
+
+5)Spring Web Services :- 
+- Spring Web Service provides layered-based approaches that are separately managed by Extensible Markup Language (XML) parsing
+- Spring provides effective mapping for transmitting incoming XML message request to an object and the developer to easily 
+  distribute XML message (object) between two machines
+
+6)JDBC abstraction layer :-
+- Helps the users in handling errors in an easy and efficient manner.
+- All SQLExceptions are translated into the DataAccessException class
+- Spring’s data access exception is not JDBC specific and hence Data Access Objects (DAO) are not bound to JDBC only
+
+7)Spring TextContext Framework :-
+- Provides facilities of unit and integration testing for the Spring applications
+- Provides specific integration testing functionalities such as context management and caching DI of test fixtures, and 
+  transactional test management with default rollback semantics.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Spring Framework Module :-
+             
+              [Spring ORM]  [Spring Web Flow]
+[Spring AOP]                                        [Spring Web MVC]
+              [Spring DAO]  [Spring Context] 
+             
+                    [Spring Core]
+
+
+
+Spring Framework Architecture :-
+                                Spring Framework
+    [Data Access / Integration]             [Web(MVC/Remoting)]
+     
+       [JDBC]   [ORM]                       [WebSocket] [Servlet]
+       [OXM]    [JMS]                       [Web]       [Portlet]
+       [Transaction]
+
+      [   [AOP]     [Aspect]   [Instrumentation]  [Messaging]   ]
+
+                    Core Container
+      [ [Beans]     [Core]     [Context]        [SpEL]]
+
+                    [TEST]
+
+
+Spring Framework Core Components :-
+1)SpEL    :- Module provides a powerful expression language for manipulating objects during execution
+2)Context :- Built on the basis of Beans and Core and allows you to access any object that is defined in the settings. 
+             The key element of the Context module is the ApplicationContext interface
+3)Core    :- Provides key parts of the framework including IoC and DI properties
+4)Bean    :- Responsible for creating and managing Spring Beans – is application context structure unit
+
+
+Spring Framework Web Component :-
+1)Web         :- Provides functions such as downloading files, creating web application, rest web service etc
+2)Web-MVC     :- Contains a Spring MVC implementation for web applications
+3)Web-Socket  :- Provides support for communication between the client and the server, using Web-Sockets in web applications
+4)Web-Portlet :- Provides MVC implementation with portlet environment
+
+
+Spring Framework Data Access / Integration :-
+1)JDBC :- Provides an abstract layer of JDBC and eliminates the need for the developer to manually register the monotonous code 
+          associated with connecting to the database
+2)ORM :-  Provides integration with popular ORMs such as Hibernate, JDO, which are implementations of JPA
+3)OXM :-  Responsible for linking the Object / XML – XMLBeans, JAXB, etc.
+4)JMS :-  Responsible for creating, sending and receiving messages
+5)Transactions :-  Supports transaction management for classes that implement certain methods and POJOs
+
+
+Miscellaneous Modules :-
+1)AOP             :- Implements aspect-oriented programming and allows using the entire arsenal of AOP capabilities
+2)Aspects         :- Provides integration with AspectJ, which is also a powerful AOP framework
+3)Instrumentation :- Responsible for supporting class instrumentation and class loader, which are used in server applications
+4)Messaging       :- Provides STOMP support.Simple (or Streaming) Text Oriented Message Protocol (STOMP), formerly known as TTMP, 
+                     is a simple text-based protocol, designed for working with message-oriented middleware (MOM)
+5)Test            :- Provides testing using TestNG or the JUnit Framework
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+Spring MVC Framework :-
+- Spring Support MVC architecture which helps to develop flexible and loosely coupled web applications
+
+Model :- Encapsulates the application data and in general they will consist of POJO.
+View  :- Responsible for rendering the model data and in general it generates HTML output that the client's browser can interpret.
+Controller :- Responsible for processing user requests and building an appropriate model and passes it to the view for rendering 
+
+
+DispatcherServlet :-
+- Spring MVC designed around a DispatcherServlet that handles all the HTTP requests and responses
+
+      HTTP Request ->                   -> [HandlerMapping]
+                                        -> [Controller] 
+                      DispatcherServlet -> [View Resoulver]
+      HTTP Response<-                   -> [View]
+
+ Working DispatcherServlet :-
+ - After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller.
+ - Controller takes the request and calls the appropriate service methods based on used GET or POST method. 
+ - The service method will set model data based on defined business logic and returns view name to the DispatcherServlet.
+ - The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request.
+ - Once view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser.
+
+ - Above component parts of WebApplicationContext w which is an extension of the plainApplicationContext with some extra features 
+   necessary for web applications.
+
+ Required Configuration :-
+ - You need to map requests that you want the DispatcherServlet to handle, by using a URL mapping in the web.xml file
+ - The [servlet-name]-servlet.xml file will be used to create the beans defined, overriding the definitions of any beans defined with
+   the same name in the global scope.
+ - The <context:component-scan...> tag will be use to activate Spring MVC annotation scanning capability which allows to make use of 
+   annotations like @Controller and @RequestMapping etc.
+ - The InternalResourceViewResolver will have rules defined to resolve the view names. 
+ - As per the above defined rule, a logical view named hello is delegated to a view implementation located at /WEB-INF/jsp/hello.jsp .
+
+
+Defining Controller :-
+- DispatcherServlet delegates the request to the controllers to execute the functionality specific to it
+- @Controllerannotation indicates that a particular class serves the role of a controller
+- @RequestMapping annotation is used to map a URL to either an entire class or a particular handler method
+- Next annotation@RequestMapping(method = RequestMethod.GET) is used to declare theprintHello() method as the controller's default 
+  service method to handle HTTP GET request
+- You will define required business logic inside a service method. You can call another method inside this method as per requirement.
+- Based on the business logic defined, you will create a model within this method. You can use setter different model attributes and 
+  these attributes will be accessed by the view to present the final result. 
+- A defined service method can return a String, which contains the name of the view to be used to render the model.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Spring IOC(Inversion Of Container) Container :-
+
+- Spring IoCContainer is the core of Spring Framework. 
+- It creates the objects, configures and assembles their dependencies, manages their entire life cycle.
+- It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class.
+- These objects are called Beans
+- The IoC container contains assembler code that handles the configuration management of application objects.
+- The interfaces BeanFactory and ApplicationContext represent the Spring IoC container. 
+
+  Types of container :- 
+  
+  1)BeanFactory Container
+  - XmlBeanFactory is the implementation class for the BeanFactory interface
+  Ex :- Resource resource=new ClassPathResource("applicationContext.xml");  
+        BeanFactory factory=new XmlBeanFactory(resource);  
+  
+  2)ApplicationContext Container :-
+  - ClassPathXmlApplicationContext class is the implementation class of ApplicationContext interface
+  Ex :- ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");   
+
+  Differnce Between BeanFactory and ApplicationContext :-
+  Features                                BeanFactory     ApplicationContext
+  Annotation Support                         No               Yes
+  Bean Instantiation/ Wiring                 Yes              Yes
+  Internationalization Support               No               Yes  
+  Enterprise Service                         No               Yes
+  ApplicationEvent publication	             No               Yes
+  Automatic BeanPostProcessor registration   No               Yes
+  Loading Mechanism	                         Lazy loading	Aggressive loading
+  Automatic BeanFactoryPostProcessor         No               Yes
+  registration
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Spring Application Context :-
+
+- Application Context advance spring container similar to bean factory it can load bean definitions, wire beans together, and 
+  dispatches beans upon request Additionally, it adds more enterprise-specific functionality such as the ability to resolve textual 
+  messages from a properties file and the ability to publish application events to interested event listeners. 
+- This container is defined by org.springframework.context.ApplicationContext interface.
+- The ApplicationContext includes all functionality of the BeanFactory, It is generally recommended over BeanFactory. 
+
+What is Spring Bean :-
+- In Spring, a bean is an object that the Spring container instantiates, assembles, and manages.
+- We should define beans for service layer objects, data access objects (DAOs), presentation objects, infrastructure objects such 
+  as Hibernate SessionFactories, JMS Queues etc.
+
+Ex :- 
+public class AccountService {
+  @Autowired
+  private AccountRepository accountRepository;
+  // getters and setters
+}
+
+Java Based Configuration :-
+- The @Bean annotation on a method indicates that the method creates a Spring bean. 
+- Moreover, a class annotated with @Configuration indicates that it contains Spring bean configurations.
+
+Annotation Based Configuration :-
+- Enable annotation-based configuration via XML configuration. 
+- Then we use a set of annotations on our Java classes, methods, constructors, or fields to configure beans. 
+- Some examples of these annotations are @Component, @Controller, @Service, @Repository, @Autowired, and @Qualifier.
+
+XML-Based Configuration :-
+- This is the traditional way of configuring beans in Spring.
+- Obviously, in this approach, we do all bean mappings in an XML configuration file.
+
+
+Type of Application Context :-
+1)AnnotationConfigApplicationContext :-
+- It can take classes annotated with @Configuration, @Component, and JSR-330 metadata as input.
+Syntax :- ApplicationContext context = new AnnotationConfigApplicationContext(AccountConfig.class);
+
+2)AnnotationConfigWebApplicationContext :-
+- Web-based variant of AnnotationConfigApplicationContext.
+- We may use this class when we configure Spring's ContextLoaderListener servlet listener or a Spring MVC DispatcherServlet
+  in a web.xml file.
+Syntax :- AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+
+3)XmlWebApplicationContext :-
+- If we use the XML based configuration in a web application, we can use the XmlWebApplicationContext class
+Syntax :- XmlWebApplicationContext context = new XmlWebApplicationContext();
+
+4)FileSystemXMLApplicationContext :-
+- Load an XML-based Spring configuration file from the file system or from URLs. 
+- This class is useful when we need to load the ApplicationContext programmatically
+Syntax :- ApplicationContext context = new FileSystemXmlApplicationContext(path);
+
+5)ClassPathXmlApplicationContext :-
+- Load an XML configuration file from the classpath
+Syntax :- ApplicationContext context = new ClassPathXmlApplicationContext("applicationcontext/account-bean-config.xml");
+
+
+Addtional Features :-
+1)Message Resolution :-
+- Supports message resolution and internationalization by extending the MessageSource interface. 
+- Spring provides two MessageSource implementations, ResourceBundleMessageSource and StaticMessageSource.
+- We can use the StaticMessageSource to programmatically add messages to the source;
+- however, it supports basic internationalization and is more suitable for tests than production use.
+- On the other hand, ResourceBundleMessageSource is the most common implementation of MessageSource. 
+- It relies on the underlying JDK's ResouceBundle implementation. 
+- It also uses the JDK's standard message parsing provided by MessageFormat.
+
+
+2)Event Handling :-
+- ApplicationContext supports event handling with the help of the ApplicationEvent class and the ApplicationListener interface. 
+- It supports built-in events like ContextStartedEvent, ContextStoppedEvent, ContextClosedEvent, and RequestHandledEvent. 
+- Moreover, it also supports custom events for business use cases
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Aspect Oriented Programming(AOP) in Spring :-
+- AOP as the name suggests uses aspects in programming
+- It can be defined as the breaking of code into different modules, also known as modularisation, where the aspect is the key 
+  unit of modularity. 
+- Aspects enable the implementation of crosscutting concerns such as- transaction, logging not central to business logic without 
+  cluttering the code core to its functionality
+
+Dominant Framework In AOP :-
+- AOP includes programming methods and frameworks on which modularisation of code is supported and implemented
+                                        AOP
+                              Dominant Framework In AOP
+                      AspectJ          JBoss        Spring 
+
+1)AspectJ :- 
+- It is an extension for Java programming created at PARC research centre. 
+- It uses Java like syntax and included IDE integrations for displaying crosscutting structure. 
+- It has its own compiler and weaver, on using it enables the use of full AspectJ language.
+
+2)JBoss :- 
+- It is an open source Java application server developed by JBoss, used for Java development.
+
+3)Spring :- 
+- It uses XML based configuration for implementing AOP, also it uses annotations which are interpreted by using a library supplied 
+  by AspectJ for parsing and matching
+
+
+How AOP Works :- 
+- Spring uses proxy based mechanism i.e. it creates a proxy Object which will wrap around the original object and will take up the advice 
+  which is relevant to the method call. 
+- Proxy objects can be created either manually through proxy factory bean or through auto proxy configuration in the XML file and get 
+  destroyed when the execution completes. 
+- Proxy objects are used to enrich the Original behaviour of the real object.
+
+
+Common Technologies in AOP :- 
+1)Aspect :-
+- The class which implements the JEE application cross-cutting concerns(transaction, logger etc) is known as the aspect. 
+- It can be normal class configured through XML configuration or through regular classes annotated with @Aspect.
+
+2)Weaving :- 
+- The process of linking Aspects with an Advised Object. 
+- It can be done at load time, compile time or at runtime time. 
+- Spring AOP does weaving at runtime.
+- Let’s write our first aspect class but before that have a look at the jars required and the Bean configuration file for AOP.
+
+3)Advice :- 
+- The job which is meant to be done by an Aspect or it can be defined as the action taken by the Aspect at a particular point. 
+  
+  Types :-
+  1)Before :- 
+  - Runs before the advised method is invoked denoted by @Before annotation
+  
+  2)After :- 
+  - Runs after the advised method completes regardless of the outcome, whether successful or not denoted by @After annotation
+
+  3)AfterReturning :- 
+  - Runs after the advised method successfully completes ie without any runtime exceptions denoted by @AfterReturning annotation
+
+  4)Around :- 
+  - This is the strongest advice among all the advice since it wraps around and runs before and after the advised method
+  - This type of advice is used where we need frequent access to a method or database like- caching
+  - It is denoted by @Around annotation
+
+  5)AfterThrowing :- 
+  - Runs after the advised method throws a Runtime Exception denoted by @AfterThrowing annotation
+
+
+4)JoinPoints :- 
+- An application has thousands of opportunities or points to apply Advice
+- These points are known as join points
+- For example – Advice can be applied at every invocation of a method or exception be thrown or at various other points
+- But Spring AOP currently supports only method execution join points (advising the execution of methods on Spring beans)
+
+5)Pointcut :- 
+- Since it is not feasible to apply advice at every point of the code, therefore, the selected join points where advice is finally 
+  applied are known as the Pointcut
+- Often you specify these pointcuts using explicit class and method names or through regular expressions that define a matching class 
+  and method name patterns
+- It helps in reduction of repeating code by writing once and use at multiple points
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+STRUCT FARMEWORK :-                         
+
+Introduction Of Strcut Farmware :-
+- Struts is an open-source web application framework for developing Java EE web applications. 
+- It uses and extends the Java Servlet API to encourage developers to adopt a Model-View-Controller (MVC) architecture. 
+- It was originally created by Craig McClanahan and donated to the Apache Foundation in May, 2000. 
+- Formerly located under the Apache Jakarta Project and known as Jakarta Struts, it became a top level Apache project in 2005.
+
