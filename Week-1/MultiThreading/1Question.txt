@@ -1,0 +1,103 @@
+Q-1
+How to create a thread by subclassing the Thread class
+Class threax extends Thread and override run method
+an infinite loop that inside method cause the thread repetitively sleep for after 2000
+milliseconds and display "hello world".
+It is neccessary to catch the interruptedException that can be thrown by sleep() method
+
+main() method threadDemo1 instaniates a Threadx object and calls start() method 
+start() method invoke run method
+
+
+Q-2
+How to create a thread by implements runnable interface
+Class runnableY implements this interface
+Write logic in run() method
+Main method ThreadDemo2 instaniates a runnabley object then instaniates Thread object
+Reference to the runnableY object is passed as argument to thread constructor
+start() method invoke to start the thread
+
+
+Q-3
+How programs can wait for a threads to complete
+ThreadM class extends thread and display string every second for 10 iterations.
+ThreadN class extends thread and display string every two seconds for 20 iterations.
+main method ThreadDemo3 create and start this two threads and display message 
+after they both complete.
+
+
+
+Q-4
+- Several bank customer who make deposit to a shared bank account
+- The account class encapsulates the current balance in the account
+- This value is increased by synchronized method so it is no corruped
+- The getBalance() method return current value of the account
+- Customer class extends thread 
+- Its constructor saves a reference to the shared account
+- the run() method executes the loop that makes 100000 deposit. each deposit equals $10
+- The bankDemo class first create one account object then 10 customer objects instantiated and started
+- Join() method called to wait for each of these threads to complete
+- finally balance the account is displayed
+
+
+
+
+Q-5
+- Remove the synchronized method from remove question
+
+Q-6 
+- create synchronized block inseted of method
+
+
+Q-7
+- How deadlock error occur
+- Class A has two synchronized method named a1() and a2() method
+- Also has an instance variable b that holds a reference to an object of class b
+- a1() method call the b2() method of that object
+- Similarly class B reverse of class A
+- Class Thread1 extends Thread and executes a loop that invoke the a1() method of an A object
+- Class Thread2 extends Thread and executes a loop that invoke the b1() method of an B object
+- DeadlockDemo class create instance of the A and B classes
+- It then instantiates the Thread1 and Thread2 classes and start these threads
+- join() method used to wait for these threads to complete 
+- final message is displayed
+
+
+Q-8
+- The one thread produces a sequence of integers 
+- These are written to a sequence
+- Several Consumer threads read the numbers from the queue and display them
+
+
+
+
+
+
+
+
+Exercies :-
+Q-1
+- Write Application that executes 2 threads
+- Thread a display every 1000 milliseconds and Thread b display every 3000 milliseconds
+- Create thread by extending thread class
+
+Q-2
+- Same Condition of above question but this time use runnable interface
+
+Q-3
+- Write Application that create and start five threads
+- Each thread instantiated from the same class 
+- It executes a loop with 10 iterations
+- Each iterations display the characters x and y sleep between 300 and 800 milliseconds
+- Application wait for all thread after complete thread execution display the msessage(Done) 
+
+Q-4
+- Remove synchronized modifier from the deposit() and preceding example 
+- Question use 7 number 
+
+Q-5
+- synchronized statement block instead of its method 
+- Question use 7 number 
+
+Q-6
+- Example check deadlock error occur 

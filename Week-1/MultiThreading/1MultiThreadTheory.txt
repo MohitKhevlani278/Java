@@ -1,0 +1,201 @@
+What is Thread ?
+- A thread is sequence of execution within a process.
+- also known as lightweight process.
+- Does not hava its own address space but use the memory and other resources of the process in which it executes
+- Required less resources than the process
+- There may be several threads in one process
+- Jvm manage these and schedule them for execution
+- Perform a context switch from one thread to another is substantially less than that required for perfrorming
+  such a change between process.
+- Thread class in the java.lang package is allow you to create and manage threads
+
+Lifecycle of thread :-
+- Thread move through several state from its creation to its ultimate death
+
+State of thread :-
+1)new 
+2)ready
+3)running
+4)waiting
+5)dead
+
+- In new state immediately after it is created, and transition to ready state after it is started
+- Moves to running state when jvm select it for execution
+- If thread complete its execution, it transition to dead state
+- If it choose to sleep, wait or perform I/O operation, it changes to waiting state
+- When above operation complete, thread again changes to the ready state
+- Jvm move thread from running to ready state so another thread has opportunity to execute
+- Functions of jvm schedule threads for execution
+- Each thread has priority,jvm select highest-priority thread in ready state for execution
+- Thread not execute if there are highest-priority threads in ready state for execution
+- If several threads has same priority, jvm timslice processor among them
+- After some time jvm preempts current execution thread and gives another thread an opportunity to execute
+- Ensure that processor time is equitably shared among these threads
+- Each thread has separate instance 
+
+
+Syntax of thread :-
+ThreadClass tx = new ThreadClass(); 
+tx.start();
+
+//Another way to create a thread :-
+- Declare a class that implements runnable interface 
+- which declares only run method
+
+implements class :-
+class runnableThread implements Runnable{
+    public void run() {
+        //code
+    }
+}
+runnableThread ry = new Runnable(); 
+Thready ty = new Thready(ry);       //provide runnable interface object  to the constructor
+ty.start(); 
+
+Note :-
+- ThreadClass extends class Thread
+- Possible to create and start several instances of ThreadClass that execute concurrently
+
+
+
+Constructor in Thread :-
+Thread()
+Thread(Runnable r)
+Thread(String s)
+Thread(Runnable r,String s)
+
+Note :-
+- r is reference to an object that implements runnable interface 
+- s is string identify the thread
+
+
+Constant in Thread :-
+- Specify the priority of the thread
+1)MAX_PRIORITY 
+2)MIN_PRIORITY 
+3)NORM_PRIORITY 
+
+
+Methods :-
+1)start() :-
+- Start the thread exectuing
+- once start method is called, that invoke run method
+
+2)void run() 
+- logic for the thread is contained 
+- create other object or even initiate other thread
+- comprises the body of the thread, overridden by subclasses
+
+3)Thread currentThread()
+- Return a reference to the current thread
+
+4)void sleep(long milliseconds)
+- current thread to wait for msec
+
+5)void sleep(long milliseconds,int nanoseconds)
+- current thread to wait for msec or nsec
+
+6)void yield()
+- current thread to yield control of the processor to other thread
+
+7)String getName()
+- Return name of the thread
+
+8)int getPriority()
+- Return the priority of the thread
+
+9)boolean isAlive()
+- Return true if the thread is alive otherwise false means the thread is not alive
+
+10)void join() throws InterruptedException
+- Cause the caller to wait until this thread is died
+
+11)void join(long milliseconds) throws InterruptedException
+- wait maximum milliseconds until this thread is died, if milliseconds zero no limit for the wait time
+
+12)void join(long milliseconds,int milliseconds) throws InterruptedException
+- wait maximum milliseconds plus nanoseconds until this thread is dead, if milliseconds plus 
+  nanoseconds zero no limit for the wait time
+
+13)void setName(String s)
+- Sets the name of the thread to s
+
+14)void setPriority(int n)
+- Sets the priority of the thread to p
+
+15)String toString()
+- Return the string equivalent of thread
+
+
+
+------------------------------------------------------------------------------------------------
+
+Synchronization in Thread :-
+- Capability to control the access of multiple threads to any shared resource.
+- To prevent thread interface and consistency problems 
+- Synchronization is done by using the synchronized keyword as a modifier in the method declaration
+- Thread executing begin synchronized instance method, it automatically acquire a lock on that object
+- Lock automatically relinquished when method completes
+- Only one thread may have this lock at any time
+- Therefore only one thread may execute any of synchronized instance method of an object at a particular time
+- When thread begin executing a synchronized static method, it automatically acquire a lock on associated
+  Class object(one thread at a one time)
+
+Syntax :- synchronized(obj) {
+    //Statement block
+}
+
+Note :- 
+- Here obj is the object to be locked.
+- Wish to protect instance data you should lock against that object for class data lock appropriate Class object
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+Deadlock in thread :-
+- Deadlock is an error which is encountered in multiplethreaded programs
+- Deadlock Occure when multiple threads wait indefinitely for each other to relinquish lock
+- Unfortunately, Many deadlock error occur only when threads are scheduled in certain sequence
+- For deadlock prevention assign a precedence to all lockable objects and never acquire locks out of sequence
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+Thread Communication :-
+- Thread release temporary a lock so other threads can have an opportunity to execute synchronized method
+  or statement block
+- Thread class object defined three method for thread communication with each other
+
+Methods :- 
+wait() :-
+- Allows thread which is executing synchronized block on that object to release lock and wait for a notification
+  from another thread
+ void wait() throws InterruptedException    //Wait indefinitely
+ void wait(long milliseconds) throws InterruptedException
+ void wait(long milliseconds,int nanoseconds) throws InterruptedException
+
+Notify() :-
+- Allow thread that executing a synchronized block that to notify another thread  that is waiting for a lock 
+  on this object 
+- If several threads waiting, only one of these thread is selected
+  :- void notify() 
+ 
+NotifyAll() :-
+- Allow thread that executing a synchronized block that to notify all thread that are waiting for a lock 
+  on this object  
+  :- void notifyAll()
+
+
+Note :-
+- When a thread is executes the notify and notifyAll does not relinquish its lock at that moment
+- This occur only when synchronized method or statement block
+- Effect that notify and notifyAll method is that one thread resume its execution for synchronized block
+- It return from wait() method and continue executing the next statement
+- because this method implements by object they all inherited from classes
+- This is extremely powerful design so we can achieve multi-threading performance
+
+

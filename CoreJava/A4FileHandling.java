@@ -105,9 +105,9 @@ public class A4FileHandling {
         if (firstObj.exists()) {
             System.out.println("File Name : " + firstObj.getName());
             System.out.println("File Path : " + firstObj.getAbsolutePath());
-            System.out.println("Writeable: " + firstObj.canWrite());
-            System.out.println("Readable " + firstObj.canRead());
-            System.out.println("File size in bytes " + firstObj.length());
+            System.out.println("Writeable : " + firstObj.canWrite());
+            System.out.println("Readable  : " + firstObj.canRead());
+            System.out.println("File size in bytes : " + firstObj.length());
         } else {
             System.out.println("file not found");
         }
