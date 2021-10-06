@@ -1,0 +1,608 @@
+---------------------------------------------------------QuestionPaper 1----------------------------------------------------------------
+
+Q-3 : A 1Marks
+
+1)List Out JSP Scopes :-
+ - page 
+ - request 
+ - session 
+ - application
+
+
+2)List Out JSP Scripting Elements :-
+  1)Expression  Tags :- <%=  %>
+  - Used to write dynamic content back to the browser Embedded in <%= and %> delimiters
+
+
+  2)Scriptlet   Tags :- <%   %> 
+  - Used to embed java code in JSP pages Contents of JSP go into _JSPpageservice() method Embedded in <% and %> delimiters
+
+
+  3)Declaration Tags :- <%!  %> 
+  - Declarations are used to define methods & instance variables Do not produce any output that is sent to client
+  - Embedded in <%! and %> delimiters
+
+  
+
+3)<%@ %> this jsp annotation represents
+- JSP Directives / 3 types 1)page 2)include 3)taglib
+
+
+Q-3 : B 3Marks
+
+1)Explain JSP Architecture :-
+ - JSP is a server-side technology used for creating web applications with dynamic web content
+ - JSP tag are used to insert java code into html pages
+ - JSP Architecture is considered as 3 tier architecture where has a client, web server and database
+
+ Diagram :-
+
+        Request   ->  JSP    ->Read JSP File
+ Client                      
+        Response  <- ENGINE  ->Translates JSP to Servlet
+
+                             ->Compile Java Servlet Code                   
+                            
+                             ->Execute Generated Servlet
+    
+
+ Step 1 :- .jsp extension file send to browser using http protocol to the server
+ Step 2 :- If file already compiled it returns a file otherwise request forward to the JSP engine
+        -  JSP engine (container)  provides the runtime environment for understanding and processing of jsp files
+ Step 3 :- JSP engine loads jsp files and translates into the servlet
+ Step 4 :- JSP engine compiles the servlet to an executable .class file
+        -  It is forward to the servlet engine 
+ Step 5 :- .class execute by servlet engine which is part of web server
+        -  Servlet engine process the request and generate html output to passes as an HTTP response to the web server
+ Step 6 :- Web server forward html file to the client browser
+
+
+2)Explain Java Beans Package :-
+ - Javabeans is specially constructed java class that encapsulates many object into a single object(the bean)
+ 
+ Unique Characteristics :-
+ 1)Must be implements Serializable
+ 2)It provides default, No argument Construtor
+ 3)All properties in java bean must be private with public getters and setter methods
+
+ Properties :-
+ - Javabeans property is a named attributes that can be accessed by the user of the object
+ - JavaBean property may be read, write, read only, or write only
+ - Properties are accessed through methods
+   1)getPropertyName() -> Accessor
+   2)setPropertyName() -> Mutator
+ - Readonly property have only getPropertyName() and WriteOnly property have only setPropertyName() methods
+
+  Syntax :-
+  public void setName(String name)
+  {
+     this.name = name;
+  }
+  public string getName()
+  {
+     return name;
+  }
+
+ Accessing JavaBean property:-
+ - useBean action element use to access the property
+ - Scope of attribute can be a page, request, session and applicationbased 
+ - id must have unique name 
+ - jsp:setProperty use to set value through setmethod
+ - jsp:getProperty use to get value through getmethod
+
+ Syntax :- 
+ <jsp:useBean id = "bean'sname" scope = "bean'sscope" typeSpec/>
+    <jsp:setProperty name = "bean's id" property = "property name"  value = "value"/>
+    <jsp:getProperty name = "bean's id" property = "property name"/>
+ </jsp:useBean>
+
+ Attribute :- 
+ id       - Identify bean in specified scope
+ scope    - Default scope is page / session / application / request 
+ class    - instantiates specified bean class
+ type     - Provide bean data type 
+ beanName - instantiates the bean using the java.beans.bean.instantiate() method 
+
+
+3)Explain Page Directives in JSP :- 
+ 
+ - JSP directives are the elements of a JSP source code that guide the web container on how to translate the JSP page into 
+   it’s respective servlet.
+ - Directives can have a number of attributes which you can list down as key-value pairs and separated by commas.
+ 
+ Syntax :- <%@ directives attribute="value" %>
+
+ Types :- 
+ 1)Page Directives :-
+ - Used to define properties applying in the jsp pages such as size of the allocated buffer, imported packages and classes/interfaces,
+   defining what type of page it is etc
+ Syntax :- <%@ page attribute="value" %>
+
+
+  Properties :-  
+  1)import :-  Tells the container what packages/classes are needed to be imported into the program (comma separated list)
+  - <%@page import="value" %>
+
+  2)contentType :- This defines the format of data that is being exchanged between the client and the server (Default text/html)
+  - <%@page contentType="value"%> 
+
+  3)info :- Defines the string which can be printed using the ‘getServletInfo()’ method
+  - <%@page info="value"%>
+
+  4)buffer:- Defines the size of the buffer that is allocated for handling the JSP page. The size is defined in Kilo Bytes.
+  - <%@page buffer = "size in kb"%>
+
+  5)language :- Defines the servside scripting language used in the page By default value is java
+
+  6)isELIgnored :- This attribute tells if the page supports expression language. By default, it is set to false. 
+                   If set to true, it will disable expression language.
+  - <%@page isElIgnored = "true/false"%>
+
+  7)errorPage :- Defines which page to redirect to, in case the current page encournters an exception.
+  - <%@page errorPage = "true/false"%>
+
+  8)isErrorPage :- It classifies whether the page is an error page or not.
+  - <%@page eisrrorPage="true/false"%>
+
+  9)extends : Declares the class which the servlet compiled from JSP needs to extend
+
+  10)Session : (Default true) Boolean which says if the session implicit variable is allowed or not
+
+  11)autoFlush : When true the buffer is flushed when max buffer size is reached 
+               - (if set to false an exception is thrown when buffer exceeds the limit)
+
+  12)isThreadSafe : (default true) If false the compiled servlet implements SingleThreadModel interface
+
+  13)pageEncoding : Defines the character encoding for the jsp page
+
+
+ 2)Include directive :-
+ - Used to include other files into the current jsp page These files can be html files, other files etc. 
+ - Advantage of using an include directive is that it allows code re-usability.
+ - Includes resources in a JSP page at translation time
+ - Normally used for including dynamic resources
+ Syntax :- <@%include file = "file location"%>
+
+
+ 3)Taglib Directive :- 
+ - Used to mention the library whose custom-defined tags are being used in the JSP page
+ - It’s major application is JSTL(JSP standard tag library)
+ Syntax :- <@%taglib uri = "library url" prefix="the prefix to identify the tags of this library with"%>
+
+ 
+
+4)How does Servlet Filters work?
+ - A Servlet Filters is an object that is used to perform filtering tasks such as conversion, encryption, decryption, etc. 
+ - The servlet filter entry is done in a file named web.xml. 
+ - If the entry is removed from this file, then we do not need to change the servlet, and the filter will be automatically removed. 
+ - Used for logging the IP address of the system, which requests the server.
+
+ Process :-
+ - When a request is made, it reaches the Web Container and checks if the filter contains any URL pattern, which is similar to 
+   the pattern of the URL requested.
+ - The Web Container locates the very first filter which matches the request URL, and then that filter code is executed.
+ - If more than one pattern is found, then all the matching filter codes are executed.
+ - When all the matching filter codes are executed successfully and no error is found, then the request is passed to the Servlet.
+ - The Servlet then returns the response to the caller, and then this response will be passed to the client passing through the 
+   Web Container.
+ 
+ Methods :-
+ 1)public void init(FilterConfig config) :- Initialize filter invoke only once
+ 2)public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+  - used to perform filtering tasks and is invoked whenever a request is made 
+  - call the next filter available in the chain
+ 3)public void destroy() :- invoked only once when the service of the filter is complete
+
+
+
+Q-3 :- C 5Marks
+1)Explain errorHandling in jsp :-
+ - Exception is normally an object that is thrown at runtime. 
+ - Exception Handling is the process to handle the runtime errors. 
+ - Exception object is jsp implicit object which derived from java.lang.Throwable  
+ 
+ Two Way to handle exception :-
+ 1)Handling exception using page directive attribute
+   
+   1)errorPage :- Use which page to be displayed when exception occured
+     Syntax :- <%@page errorPage="Url Of Error Page" %>
+
+   2)isErrorPage :- Used to make a page as an error page where exception are displayed
+    - Separate errorPage is created which displayed the exception
+    - If exception occures navigate it to the errorpage which display exception  
+     Syntax :- <%@page isErrorPage="true" %>
+    
+
+ 2)Handling exception using error page element in web.xml file
+ - In this method errorpage for each page can be specified in the web.xml file 
+ Syntax :-
+        <error-page>
+            <exception-type>Types Of Exception</exception-type>
+            <location>Error Page URL</location>
+        </error-page>
+
+ 
+ Example :-
+ 
+ index.html
+ <html>
+ <head>
+ <body>
+    <form action="a.jsp">
+        Number1:<input type="text" name="first" >
+        Number2:<input type="text" name="second" >
+        <input type="submit" value="divide">
+    </form>
+ </body>
+ </html>
+
+ 
+ A.jsp :- JSP code to divide two numbers
+  <% @page errorPage = "error.jsp" %> < %
+    String num1 = request.getParameter("first");
+    String num2 = request.getParameter("second");
+
+    int x = Integer.parseInt(num1);
+    int y = Integer.parseInt(num2);
+    int z = x / y; // dividing the numbers
+    out.print("division of numbers is: " + z); // result
+  %>
+
+ 
+ error.jsp :- JSP code for error page, which displays the exception
+    <% @page isErrorPage = "true" %>
+	  <h1> Exception caught</ h1>
+    The exception is : <%= exception %> // displaying the exception
+
+ 
+ In Web.xml :-
+ <web-app>
+    <error-page>
+        <excption-type>java.lang.Exception</excption-type>
+        <location>/error.jsp</location>
+    </error-page>
+ </web-app>
+
+
+2)Working with Session in jsp :-
+ - A session can be defined as an object associated each user with a unique session ID
+ - Different forms of data can be set in a session; These data related to each user of the site help the user and the website owner 
+   in different ways. 
+ - HTTP is a "stateless" protocol Whenever a user visits a web page, the user opens a separate connection with the webserver, 
+   and the server does not keep a record of preceding client requests.
+
+ 
+ Different Apporch to maintaining session :
+  1)Cookies :- 
+  - Cookies are text files that allow programmers to store some information on a client computer, and they are kept for usage 
+    tracking purposes
+ 
+  2)Passing Session ID in URL :- 
+  - Adding and passing session ID to URL is also a way to identify a session. 
+  - However, this method is obsolete and insecure because the URL can be tracked.
+ 
+ 
+ Session Implicit Object :-
+ - Session object is the most commonly used implicit object implemented to store user data to make it available on other JSP pages
+   until the user's session is active.
+ - Session implicit object is an instance of a javax.servlet.http.HttpSession interface.
+ 
+ 
+ Method :-
+ 1)public Object getAttribute(String name) :- 
+ 2)public Enumeration getAttributeNames()  :-
+ 3)public long getCreationTime()           :-
+ 4)public String getId()                   :- Returning a string that will hold a unique identifier assigned to your session.
+ 5)public long getLastAccessedTime()       :-
+ 6)public int getMaxInactiveInterval()     :- 
+ 7)public void invalidate()                :- Used for invalidating a session and unbinds its objects bound to it.
+ 8)public boolean isNew()                  :-
+ 9)public void removeAttribute(String name):- Used for removing the object bound specifically to a session.
+ 10)public void setAttribute(String name, Object value) :- Used for binding an object to your session with the help of a specified name.
+ 11)public void setMaxInactiveInterval(int interval) :- Specifying the time (in seconds) of client requests 
+
+
+
+---------------------------------------------------------QuestionPaper 2----------------------------------------------------------------
+
+
+Q-3 : A 1Marks
+1)Which tag in jsp used to define errorPage
+ - <%@page errorPage="Url error page"> or <%@page isErrorPage="true">
+
+2)List Out JSP Scopes :- Alerdy in QuestionPaper-1
+
+3)What is JavaBean :-
+ - JavaBeans are classes that encapsulate many objects into a single object. 
+ - They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods.
+
+4)List-Out JSP Scripting Elements :- Alerdy in QuestionPaper-1
+
+
+Q-3 : B 2Marks
+
+1)Explain Directives Elements In JSP :- Alerdy in QuestionPaper-1 //aama khali page,include and tag j lakhvana 
+
+
+2)List Out Action Elements :-
+ - JSP action tag is used to perform some specific tasks.
+ - Used to control the flow between pages and Java Bean
+
+  Action Elements :-
+  jsp:forward	    forwards the request and response to another specific resource
+  jsp:include	    includes another resource
+  jsp:useBean	    creates or locates bean object
+  jsp:setProperty	sets the value of property in bean object
+  jsp:getProperty	prints the value of property of the bean
+  jsp:plugin	    embeds another components such as applet
+  jsp:param	        sets the parameter value. It is used in forward and include mostly
+  jsp:fallback	    can be used to print the message if plugin is working. It is used in jsp:plugin
+  jsp:element       Defines XML elements dynamically
+  jsp:attribute     Defines dynamically-defined XML element's attribute
+  jsp:body          Defines dynamically-defined XML element's body
+  jsp:text          Used to write template text in JSP pages and documents
+  jsp:output        It specifies the XML declaration or the DOCTYPE declaration of jsp
+
+
+Q-3 : C 3Marks
+
+1)Explain Page Directives in Jsp :- Alerdy in QuestionPaper-1 //write page directive with properties
+
+2)Explain JSP Architecture :- Alerdy in QuestionPaper-1
+
+
+Q-3 : D 5Marks
+
+1)Explain Working with Session in Jsp :- Alerdy in QuestionPaper-1
+ 
+2)Explain Working with Cookies in JSP :-
+ 
+ - Cookies are the text files which are stored on the client machine
+ - Used to track the user information 
+ - It supports HTTP cookies using servlet technology
+ - The cookies are set in the HTTP Header
+ - If the browser is configured to store cookies, it will keep information until expiry date.
+
+ Method :-
+ Public void setDomain(String domain) :- Used to set the domain to which the cookie applies
+ Public String getDomain()            :- Used to get the domain to which cookie applies
+ Public void setMaxAge(int expiry)    :- It sets the maximum time which should apply till the cookie expires
+ Public intgetMaxAge()                :- It returns the maximum age of cookie in JSP
+ Public String getName()              :- It returns the name of the cookie
+ Public void setValue(String value)   :- Sets the value associated with the cookie
+ Public String getValue()             :- Get the value associated with the cookie
+ Public void setPath(String path)     :- This set cookie in JSP sets the path to which cookie applies
+ Public String getPath()              :- It gets the path to which the cookie applies
+ Public void setSecure(Boolean flag)  :- It should be sent over encrypted connections or not.
+ Public void setComment(String cmt)   :- It describes the cookie purpose
+ Public String getComment()           :- It the returns the cookie comments which has been described.
+
+
+ Action_cookie.jsp :-
+ <html>
+ <head>
+ </head>
+ <body>
+    <form action="action_cookie_main.jsp" method="GET">
+    Username: <input type="text" name="username">
+    Email: <input type="text" name="email" />
+    <input type="submit" value="Submit" />
+ </form>
+ </body>
+ </html>
+
+
+ Action_cookie_main.jsp :-
+
+ <%
+   Cookie username = new Cookie("username", request.getParameter("username"));
+   Cookie email    = new Cookie("email",request.getParameter("email"));
+  
+   username.setMaxAge(60*60*10); 
+   email.setMaxAge(60*60*10); 
+
+   // Add both the cookies in the response header.
+   response.addCookie( username );
+   response.addCookie( email );
+ %>
+ 
+ <html>
+ <head>
+ </head>
+ <body>
+ Username : <%= request.getParameter("username")%>
+ Email    : <%= request.getParameter("email")%>
+ </body>
+ </html>
+
+
+
+---------------------------------------------------------QuestionPaper 3----------------------------------------------------------------
+
+Q-3 : A 1Marks
+
+1)What is Java Bean :- Alerdy in QuestionPaper-2
+
+2)List Out JSP Scopes :- Alerdy in QuestionPaper-1
+
+3)<%@ %> Annoation Used For :- Alerdy in QuestionPaper-1
+
+4)List Out JSP Scripting Elements :- Alerdy in QuestionPaper-1
+
+
+Q-3 : B 2Marks
+
+1)Explain <jsp:useBean> element :- Alerdy in QuestionPaper-1 in Java Bean Question
+
+2)Explain include directive and compare it with include action element :-
+ 
+ Include directive :-
+ - Used to include other files into the current jsp page These files can be html files, other files etc. 
+ - Advantage of using an include directive is that it allows code re-usability.
+ Syntax :- <@%include file = "file location"%>
+
+ jsp:include :- 
+ - Used to include the content of another resource it may be jsp, html or servlet.
+ - includes the resource at request time so it is better for dynamic pages 
+ Syntax :- <jsp:include page="relativeURL | <%= expression %>">  
+
+ Difference :-
+  JSP include directive	                    JSP include action
+  includes resource at translation time 	includes resource at request time
+  better for static pages               	better for dynamic pages
+  includes the original content in 	      calls the include method
+  the generated servlet
+
+
+Q-3 : C 3Marks
+
+1)Explain JSP Architecture :- Alerdy in QuestionPaper-1
+
+2)Explain Java Bean packaging :- Alerdy in QuestionPaper-1
+
+Q-3 : D 5Marks
+
+1)Explain errorHandling in JSP :- Alerdy in QuestionPaper-1
+
+2)Explain Page Directives in JSP :- Alerdy in QuestionPaper-1 //page directive with properties
+
+
+
+------------------------------------------------Optional----------------------------------------------------------
+
+1)Four different elements are used in constructing JSPs 
+  Scripting Elements
+  Implicit Objects
+  Directives
+  Actions
+
+
+2)Java Implicit Objects :-
+ - Provide access to server side objects 
+
+ Four scopes of the objects :-
+  Page        : Only be accessed in the page where they are referenced
+  Request     : Accessed within all pages that serve the current request.
+	Session     : Accessed within the JSP pages for which the objects are defined
+  Application : Accessed by all JSP pages in a given context
+
+ List :-                  Implicit Objects                          Types
+ request  : Reference to the current request                      HttpServletRequest
+ response : Response to the request                               HttpServletResponse
+ session  : session associated woth current request               HttpSession
+ application  : Servlet context to which a page belongs           ServletContext
+ pageContext  : Object to access request, response, session and application associated with a page      PageContext
+ config   : Servlet configuration for the page                    ServletConfig
+ out      : Object that writes to the response output stream      PrintWriter / JSPWriter
+ page     : instance of the page implementation class (this)      Object
+ exception: Available with JSP pages which are error pages        Throwable
+
+ 
+3)Action Elements In details :-
+ 
+ jsp:forward
+ - Forwards the response to other web specification resources
+ - Forwarded only when content is not committed to other web application resources Otherwise an IllegalStateException is thrown
+ - Can be avoided by setting a high buffer size for the forwarding jsp page
+ Syntax :- <jsp:forward page=“Forwarded.html”>
+
+ jsp:action :-
+ - Used in conjunction with Include & Forward actions to include additional request parameters to the included or forwarded resource
+ Example :-
+  <jsp:forward page=“Param2.jsp”>
+	  <jsp:param name=“FirstName” value=“Sanjay”>
+  </jsp:forward>
+
+ jsp:plugin :-
+ - Enables the JSP container to render appropriate HTML (based on the browser type) 
+ To :-
+ - Initiate the download of the Java plugin
+ - Execution of the specified applet or bean
+ - plugIn standard action allows the applet to be embedded in a browser neutral fashion
+
+ Example :-
+  <jsp:plugin type='applet' code='MyApplet.class' codebase='/'>
+	  <jsp:params>
+		  <jsp:param name=“myParam” value=“122”/>
+	  </jsp:params>
+	<jsp:fallback><b>Unable to load applet</b></jsp:fallback>
+  </jsp:plugin>
+
+
+4)What is JSP :-
+ - JavaServer Pages (JSP) is a server-side programming technology that enables the creation of dynamic, platform-independent method 
+   for building Web-based applications.
+ - JSP have access to the entire family of Java APIs, including the JDBC API to access enterprise databases.
+
+
+5)Lifecycle Of JSP :-
+- A JSP life cycle can be defined as the entire process from its creation till the destruction similar to a servlet life cycle with 
+  an additional step of compiling a JSP into servlet.
+
+ The following are the paths followed by a JSP
+ - Compilation –  3 steps
+    Parsing jsp       
+    Turning the JSP into a servlet 
+    Compiling the servlet
+ - Initialization
+ - Execution
+ - destroy
+
+ Method :-
+ jspInit() - initialization is performed only once 
+ jspService - This method is invoked once per request and is responsible for generating the response for that request
+ jspDestroy - Override jspDestroy when you need to perform any    cleanup
+
+
+6)MVC in JSP :- Model View Controller
+ - It is a design pattern that separates the business logic ,presentation logic and data
+
+  Model – represents the state(data) and business logic of the application (Eg. Java Beans)
+  View – responsible for display data or presentation ( Eg.JSP/HTML pages)
+  Controller – Acts as interface between view and model Receives input and commands to Model/View  to change accordingly (Eg:-Servlet page)
+
+
+7)Differnce between jsp and servlet
+
+    JSP                                                             Servlet
+  - Protocol dependent handle only HTTP and HTTPS protocol    - Protocol independent handle any type of protocol
+  - Time taken for first request                              - Genrate response time is less     
+  - Business logic kept separates from presentation layer     - Tightly coupled with presentation logic
+  - Scripting Elements generate dynamic output                - java program generate dynamic response
+  - Implicit Objects Available                                - No Implicit Objects 
+
+
+8)Beans In details :-
+- Property Types 
+  
+ 1)Simple Properties :- Represent a single value accessor methods should follow standard naming conventions
+                       - public <PropertyType> get<PropertyName>(); 
+                       - public void set<PropertyName>(<PropertyType> value); 
+
+ - Boolean Properties :-They are simple properties The getter methods follow an optional design pattern
+                         public boolean is<PropertyName>(); 
+
+ 2)Bound Properties :-
+ - Registered listeners object are notified when the value of the property changes Listeners must implement the 
+   java.beans.PropertyChangeListener interface    
+ - propertyChange(PropertyChangeEvent event); 
+
+ 3)Indexed Properties :-
+ - Represent an array of values
+ - public <PropertyElement>[] get<PropertyName>(); 
+ - public void set<PropertyName>(<PropertyElement>[] values);
+ 
+ 4)Constrained Properties :-
+ - Allow registered listeners to validate a proposed changeListeners must implement the 
+ - java.beans.VetoablecChangeListenerinterface vetoableChange( PropertyChangeEvent event ) throws PropertyVetoException;
+
+ Packaging and Deployment:- 
+ - JAR (Java ARchive) files are the primary method of packaging and distributing JavaBeans 
+ - JAR file contains: Class files 
+                      Serialized prototypes of a bean 
+                      Documentation files 
+                      Resources
+                  
+ Overview of Event Model :- 
+ - Provides a notification mechanism between a source object and one or more listener objects Source or listener objects does 
+   not need to be graphical components Supports introspection Extensible
