@@ -1,4 +1,4 @@
-------------------------------------------Question Paper-1------------------------------------------------------------------------------
+------------------------------------------QuestionPaper-1------------------------------------------------------------------------------
 Q-1 : A 1 Marks                                 
  1)List Out Various JDBC Driver :-
  - JDBC-ODBC bridge driver
@@ -126,7 +126,7 @@ Q-1 : B 3 Marks
                       -  After 4 years java own    
 '=
 
-Q-3 : 5Marks
+Q-3 : C 
 
  1)Exaplin database metadata interface :-
 
@@ -491,6 +491,76 @@ Q-1 : D 5Marks
 
 
  
+-------------------------------------------------------------Question All :--------------------------------------------------------
+
+
+                                                          1 Marks 
+
+
+ QuestionPaper 1 :-
+ 1)List Out Various JDBC Driver :- 
+ 2)JDBC Stands for :-
+ 3)ODBC Stands for :-
+
+ QuestionPaper 2 :-
+ 1)DSN stand for :-
+ 2)JDBC Stands for :-                                                                               QuestionPaper1
+ 3)ODBC Stands for :-                                                                               QuestionPaper2
+ 4)What is J2EE :-
+
+ QuestionPaper 3 :-
+ 1)What is J2EE :-                                                                                  QuestionPaper2
+ 2)________ class holds the list of all registered database drivers,which are used for connection
+ 3)In JDBC PreparedStatement, interface is used to call stored procedures.True or False
+ 4)List Out Various JDBC Driver :-                                                                  QuestionPaper1
+
+
+                                                    3 Marks 
+ 
+ 
+ QuestionPaper1
+ 1)Differnce between execute(), executeUpdate() and executeQuery() :-
+ 2)Explain Thin and Thick Client :-
+ 3)Explain JDBC Architecture :-
+ 4)What is container? Explain types of container? :-
+
+
+ QuestionPaper2
+ 1)What is N-tier Architecture :-  2Marks
+ 2)Explain commit and rollback method of connection interface :- 2Marks
+ 1)Explain Thin and Thick client :- 3Marks                                                            QuestionPaper1
+ 2)Explain JDBC Architecture :- 3Marks                                                                QuestionPaper1
+
+
+ QuestionPaper3
+ 1)What is Enterprise-Application? List Out its Characteristics :- 2Marks
+ 2)Differnce between Statement, PreparedStatement and CallableStatement :- 2Marks
+ 2)Differnce between execute, executeQuery and executeUpdate :-  3Marks                                QuestionPaper1
+ 2)What is container? Explain Type of J2EE Container :- 3marks                                         QuestionPaper1
+
+  
+                                             5Marks 
+ 
+ Main 3 Question Only Asked 
+ 
+ QuestionPaper1
+ 1)Exaplin Databasemetadata / ResultSetMetaData interface :-
+ 2)Explain Method Of ResultSet Interface :-
+
+ QuestionPaper2
+ 1)Explain various J2EE api in brief :-
+ 2)Explain Database Metadata / ResultSetMetaData Interface :-
+ 
+ QuestionPaper3
+ 1)Explain ResultSet Interface Method :- 
+ 2)Explain Various J2EE Api in brief :- 
+
+
+ Other :-
+ 1)Explain Connection interface :- 
+ 2)Types Of Drivers :- 
+ 3)Exaplain J2EE Architecture :-
+
 
 
 

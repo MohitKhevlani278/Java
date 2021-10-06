@@ -1,3 +1,5 @@
+package MultiThreading;
+
 class RunInterface implements Runnable {
     // @Override run method
     public void run() {
