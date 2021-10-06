@@ -1,4 +1,4 @@
----------------------------------------------------------QuestionPaper 1----------------------------------------------------------------
+---------------------------------------------------------QuestionPaper 3----------------------------------------------------------------
 
 Q-3 : A 1Marks
 
@@ -21,10 +21,9 @@ Q-3 : A 1Marks
   3)Declaration Tags :- <%!  %> 
   - Declarations are used to define methods & instance variables Do not produce any output that is sent to client
   - Embedded in <%! and %> delimiters
-
   
 
-3)<%@ %> this jsp annotation represents
+3)<%@ %> this jsp annotation represents :-
 - JSP Directives / 3 types 1)page 2)include 3)taglib
 
 
@@ -307,7 +306,7 @@ Q-3 :- C 5Marks
 
 
 Q-3 : A 1Marks
-1)Which tag in jsp used to define errorPage
+1)Which tag in jsp used to define errorPage :-
  - <%@page errorPage="Url error page"> or <%@page isErrorPage="true">
 
 2)List Out JSP Scopes :- Alerdy in QuestionPaper-1
@@ -606,3 +605,63 @@ Q-3 : D 5Marks
  Overview of Event Model :- 
  - Provides a notification mechanism between a source object and one or more listener objects Source or listener objects does 
    not need to be graphical components Supports introspection Extensible
+
+
+
+
+------------------------------------------------------- QuestionAll :- ----------------------------------------------------
+
+                                                        1 Marks
+QuestionPaper1
+1)List Out JSP Scopes :-
+2)List Out JSP Scripting Elements :-
+3)<%@ %> this jsp annotation represents :-
+
+QuestionPaper2
+1)Which tag in jsp used to define errorPage :-
+2)List Out JSP Scopes :-
+3)What is JavaBean :-
+4)List-Out JSP Scripting Elements :-
+
+QuestionPaper3
+1)What is Java Bean :-
+2)List Out JSP Scopes :-
+3)<%@ %> Annoation Used For :-
+4)List Out JSP Scripting Elements :-
+
+
+------------------------------------------------------- 3 Marks ----------------------------------------------------------------    
+
+
+QuestionPaper1
+1)Explain JSP Architecture :-
+2)Explain Java Beans Package :-
+3)Explain Page Directives in JSP :-
+
+QuestionPaper2
+1)Explain Directives Elements In JSP :- 2Marks
+2)List Out Action Elements :- 2Marks
+1)Explain Page Directives in Jsp :-
+2)Explain JSP Architecture :- 
+
+QuestionPaper3 
+1)Explain <jsp:useBean> element :- 2Marks
+2)Explain include directive and compare it with include action element :- 2Marks
+1)Explain JSP Architecture :-
+2)Explain Java Bean packaging :-
+
+
+---------------------------------------------------------5 Marks ---------------------------------------------------------------------
+
+
+QuestionPaper1
+1)Explain errorHandling in jsp :-
+2)Working with Session in jsp :-
+
+QuestionPaper2
+1)Explain Working with Session in Jsp :-
+2)Explain Working with Cookies in Jsp :-
+
+QuestionPaper3
+1)Explain errorHandling in JSP :-
+2)Explain Page Directives in JSP :-

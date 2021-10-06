@@ -1,0 +1,80 @@
+--------------------------------------------------QuestionAll----------------------------------------------------------------
+                                                    1 Marks
+QuestionPaper1 
+1)What is Spring Framework :-
+2)OXM Stands for :-
+3)AOP Stands for :-
+
+QuestionPaper2
+
+
+
+QuestionPaper3
+
+
+-------------------------------------------------- 3Marks ----------------------------------------------------------------
+
+QuestionPaper1
+1)Explain Struct Flow of control :-
+2)Explain Inversion of control in spring Framework :-
+3)Explain Advantage Of Spring Framework :-
+4)Explain Processing Request  with action object :-
+
+QuestionPaper2
+
+
+QuestionPaper3
+1)Explain IOC in Spring Framework :-2Marks :-
+2)Differnce between BeanFactory and Application Context IOC Container :- 2Marks
+1)Explain Spring Framework Module :- 
+2)Explain Strcut Flow of control :-
+
+
+-------------------------------------------------- 5Marks  ---------------------------------------------------------------
+
+QuestionPaper1
+1)Explain Advantage Of Struct Framework :-
+2)Explain Spring Architecture :-
+
+QuestionPaper2
+1)Explain Spring Architecture :-
+2)Explain Struct Flow of control :-
+
+QuestionPaper3
+1)Explain Advantage Of Struct Framework :-
+2)Explain Benefit Of Spring Framework :-
+
+--------------------------------------------------Question Paper-1----------------------------------------------------------------
+Q- 5 : A 1Marks
+
+Q- 5 : B 3Marks
+
+Q- 5 : C 5Marks
+
+
+--------------------------------------------------Question Paper-2----------------------------------------------------------------
+
+Q- 5 : A 1Marks
+
+Q- 5 : B 2Marks
+
+Q- 5 : C 3Marks
+
+Q- 5 : D 5Marks
+
+
+--------------------------------------------------Question Paper-3----------------------------------------------------------------
+
+
+Q- 5 : A 1Marks
+
+
+
+Q- 5 : B 2Marks
+
+
+
+Q- 5 : C 3Marks 
+
+
+Q- 5 : D 5Marks

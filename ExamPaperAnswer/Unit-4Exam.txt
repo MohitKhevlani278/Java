@@ -1,0 +1,120 @@
+--------------------------------------------------QuestionAll----------------------------------------------------------------
+                                                    1 Marks
+QuestionPaper1 
+1)________invented Hibernate framework
+2)ORM Stands for :-
+3)EJB Stands for :-
+
+QuestionPaper2
+1)Hibernate.cfg.xml file is a ______ file :-
+2)Define MVC :-
+3)What is ORM :-
+4)What is EJB :-
+
+QuestionPaper3
+1)Define MVC :-
+2)Give Fullform Of EJB & ORM
+3)List-Out types of EJB :-
+4)________invented Hibernate framework
+
+-------------------------------------------------- 3Marks ----------------------------------------------------------------
+QuestionPaper1
+1)Explain Session in EJB :-
+2)Explain rols of model in mvc design pattern :-
+3)Explain Hibernate Configuration File and Properties File :- 
+4)Explain Automation?Explain It?
+
+QuestionPaper2
+1)What is EntityBean :-  2Marks
+2)List-Out types of EJB :- 2Marks
+1)Explain Message driven beans :-
+2)What is Annotation?Explain It? :-
+
+QuestionPaper3
+1)Explain rols of model in mvc design pattern :- 2Marks
+2)Explain Message driven beans :- 2Marks
+1)Explain Hibernate Configuration File and Properties File :- 
+2)Explain Session in EJB :-
+
+
+-------------------------------------------------- 5Marks  ---------------------------------------------------------------
+
+QuestionPaper1
+1)Explain implementation of MVC Architecture :-
+2)Explain Inheritance Annotation :-
+
+QuestionPaper2
+1)Explain Hibernate Session
+2)Explain implementation of MVC Architecture :-
+
+QuestionPaper3
+1)Explain MVC Architecture :-
+2)Explain Inheritance Annotation :-
+
+--------------------------------------------------Question Paper-1----------------------------------------------------------------
+Q- 4 : A 1Marks
+
+1)________invented Hibernate framework
+- 
+
+2)ORM Stands for :-
+- Object Realtional Mapping
+
+3)EJB Stands for :-
+- Enterprise JavaBeans
+
+
+Q- 4 : B 3Marks
+1)Explain Session in EJB :-
+2)Explain rols of model in mvc design pattern :-
+3)Explain Hibernate Configuration File and Properties File :- 
+4)Explain Automation?Explain It?
+
+Q- 4 : C 5Marks
+1)Explain implementation of MVC Architecture :-
+2)Explain Inheritance Annotation :-
+
+
+--------------------------------------------------Question Paper-2----------------------------------------------------------------
+
+Q- 4 : A 1Marks
+1)Hibernate.cfg.xml file is a ______ file :-
+2)Define MVC :-
+3)What is ORM :-
+4)What is EJB :-
+
+Q- 4 : B 2Marks
+1)What is EntityBean :-  
+2)List-Out types of EJB :-
+
+Q- 4 : C 3Marks
+1)Explain Message driven beans :-
+2)What is Annotation?Explain It? :-
+
+Q- 4 : D 5Marks
+1)Explain Hibernate Session
+2)Explain implementation of MVC Architecture :-
+
+
+--------------------------------------------------Question Paper-3----------------------------------------------------------------
+
+
+Q - 4 : A 1Marks
+1)Define MVC :-
+2)Give Fullform Of EJB & ORM
+3)List-Out types of EJB :-
+4)________invented Hibernate framework
+
+
+Q- 4 : B 2Marks
+1)Explain rols of model in mvc design pattern :- 
+2)Explain Message driven beans :- 
+
+
+Q- 4 : C 3Marks 
+1)Explain Hibernate Configuration File and Properties File :- 
+2)Explain Session in EJB :-
+
+Q- 4 : D 5Marks
+1)Explain MVC Architecture :-
+2)Explain Inheritance Annotation :-
