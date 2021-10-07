@@ -470,8 +470,8 @@ Q-1 : D 5Marks
      - A bean which is instantiated once per application and exists throughout the lifecycle of the developed application 
 
    2)EntityBean :-
-   - The type of bean which is used to manage data which is persistent, to perform complex business logic and can be uniquely 
-     identified by making use of primary key is known as an entity bean
+    - Used to manage data which is persistent, to perform complex business logic and can be uniquely 
+      identified by making use of primary key is known as an entity bean
 
    3)Message-Driven Bean :- 
    - allowed to process messages asynchronously by making use of message driven beans with the help of JMS(Java Message Service)

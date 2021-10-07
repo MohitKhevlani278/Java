@@ -42,7 +42,6 @@ Features :-
 - Provides specific integration testing functionalities such as context management and caching DI of test fixtures, and 
   transactional test management with default rollback semantics.
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
 Spring Framework Module :-
@@ -52,10 +51,52 @@ Spring Framework Module :-
               [Spring DAO]  [Spring Context] 
              
                     [Spring Core]
+ 
+ Spring Core module :- 
+ - Core component of the Spring framework, provides the IoC container.
+ - There are two types of implementations of the Spring container, namely, bean factory and application context. 
+ - Bean factory is defined in the org.springframework.beans.factory.BeanFactory interface and acts as a container for beans.
+
+ Spring AOP module :- 
+ - Similar to OOP which breaks applications into hierarchy of objects, AOP breaks down the programs into aspects or concerns. 
+ - Aspects are the regular Spring beans or regular classes annotated with @Aspect annotation. 
+ - These aspects help in transaction management and logging and failure monitoring of an application
+
+ Spring ORM Module :-
+ - Used for accessing data from databases in an application
+ - It provides APIs for manipulating databases with JDO, Hibernate, and iBatis. 
+ 
+ Spring Web MVC Module :-
+ - Web MVC module of Spring implements the MVC architecture for creating Web applications. 
+ - In Spring MVC, when a request is generated from the browser, it first goes to the DispatcherServlet class  which dispatches the
+   request to a controller using a set of handler mappings.
+ - Controller extracts and processes the information embedded in a request and sends result to the DispatcherServlet class in 
+   the form of the model object
+- Finally, the DispatcherServlet class uses ViewResolver classes to send the results to a view, which displays these results to the users
+
+ Spring Web Flow Module :-
+ - Extension of the Spring Web MVC module provides form controllers, such as class SimpleFormController and AbstractWizardFormController
+   class, to implement predefined workflow. 
+ - Helps in defining XML file or Java Class that manages the workflow between different pages of a Web application. 
+
+ Spring Web DAO Module :-
+ - DAO package provides data access technologies such as JDBC, Hibernate, or JDO. 
+ - This module eliminating the need for providing tedious JDBC coding. 
+ - Provides programmatic as well as declarative transaction management classes. 
+ - Supports heterogeneous JDBC and O/R mapping, which helps Spring work with several data access technologies. 
+ - Provides abstract DAO base classes for quiz and easy access.
+ 
+ Spring Application Context Module :-
+ - Based on the Core module available in org.springframework.context.ApplicationContext is an interface of BeanFactory
+ - Derives its feature from the org.springframework.beans package and supports functionalities such as internationalization (I18N), 
+   validation, event propagation, and resource loading
+ - Its implements MessageSource interface and provides the messaging functionality to an application
 
 
+--------------------------------------------------------------------------------------------------------------------------------
 
 Spring Framework Architecture :-
+
                                 Spring Framework
     [Data Access / Integration]             [Web(MVC/Remoting)]
      
@@ -104,10 +145,10 @@ Miscellaneous Modules :-
 5)Test            :- Provides testing using TestNG or the JUnit Framework
 
 
---------------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------------------------------
 
 Spring MVC Framework :-
+
 - Spring Support MVC architecture which helps to develop flexible and loosely coupled web applications
 
 Model :- Encapsulates the application data and in general they will consist of POJO.
@@ -187,22 +228,12 @@ Spring IOC(Inversion Of Container) Container :-
   Automatic BeanPostProcessor registration   No               Yes
   Loading Mechanism	                         Lazy loading	Aggressive loading
   Automatic BeanFactoryPostProcessor         No               Yes
-  registration
-
+  
 
 
 --------------------------------------------------------------------------------------------------------------------------------
-
-Spring Application Context :-
-
-- Application Context advance spring container similar to bean factory it can load bean definitions, wire beans together, and 
-  dispatches beans upon request Additionally, it adds more enterprise-specific functionality such as the ability to resolve textual 
-  messages from a properties file and the ability to publish application events to interested event listeners. 
-- This container is defined by org.springframework.context.ApplicationContext interface.
-- The ApplicationContext includes all functionality of the BeanFactory, It is generally recommended over BeanFactory. 
-
 What is Spring Bean :-
-- In Spring, a bean is an object that the Spring container instantiates, assembles, and manages.
+- Spring, a bean is an object that the Spring container instantiates, assembles, and manages.
 - We should define beans for service layer objects, data access objects (DAOs), presentation objects, infrastructure objects such 
   as Hibernate SessionFactories, JMS Queues etc.
 
@@ -225,6 +256,17 @@ Annotation Based Configuration :-
 XML-Based Configuration :-
 - This is the traditional way of configuring beans in Spring.
 - Obviously, in this approach, we do all bean mappings in an XML configuration file.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Spring Application Context :-
+
+- Application Context advance spring container similar to bean factory it can load bean definitions, wire beans together, and 
+  dispatches beans upon request 
+- Additionally, it adds more enterprise-specific functionality such as the ability to resolve textual messages from a properties 
+  file and the ability to publish application events to interested event listeners. 
+- This container is defined by org.springframework.context.ApplicationContext interface.
+- The ApplicationContext includes all functionality of the BeanFactory, It is generally recommended over BeanFactory. 
 
 
 Type of Application Context :-
@@ -261,7 +303,6 @@ Addtional Features :-
 - On the other hand, ResourceBundleMessageSource is the most common implementation of MessageSource. 
 - It relies on the underlying JDK's ResouceBundle implementation. 
 - It also uses the JDK's standard message parsing provided by MessageFormat.
-
 
 2)Event Handling :-
 - ApplicationContext supports event handling with the help of the ApplicationEvent class and the ApplicationListener interface. 
@@ -382,31 +423,31 @@ Processing Action Object :-
   footer, and content components.
 
 
-Architecture :-
-- Struct develop robust web application with the help of MVC architecture.
+  Architecture :-
+  - Struct develop robust web application with the help of MVC architecture.
 
- Components Of Architecture :-
- Request     :- Provided by the application developer that is used to be mapped to a particular URI
- Response    :- Used to transfer the control to another resource which will be responsible for completing the response
- Tag library :- Helps developers to create the interactive form based applications with server pages
+  Components Of Architecture :-
+  Request     :- Provided by the application developer that is used to be mapped to a particular URI
+  Response    :- Used to transfer the control to another resource which will be responsible for completing the response
+  Tag library :- Helps developers to create the interactive form based applications with server pages
 
- 
- Struts Controller Components :-
- - User send http request which ActionServlet receives it intercepts the URL based on the Struts Configuration files, 
- - It gives handling of the request to the Action class. 
- - Action class is a part of the controller and is responsible for communicating with the model layer.
+  
+  Struts Controller Components :-
+  - User send http request which ActionServlet receives it intercepts the URL based on the Struts Configuration files, 
+  - It gives handling of the request to the Action class. 
+  - Action class is a part of the controller and is responsible for communicating with the model layer.
 
- Struts View Components :-
- - Responsible for accepting the input from them and displaying information to the user with the help of the model components. 
- - Mostly we use the JavaServer Pages (JSP) for the view presentation. 
- - To extend the capability of the view we can use the Custom tags, java script etc.
+  Struts View Components :-
+  - Responsible for accepting the input from them and displaying information to the user with the help of the model components. 
+  - Mostly we use the JavaServer Pages (JSP) for the view presentation. 
+  - To extend the capability of the view we can use the Custom tags, java script etc.
 
- Struts Model Component :-
- - Model component provides a model of the business logic behind a Struts program
- - Model components are generally a java class
- - It provides interfaces to databases or back-ends systems
+  Struts Model Component :-
+  - Model component provides a model of the business logic behind a Struts program
+  - Model components are generally a java class
+  - It provides interfaces to databases or back-ends systems
 
- Diagram :- https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
+  Diagram :- https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
  
 
  

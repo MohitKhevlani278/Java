@@ -8,54 +8,57 @@ QuestionPaper1
 QuestionPaper2
 1)Hibernate.cfg.xml file is a ______ file :-
 2)Define MVC :-
-3)What is ORM :-
+3)What is ORM :- 
 4)What is EJB :-
 
-QuestionPaper3
-1)Define MVC :-
-2)Give Fullform Of EJB & ORM
-3)List-Out types of EJB :-
-4)________invented Hibernate framework
+QuestionPaper3  
+1)Define MVC                              :- Alerdy in QuestionPaper-2
+2)Give Fullform Of EJB & ORM              :- Alerdy in QuestionPaper-1
+3)List-Out types of EJB                   :- 
+4)________invented Hibernate framework    :- Alerdy in QuestionPaper-1
 
 -------------------------------------------------- 3Marks ----------------------------------------------------------------
+
 QuestionPaper1
-1)Explain Session in EJB :-
-2)Explain rols of model in mvc design pattern :-
+1)Explain Session in EJB                                   :-
+2)Explain rols of model in mvc design pattern              :-
 3)Explain Hibernate Configuration File and Properties File :- 
-4)Explain Automation?Explain It?
+4)Explain Annotation?Explain It?                           :-
 
 QuestionPaper2
-1)What is EntityBean :-  2Marks
-2)List-Out types of EJB :- 2Marks
-1)Explain Message driven beans :-
-2)What is Annotation?Explain It? :-
+1)What is EntityBean                                       :- 2Marks
+2)List-Out types of EJB                                    :- 2Marks
+1)Explain Message driven beans                             :-
+2)What is Annotation?Explain It?                           :- Alerdy in QuestionPaper-1
 
 QuestionPaper3
-1)Explain rols of model in mvc design pattern :- 2Marks
-2)Explain Message driven beans :- 2Marks
-1)Explain Hibernate Configuration File and Properties File :- 
-2)Explain Session in EJB :-
+1)Explain rols of model in mvc design pattern              :- Alerdy in QuestionPaper-1 2Marks
+2)Explain Message driven beans                             :- Alerdy in QuestionPaper-2 2Marks
+1)Explain Hibernate Configuration File and Properties File :- Alerdy in QuestionPaper-1
+2)Explain Session in EJB                                   :- Alerdy in QuestionPaper-1
 
 
 -------------------------------------------------- 5Marks  ---------------------------------------------------------------
 
 QuestionPaper1
 1)Explain implementation of MVC Architecture :-
-2)Explain Inheritance Annotation :-
+2)Explain Inheritance Annotation             :-
 
 QuestionPaper2
-1)Explain Hibernate Session
-2)Explain implementation of MVC Architecture :-
+1)Explain Hibernate Session                  :- 
+2)Explain implementation of MVC Architecture :- Alerdy in QuestionPaper-1
 
 QuestionPaper3
-1)Explain MVC Architecture :-
-2)Explain Inheritance Annotation :-
+1)Explain MVC Architecture                   :-
+2)Explain Inheritance Annotation             :- Alerdy in QuestionPaper-1
+
 
 --------------------------------------------------Question Paper-1----------------------------------------------------------------
+
 Q- 4 : A 1Marks
 
 1)________invented Hibernate framework
-- 
+- Gavin King  
 
 2)ORM Stands for :-
 - Object Realtional Mapping
@@ -65,56 +68,250 @@ Q- 4 : A 1Marks
 
 
 Q- 4 : B 3Marks
+
 1)Explain Session in EJB :-
+ - A session can be defined as an object associated each user with a unique session ID
+ - Different forms of data can be set in a session; These data related to each user of the site help the user and the website owner 
+   in different ways. 
+ - HTTP is a "stateless" protocol Whenever a user visits a web page, the user opens a separate connection with the webserver, 
+   and the server does not keep a record of preceding client requests. 
+
+ SessionBean :-
+ - A bean which can be invoked by a client over local, remote or web service client views, programmatically and encapsulates 
+   business logic is known as a session bean.  
+     
+  Types :- 
+  1)Stateful :-
+  - Values of the instance variables of an object are stored in its state.
+    
+  2)Stateless :-
+  - A conversational state with the client is not maintained by a stateless session bean.
+
+  3)Singleton :-
+  - A bean which is instantiated once per application and exists throughout the lifecycle of the developed application  
+
+
 2)Explain rols of model in mvc design pattern :-
+ - Model View Controller (MVC) design pattern specifies that an application consist of a data model, presentation information, and 
+   control information. 
+ - The pattern requires that each of these be separated into different objects.
+ 
+ Diagram :- https://media.geeksforgeeks.org/wp-content/uploads/MVC-Design-Pattern.png
+
+ - Model contains only the pure application data, it contains no logic describing how to present the data to a user.
+ - It Also Manages Business logic with the database access
+ - Controller send request to the model for processing user requests and response returns back to the controller
+
+
 3)Explain Hibernate Configuration File and Properties File :- 
-4)Explain Automation?Explain It?
+ - Hibernate Configuration File(cfg file) is the uses to establish connection to the database server.
+ - It is an XML file which name is hibernate.cfg.xml.
+ - There must be one configuration file for each database used in the application
+ - We can acquire the Configuration class instance by instantiating it directly and specifying mappings in the configuration file. 
+ - Use the addResource() method, if the mapping files are present in the classpath.
+ Syntax :- Configuration cfg = new Configuration().addResource("employee.hbm.xml")  
+
+ Files :-
+ <?xml>  :- 
+ - Defines the version and encoding type used for the XML document.
+ 
+ <DOCTYPE> :- 
+ - Specifies the Document Type Definition (DTD) for the XML  elements. 
+ - DTD specifies the grammar rule for the XML document. For  example, DTD for hibernate.cfg.xml file is specified as  
+   http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd.
+
+ <hibernate-configuration> :-  
+ - Specifies all the configuration details  that the application uses to communicate with the underlying database.
+ 
+ <session-factory> :- 
+ - Contains the database and application specific  properties that a Session object uses to establish a communication link  
+   between the application and the database.
+
+ <property> :- 
+ - Defines the various properties that are required to connect  with the database.
+ 
+ <mapping> :- 
+ - Specifies the name of the Hibernate mapping file that defines the mapping of a database table to a class.
+
+ Example :-
+ <?xml version="1.0" encoding="utf-8"?>
+ <!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+    <session-factory>
+        
+        <property name="hibernate.dialect"> org.hibernate.dialect.MySQLDialect </property>
+        <property name="hibernate.connection.driver_class"> com.mysql.jdbc.Driver </property>
+        
+        <!-- Assume test is the database name -->
+        <property name="hibernate.connection.url"> jdbc:mysql://localhost/test </property>
+        <property name="hibernate.connection.username"> root </property>
+        <property name="hibernate.connection.password"> root123 </property>
+        
+        <!-- List of XML mapping files -->
+        <mapping resource="Employee.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
+ 
+
+4)Explain Annotation? :-
+ - Java annotation is a form of metadata that can be added to Java source code. 
+ - Hibernate is the most popular implement of JPA specification annotation and provides some additional annotations.
+ - JPA annotations are used in mapping java objects to the database tables, columns etc
+ - All the metadata is clubbed into the POJO java file along with the code, this helps the user to understand the table structure 
+   and POJO simultaneously during the development
+
+  Hibernate Annotation :-
+  @Entity :- 
+  - Is used to specify a class as an entity bean. It is contained inside the javax.persistence package.
+
+  @Table :- 
+  - Used to specify the name of the table. 
+
+  @Column :- 
+  - used to specify the column name. 
+  - It contains the following attributes:
+     name     : Specifies the name of the column.
+     length   : Specifies the length of the column.
+     nullable : Specifies the column to be NOT NULL.
+     unique   : Specifies the column to contain unique values.
+
+  @Id :- 
+  -Used to define the column as an identifier or a primary key.
+
+  @GeneratedValue :- 
+  - Specify the identifier generation  strategy. 
+    Types :-
+      AUTO
+      IDENTITY
+      SEQUENCE
+      TABLE
+  
+  @OrderBy :- Sort your data using @OrderBy annotation
+ 
+  @Transient :- Every non static and non-transient property of an entity is considered persistent, unless you annotate it as @Transient
+
+  @Lob :- Large objects are declared with @Lob
+ 
+  Annotations for Mapping between tables :-
+  - @OneToOne 
+  - @ManyToOne
+  - @OneToMany
+  - @PrimaryKeyJoinColumn
+  - @JoinColumn 
+
 
 Q- 4 : C 5Marks
 1)Explain implementation of MVC Architecture :-
-2)Explain Inheritance Annotation :-
+- 
 
+2)Explain Inheritance Annotation :-
+- 
 
 --------------------------------------------------Question Paper-2----------------------------------------------------------------
 
 Q- 4 : A 1Marks
 1)Hibernate.cfg.xml file is a ______ file :-
+- Configuration File
+
 2)Define MVC :-
+- Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: 
+  the model, the view, and the controller. 
+
 3)What is ORM :-
+- ORM stands for Object-Relational Mapping (ORM) is a programming technique for converting data between relational databases 
+  and object oriented programming languages such as Java, C#, etc. 
+
 4)What is EJB :-
+- Enterprise JavaBeans (EJB) is a specification for developing large-scale, distributed business applications on the Java platform.
 
 Q- 4 : B 2Marks
-1)What is EntityBean :-  
-2)List-Out types of EJB :-
+1)What is EntityBean        :- 
+ - Used to manage data which is persistent, to perform complex business logic and can be uniquely identified by making use of 
+   primary key is known as an entity bean
+ - An “entity bean” is a business encodes persistent object which forms and integral part of JAVA Enterprise edition. 
+ - They can persistent independently or can delegate this to the container. 
+ - A container is used to host the EJB Services and in case container or server crashes, then also beans survive the crash as 
+   these are linked to primary keys present in the database.
+  
+  Types :- 
+  1)Container Managed Persistence (CMP) 
+  2)Bean-Managed Persistence (BMP). 
+
+
+2)List-Out types of EJB     :- 
+- Enterprise JavaBeans (EJB) is a specification for developing large-scale, distributed business applications on the Java platform.
+
+ Types Of EJB :- 
+   1)SessionBean :-
+   - A bean which can be invoked by a client over local, remote or web service client views, programmatically and encapsulates 
+     business logic is known as a session bean.  
+     
+     Types :- 
+     1)Stateful :-
+     - Values of the instance variables of an object are stored in its state.
+    
+     2)Stateless :-
+     - A conversational state with the client is not maintained by a stateless session bean.
+
+     3)Singleton :-
+     - A bean which is instantiated once per application and exists throughout the lifecycle of the developed application 
+
+   2)EntityBean :-
+   - Used to manage data which is persistent, to perform complex business logic and can be uniquely identified by making use of 
+     primary key is known as an entity bean
+
+   3)Message-Driven Bean :- 
+   - allowed to process messages asynchronously by making use of message driven beans with the help of JMS(Java Message Service)
 
 Q- 4 : C 3Marks
-1)Explain Message driven beans :-
-2)What is Annotation?Explain It? :-
+1)Explain Message driven beans    :-
+ - A message-driven bean combines features of a session bean and a Java Message Service (JMS) message listener, allowing a business 
+   component to receive JMS. 
+ - message-driven bean enables asynchronous clients to access the business logic in the EJB tier. 
+
+ Timer Service :-
+ - Timer Service is a mechanism using which scheduled application can be build. 
+ - EJB 3.0 specification has specified @Timeout annotation which helps in programming the ejb service in a stateless or message 
+   driven bean. 
+ - EJB Container calls the method which is annotated by @Timeout.
+ - EJB Timer Service is a service provided by Ejb container which helps to create timer and to schedule callback when timer expires. 
+
+
+2)What is Annotation?Explain It?  :- Alerdy in QuestionPaper-1
+
 
 Q- 4 : D 5Marks
-1)Explain Hibernate Session
-2)Explain implementation of MVC Architecture :-
+1)Explain Hibernate Session :-
+- 
+
+2)Explain implementation of MVC Architecture                :- Alerdy in QuestionPaper-1
 
 
 --------------------------------------------------Question Paper-3----------------------------------------------------------------
 
 
 Q - 4 : A 1Marks
-1)Define MVC :-
-2)Give Fullform Of EJB & ORM
-3)List-Out types of EJB :-
-4)________invented Hibernate framework
+1)Define MVC                              :- Alerdy in QuestionPaper-2
+2)Give Fullform Of EJB & ORM              :- Alerdy in QuestionPaper-1
+3)List-Out types of EJB                   :- 
+ - Session Bean
+ - Entity Bean
+ - Message-Driven Bean
+
+4)________invented Hibernate framework    :- Alerdy in QuestionPaper-1
 
 
 Q- 4 : B 2Marks
-1)Explain rols of model in mvc design pattern :- 
-2)Explain Message driven beans :- 
-
+1)Explain rols of model in mvc design pattern              :- Alerdy in QuestionPaper-1 2Marks
+2)Explain Message driven beans                             :- Alerdy in QuestionPaper-2 2Marks
 
 Q- 4 : C 3Marks 
-1)Explain Hibernate Configuration File and Properties File :- 
-2)Explain Session in EJB :-
+1)Explain Hibernate Configuration File and Properties File :- Alerdy in QuestionPaper-1
+2)Explain Session in EJB                                   :- Alerdy in QuestionPaper-1
 
 Q- 4 : D 5Marks
-1)Explain MVC Architecture :-
-2)Explain Inheritance Annotation :-
+1)Explain MVC Architecture  :-
+-  
+
+2)Explain Inheritance Annotation             :- Alerdy in QuestionPaper-1

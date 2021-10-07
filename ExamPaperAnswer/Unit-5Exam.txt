@@ -1,4 +1,365 @@
+-------------------------------------------------Question Paper-1----------------------------------------------------------------
+
+Q- 5 : A 1Marks
+1)What is Spring Framework :-
+- Spring is an open source lightweight framework that allows Java EE 7 developers to build simple, reliable, and scalable 
+  enterprise applications written by Rod johnson first released in June,2003 under apache license.
+
+2)OXM Stands for :-
+- Object XML Mapping 
+
+3)AOP Stands for :-
+- Aspect Oriented Programming
+
+
+Q- 5 : B 3Marks
+1)Explain Struct Flow of control :-
+- Struts Frame work is the implementation of Model-View-Controller (MVC) design pattern for the JSP.
+ 
+ Flow Of Control :-
+ - Request is first sent from the browser to the server Then the server loads the web.xml and if the request pattern matches then 
+   it is forwarded to the FilterDispatcher
+ - In struts 2 the FilterDispatcher is the Front Controller
+ - Based on the request url and it’s mapping in the struts.xml the appropriate action class to be executed is decided
+ - Before the Action class is executed the request is passed through the interceptors
+ - Action method of the action class (controller)  is executed
+ - Action class calls the business logic function
+ - Business Logic class works with the database and gets data from the database
+ - Processed data from bushiness logic is sent back to the Action class or the controller
+ - Depending on the result the Controller identifies the view to be rendered
+ - Before the response is  generated the interceptors are executed again
+
+
+2)Explain Inversion of control(IOC) in spring Framework :-
+
+ - Spring IoCContainer is the core of Spring Framework. 
+ - It creates the objects, configures and assembles their dependencies, manages their entire life cycle.
+ - It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class.
+ - These objects are called Beans
+ - The IoC container contains assembler code that handles the configuration management of application objects.
+ - The interfaces BeanFactory and ApplicationContext represent the Spring IoC container. 
+
+  Types of container :- 
+  
+  1)BeanFactory Container
+  - XmlBeanFactory is the implementation class for the BeanFactory interface
+  Ex :- Resource resource=new ClassPathResource("applicationContext.xml");  
+        BeanFactory factory = new XmlBeanFactory(resource);  
+  
+  2)ApplicationContext Container :-
+  - ClassPathXmlApplicationContext class is the implementation class of ApplicationContext interface
+  Ex :- ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");   
+
+  Differnce Between BeanFactory and ApplicationContext :-
+  Features                                BeanFactory     ApplicationContext
+  Annotation Support                         No               Yes
+  Bean Instantiation/ Wiring                 Yes              Yes
+  Internationalization Support               No               Yes  
+  Enterprise Service                         No               Yes
+  ApplicationEvent publication	             No               Yes
+  Automatic BeanPostProcessor registration   No               Yes
+  Loading Mechanism	                         Lazy loading	Aggressive loading
+  Automatic BeanFactoryPostProcessor         No               Yes
+  
+
+3)Explain Advantage Of Spring Framework :-
+-
+ 1)Light Weight :- 
+ - Spring is a lightweight framework because of its POJO(Plain Old Java Object) implementation. 
+ 
+ 2)Flexible :- 
+ - It provides flexible libraries trusted by developers all over the world. 
+ - Developer can choose either XML or Java-based annotations for configuration options. 
+ 
+ 3)Loose Coupling :- 
+ - Spring applications are loosely coupled because of dependency injection. 
+ - It handles injecting dependent components without a component knowing where they came from.
+
+ 4)Powerful Abstraction :- 
+ - It provides a powerful abstraction to J2EE specifications such as JMS, JDBC, JPA, and JTA.
+
+ 5)Declarative Support :- 
+ - It provides declarative support for caching, validation, transaction, and formatting.
+
+ 6)Portable :- 
+ - We can use server-side in web/EJB app, client-side in swing app business logic is completely portable.
+
+ 7)Cross-cutting behavior :- 
+ - Resource management is a cross-cutting concern, easy to copy and paste everywhere.
+
+ 8)Configuration :- 
+ - Provides a consistent way of configuring everything, separate configuration from application logic, varying configuration.
+
+ 9)Lifecycle :- 
+ - Responsible for managing all your application components, particularly those in middle-tier container sees components through 
+   well-defined lifecycle: init(), destroy().
+
+ 10)Dependency Injection :- 
+ - Use of dependency injection makes the easy development of JavaEE.
+
+ 11)Easier Testing :- 
+ - Use of dependency injection makes the testing easy. 
+ - Does not require a server while the EJB and Struts application requires a server.
+
+ 12)Secure :- 
+ - Monitors third-party dependencies closely. 
+ - Regular update make our data and application secure. 
+ - Provides industry-standard security schemes and delivers a trustworthy solution that is secure by default.
+ 
+ 
+4)Explain Processing Request with action object in Struct:-
+ 
+ - Action objects handle the request from and responds to the client (generally a web browser). 
+ - ActionServlet receives the request
+ - Requests from the client are sent to the controller in the form of Actions defined in the struts-config.xml configuration file
+ - Action objects have access to the applications controller servlet and also access to the servlet’s methods. 
+ - Bundles all the request values into a JavaBean class which extends Struts ActionForm class
+ - Decides which action class to invoke to process the request
+ - Action class is a part of the controller and is responsible for communicating with the model layer
+ - The model code returns an ActionForward to the controller output page to send to the client
+ - Information is passed between model and view in the form of special JavaBeans
+ - A powerful custom tag library allows it to read and write the content of these beans from the presentation layer without the need 
+   for any embedded Java code
+ - Struts also supports internationalization, provides facilities for the validation of data submitted by web forms, and includes a
+   template mechanism called “Tiles” which allows the presentation layer to be composed from independent header, 
+   footer, and content components. 
+
+
+Q- 5 : C 5Marks
+
+1)Explain Advantage Of Struct Framework :-
+- 
+ 1)Centralized File-Based Configuration :- 
+ - Struts values/mapping are represented in XML or property files
+ - This loose coupling means that many changes can be made without modifying or recompiling Java code, and that whole changes 
+   can be made by editing a single file 
+ - This approach helps Java and Web developers focus on their specific tasks without needing to know about the overall system layout.
+
+ 2)ActionForm Beans :- 
+ - Apache Struts extends EJB capability to Java code and adds several useful utilities, all of which serve to greatly simplify 
+   the processing of request parameters.
+
+ 3)Struts-Tags Library :- 
+ - Provides a set of Bean tags that let us easily output the properties of JavaBeans components
+ - Struts provides a set of HTML Tags to create HTML forms that are associated with JavaBeans components. 
+   Two useful purposes :-
+    - Get initial form-field values from Java objects.
+    - Redisplay forms with some or all previously entered values intact
+
+ 4)Form Field Validation :- 
+ - Struts has a robust, extensible validator that can be used to uniformly validate your form fields
+ - This validation can be performed on the server (in Java), or both on the server and on the client (in JavaScript)
+
+ 5)Maintaining and development :- 
+ - Struts Support MVC so its GUI development time and maintaining cost is low
+ - Developer have focus only GUI ,business logic developer have focus on writing business logics and controller developer have focus on
+   only networks securities ,traffics etc.
+ - We can assign different task on the behalf of the skill set so development cost can be optimized.
+
+ 6)Plumbing code :- 
+ - Contained within the Struts framework 
+ - Use to Mapping HTTP request parameters to Java objects 
+ - for example :- You don't have to do it
+ - Allows you to focus more on the domain problem instead of building infrastructure
+
+ 7)Good documentation & plenty of books :- 
+ - If you have to leave the project and/or someone else has to maintain it then using  well documented framework will make that job
+   much easier. 
+
+ 8)Wide Range Community :- 
+ - Struts is used in plenty web-apps so it will get looked by many more eyes 
+ - Usually, that means any problems you have face will seen by someone else first
+
+
+
+2)Explain Spring Architecture :-
+- 
+    Diagram :-
+                      
+                         Spring Framework
+    [Data Access / Integration]           [Web(MVC/Remoting)]
+     
+       [JDBC]   [ORM]                     [WebSocket] [Servlet]
+       [OXM]    [JMS]                     [Web]       [Portlet]
+       [Transaction]
+
+      [   [AOP]     [Aspect]   [Instrumentation]  [Messaging]   ]
+
+                        Core Container
+      [ [Beans]     [Core]     [Context]        [SpEL]]
+
+                    [TEST]
+
+
+ Spring Framework Core Components :-
+ 1)SpEL    :- Module provides a powerful expression language for manipulating objects during execution
+ 2)Context :- Built on the basis of Beans and Core and allows you to access any object that is defined in the settings. 
+             The key element of the Context module is the ApplicationContext interface
+ 3)Core    :- Provides key parts of the framework including IoC and DI properties
+ 4)Bean    :- Responsible for creating and managing Spring Beans – is application context structure unit
+
+
+ Spring Framework Web Component :-
+ 1)Web         :- Provides functions such as downloading files, creating web application, rest web service etc
+ 2)Web-MVC     :- Contains a Spring MVC implementation for web applications
+ 3)Web-Socket  :- Provides support for communication between the client and the server, using Web-Sockets in web applications
+ 4)Web-Portlet :- Provides MVC implementation with portlet environment
+
+
+ Spring Framework Data Access / Integration :-
+ 1)JDBC :- Provides an abstract layer of JDBC and eliminates the need for the developer to manually register the monotonous code 
+           associated with connecting to the database
+ 2)ORM :-  Provides integration with popular ORMs such as Hibernate, JDO, which are implementations of JPA
+ 3)OXM :-  Responsible for linking the Object / XML – XMLBeans, JAXB, etc.
+ 4)JMS :-  Responsible for creating, sending and receiving messages
+ 5)Transactions :-  Supports transaction management for classes that implement certain methods and POJOs
+
+
+ Miscellaneous Modules :-
+ 1)AOP             :- Implements aspect-oriented programming and allows using the entire arsenal of AOP capabilities
+ 2)Aspects         :- Provides integration with AspectJ, which is also a powerful AOP framework
+ 3)Instrumentation :- Responsible for supporting class instrumentation and class loader, which are used in server applications
+ 4)Messaging       :- Provides STOMP support.Simple (or Streaming) Text Oriented Message Protocol (STOMP), formerly known as TTMP, 
+                      is a simple text-based protocol, designed for working with message-oriented middleware (MOM)
+ 5)Test            :- Provides testing using TestNG or the JUnit Framework 
+
+
+
+
+--------------------------------------------------Question Paper-2----------------------------------------------------------------
+
+Q- 5 : A 1Marks
+
+1)What are the components of struct framework :-
+ - Action Classes 
+ - Interceptors 
+ - Result Pages, JSP of FreeMarker templates 
+ - ValueStack, OGNL and Tag Libraries
+
+2)__file is used by controller to get mapping information for request routing  :- struts-config.xml
+
+3)What is Spring Framework :- Alerdy in QuestionPaper-1
+
+4)What is Struct :-
+- Struts is an open source framework that extends the Java Servlet API and support MVC architecture. 
+- It enables you to create maintainable, extensible, and flexible web applications based on standard technologies, such as JSP pages,
+  JavaBeans, resource bundles, and XML
+
+
+Q- 5 : B 2Marks
+1)What is Inversion Of Control in Spring Framework :- 2Marks Alerdy in QuestionPaper-1
+
+2)What is Spring Context Defination :- 2Marks
+ - Spring contexts are also called Spring IoC containers, which are responsible for instantiating, configuring, and assembling beans 
+   by reading configuration metadata from XML, Java annotations, and/or Java code in the configuration files.
+
+ ApplicationContext :-
+ - Application Context advance spring container similar to bean factory it can load bean definitions, wire beans together, and 
+   dispatches beans upon request 
+ - Additionally, it adds more enterprise-specific functionality such as the ability to resolve textual messages from a properties 
+   file and the ability to publish application events to interested event listeners. 
+ - This container is defined by org.springframework.context.ApplicationContext interface.
+ - The ApplicationContext includes all functionality of the BeanFactory, It is generally recommended over BeanFactory. 
+
+ Type of Application Context :-
+ 1)AnnotationConfigApplicationContext 
+ 2)AnnotationConfigWebApplicationContext 
+ 3)XmlWebApplicationContext 
+ 4)FileSystemXMLApplicationContext 
+ 5)ClassPathXmlApplicationContext 
+
+
+Q- 5 : C 3Marks
+1)Explain Advantage Of Spring Framework         :- Alerdy in QuestionPaper-1
+2)Explain Processing Request with action object :- Alerdy in QuestionPaper-1 
+ 
+Q- 5 : D 5Marks
+1)Explain Spring Architecture    :- Alerdy in QuestionPaper1
+2)Explain Struct Flow of control :- Alerdy in QuestionPaper-1 In 3Marks
+- Need to write this diagram for 5 marks
+- https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
+
+--------------------------------------------------Question Paper-3----------------------------------------------------------------
+
+
+Q- 5 : A 1Marks
+1)What is Spring Framework   :- Alerdy in QuestionPaper-1
+2)Define Struct Framework    :- Alerdy in QuestionPaper-1 
+3)Give Fullform Of OGNL, AOP :- Object-Graph Navigation Language / Aspect-Oriented Programming
+4)Is Struct is ORM Based Framework? Yes Or No? :- YES
+
+
+Q- 5 : B 2Marks
+1)Explain IOC in Spring Framework   :-2Marks    - Alerdy in QuestionPaper-1
+2)Differnce between BeanFactory and Application Context IOC Container :- 2Marks
+- Alerdy in QuestionPaper-1 In IOC Question  
+
+Q- 5 : C 3Marks 
+1)Explain Spring Framework Module :-
+- 
+  Diagram :-
+
+              [Spring ORM]  [Spring Web Flow]
+ [Spring AOP]                                 [Spring Web MVC]
+              [Spring DAO]  [Spring Context] 
+                     [Spring Core]
+ 
+ 
+ Spring Core module :- 
+ - Core component of the Spring framework, provides the IoC container.
+ - There are two types of implementations of the Spring container, namely, bean factory and application context. 
+ - Bean factory is defined in the org.springframework.beans.factory.BeanFactory interface and acts as a container for beans.
+
+ Spring AOP module :- 
+ - Similar to OOP which breaks applications into hierarchy of objects, AOP breaks down the programs into aspects or concerns. 
+ - Aspects are the regular Spring beans or regular classes annotated with @Aspect annotation. 
+ - These aspects help in transaction management and logging and failure monitoring of an application
+
+ Spring ORM Module :-
+ - Used for accessing data from databases in an application
+ - It provides APIs for manipulating databases with JDO, Hibernate, and iBatis. 
+ 
+ Spring Web MVC Module :-
+ - Web MVC module of Spring implements the MVC architecture for creating Web applications. 
+ - In Spring MVC, when a request is generated from the browser, it first goes to the DispatcherServlet class  which dispatches the
+   request to a controller using a set of handler mappings.
+ - Controller extracts and processes the information embedded in a request and sends result to the DispatcherServlet class in 
+   the form of the model object
+- Finally, the DispatcherServlet class uses ViewResolver classes to send the results to a view, which displays these results to the users
+
+ Spring Web Flow Module :-
+ - Extension of the Spring Web MVC module provides form controllers, such as class SimpleFormController and AbstractWizardFormController
+   class, to implement predefined workflow. 
+ - Helps in defining XML file or Java Class that manages the workflow between different pages of a Web application. 
+
+ Spring Web DAO Module :-
+ - DAO package provides data access technologies such as JDBC, Hibernate, or JDO. 
+ - This module eliminating the need for providing tedious JDBC coding. 
+ - Provides programmatic as well as declarative transaction management classes. 
+ - Supports heterogeneous JDBC and O/R mapping, which helps Spring work with several data access technologies. 
+ - Provides abstract DAO base classes for quiz and easy access.
+ 
+ Spring Application Context Module :-
+ - Based on the Core module available in org.springframework.context.ApplicationContext is an interface of BeanFactory
+ - Derives its feature from the org.springframework.beans package and supports functionalities such as internationalization (I18N), 
+   validation, event propagation, and resource loading
+ - Its implements MessageSource interface and provides the messaging functionality to an application
+
+
+2)Explain Strcut Flow of control  :- Alerdy in QuestionPaper-1
+
+
+Q- 5 : D 5Marks
+1)Explain Advantage Of Struct Framework :- Alerdy in QuestionPaper-1
+2)Explain Advantage Of Spring Framework :- Alerdy in QuestionPaper-1 in B Q-3 3Marks
+
+
+
+
+
+
 --------------------------------------------------QuestionAll----------------------------------------------------------------
+
                                                     1 Marks
 QuestionPaper1 
 1)What is Spring Framework :-
@@ -6,75 +367,282 @@ QuestionPaper1
 3)AOP Stands for :-
 
 QuestionPaper2
-
-
+1)What are the components of struct framework :-
+2)__file is used by controller to get mapping information for request routing  :-
+3)What is Spring Framework              :- Alerdy in QuestionPaper-1
+4)What is Struct Framework              :-
 
 QuestionPaper3
+1)What is Spring Framework              :- Alerdy in QuestionPaper-1
+2)What is Struct Framework              :- Alerdy in QuestionPaper-2
+3)Give Fullform Of OGNL, AOP            :-
+4)Is Struct is ORM Based Framework? Yes Or No? :-
 
 
 -------------------------------------------------- 3Marks ----------------------------------------------------------------
 
+
 QuestionPaper1
-1)Explain Struct Flow of control :-
-2)Explain Inversion of control in spring Framework :-
-3)Explain Advantage Of Spring Framework :-
-4)Explain Processing Request  with action object :-
+1)Explain Struct Flow of control                          :-
+2)Explain Inversion of control(IOC) in spring Framework   :-
+3)Explain Advantage Of Spring Framework                   :-
+4)Explain Processing Request with action object in Struct :-
+
 
 QuestionPaper2
+1)What is Inversion Of Control(IOC) in Spring Framework :- Alerdy in QuestionPaper-1    2Marks
+2)What is Spring Context Defination                     :-                              2Marks
+1)Explain Advantage Of Spring Framework                 :- Alerdy in QuestionPaper-1
+2)Explain Processing Request with action object         :- Alerdy in QuestionPaper-1
 
 
 QuestionPaper3
-1)Explain IOC in Spring Framework :-2Marks :-
-2)Differnce between BeanFactory and Application Context IOC Container :- 2Marks
-1)Explain Spring Framework Module :- 
-2)Explain Strcut Flow of control :-
+1)Explain Inversion Of Control(IOC) in Spring Framework               :- Alerdy in QuestionPaper-1                  2Marks     
+2)Differnce between BeanFactory and Application Context IOC Container :- Alerdy in QuestionPaper-1 In IOC Question  2Marks
+1)Explain Spring Framework Module           :-  
+2)Explain Strcut Flow of control            :- Alerdy in QuestionPaper-1
 
 
 -------------------------------------------------- 5Marks  ---------------------------------------------------------------
 
 QuestionPaper1
-1)Explain Advantage Of Struct Framework :-
-2)Explain Spring Architecture :-
+1)Explain Advantage Of Struct Framework  :-
+2)Explain Spring Architecture            :-
 
 QuestionPaper2
-1)Explain Spring Architecture :-
-2)Explain Struct Flow of control :-
+1)Explain Spring Architecture            :- Alerdy in QuestionPaper-1
+2)Explain Struct Flow of control         :- Alerdy in QuestionPaper-1 in B Q-2 In this draw diagram
 
 QuestionPaper3
-1)Explain Advantage Of Struct Framework :-
-2)Explain Benefit Of Spring Framework :-
-
---------------------------------------------------Question Paper-1----------------------------------------------------------------
-Q- 5 : A 1Marks
-
-Q- 5 : B 3Marks
-
-Q- 5 : C 5Marks
-
-
---------------------------------------------------Question Paper-2----------------------------------------------------------------
-
-Q- 5 : A 1Marks
-
-Q- 5 : B 2Marks
-
-Q- 5 : C 3Marks
-
-Q- 5 : D 5Marks
-
-
---------------------------------------------------Question Paper-3----------------------------------------------------------------
-
-
-Q- 5 : A 1Marks
+1)Explain Advantage Of Struct Framework :- Alerdy in QuestionPaper-1
+2)Explain Advantage Of Spring Framework :- Alerdy in QuestionPaper-1 in B Q-3 3Marks
 
 
 
-Q- 5 : B 2Marks
+--------------------------------------------------Optional----------------------------------------------------------------
+
+1)What is Spring Bean :-
+ - Bean is an object that the Spring container instantiates, assembles, and manages.
+ - Define beans for service layer objects, data access objects (DAOs), presentation objects, infrastructure objects such 
+  as Hibernate SessionFactories, JMS Queues etc.
+
+ Ex :- 
+ public class AccountService {
+  @Autowired
+  private AccountRepository accountRepository;
+  // getters and setters
+ }
+
+ Java Based Configuration :-
+ - @Bean annotation on a method indicates that the method creates a Spring bean. 
+ - Class annotated with @Configuration indicates that it contains Spring bean configurations.
+
+ Annotation Based Configuration :-
+ - Enable annotation-based configuration via XML configuration
+ - We can use a set of annotations on our Java classes, methods, constructors, or fields to configure beans such as @Component, 
+   @Controller, @Service, @Repository, @Autowired, and @Qualifier.
+
+ XML-Based Configuration :-
+ - Traditional way of configuring beans in Spring.
+ - This approach, we need all bean mappings in an XML configuration file.
+
+
+2)Introduction Of Spring Framework :-
+ - Spring is an open source lightweight framework that allows Java EE 7 developers to build simple, reliable, and scalable 
+   enterprise applications
+ - Uses various new techniques such as Aspect-Oriented Programming (AOP), Plain Old Java Object (POJO), and dependency injection (DI)
+ - Spring framework is a collection of sub-frameworks, also called layers, such as Spring AOP,Spring Object-Relational Mapping(Spring ORM)
+   Spring Web Flow, and Spring Web MVC
+ - First released in 2004 
+
+
+ Features :-
+ 1)IoC container(Inversion of Control) :-
+ - Core container that uses the DI or IoC pattern to implicitly provide an object reference in a class during runtime
+ - This pattern acts as an alternative to the service locator pattern
+ - The IoC container contains assembler code that handles the configuration management of application objects.
+ - org.springframework.beans and org.springframework.context which helps in providing the functionality of the IoC container
+
+ 2)Data Access Framework :-
+ - Allows the developers to use persistence APIs, such as JDBC and Hibernate, for storing persistence data in database.
+
+ 3)Spring MVC Framework :-
+ - Allows you to build Web applications based on MVC architecture
+ - form handling and form validating features of the Spring MVC framework can be easily integrated with all popular view 
+   technologies such as ISP, Jasper Report, FreeMarker, and Velocity.
+
+ 4)Transaction Management :-
+ - Provides Java Transaction API (JTA) for global transactions managed by an application server and local transactions managed by 
+   using the JDBC Hibernate, Java Data Objects (JDO), or other data access APIs.
+ - Develope wide range of transactions using Spring’s declarative and programmatic transaction management.
+
+ 5)Spring Web Services :- 
+ - Provides layered-based approaches that are separately managed by Extensible Markup Language (XML) parsing
+ - Spring provides effective mapping for transmitting incoming XML message request to an object and the developer to easily 
+   distribute XML message (object) between two machines
+
+ 6)JDBC abstraction layer :-
+ - Helps the users in handling errors in an easy and efficient manner.
+ - All SQLExceptions are translated into the DataAccessException class
+ - Spring’s data access exception is not JDBC specific and hence Data Access Objects (DAO) are not bound to JDBC only
+ 
+ 7)Spring TextContext Framework :-
+ - Provides facilities of unit and integration testing for the Spring applications
+ - Provides specific integration testing functionalities such as context management and caching DI of test fixtures, and 
+   transactional test management with default rollback semantics.
 
 
 
-Q- 5 : C 3Marks 
+3)Spring MVC Framework :-
+ - Spring Support MVC architecture which helps to develop flexible and loosely coupled web applications
+
+ Model :- Encapsulates the application data and in general they will consist of POJO.
+ View  :- Responsible for rendering the model data and in general it generates HTML output that the client's browser can interpret.
+ Controller :- Responsible for processing user requests and building an appropriate model and passes it to the view for rendering 
+
+ DispatcherServlet :-
+ - Spring MVC designed around a DispatcherServlet that handles all the HTTP requests and responses
+
+      HTTP Request ->                   -> [HandlerMapping]
+                                        -> [Controller] 
+                      DispatcherServlet -> [View Resoulver]
+      HTTP Response<-                   -> [View]
+
+ Working DispatcherServlet :-
+ - After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller.
+ - Controller takes the request and calls the appropriate service methods based on used GET or POST method. 
+ - The service method will set model data based on defined business logic and returns view name to the DispatcherServlet.
+ - The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request.
+ - Once view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser.
+ - Above component parts of WebApplicationContext which is an extension of the plainApplicationContext with some extra features 
+   necessary for web applications.
+
+ Required Configuration :-
+ - You need to map requests by using a URL mapping in the web.xml file
+ - The [servlet-name]-servlet.xml file will be used to create the beans defined, overriding the definitions of any beans defined with
+   the same name in the global scope.
+ - The <context:component-scan...> tag will be use to activate Spring MVC annotation scanning capability which allows to make use of 
+   annotations like @Controller and @RequestMapping etc.
+ - The InternalResourceViewResolver will have rules defined to resolve the view names. 
+ 
+ Defining Controller :-
+ - DispatcherServlet delegates the request to the controllers to execute the functionality specific to it
+ - @Controllerannotation indicates that a particular class serves the role of a controller
+ - @RequestMapping annotation is used to map a URL to either an entire class or a particular handler method
+ - Next annotation@RequestMapping(method = RequestMethod.GET) is used to declare theprintHello() method as the controller's default 
+   service method to handle HTTP GET request
+ - You will define required business logic inside a service method. You can call another method inside this method as per requirement.
+ - Based on the business logic defined, you will create a model within this method. You can use setter different model attributes and 
+   these attributes will be accessed by the view to present the final result. 
+ - A defined service method can return a String, which contains the name of the view to be used to render the model.
 
 
-Q- 5 : D 5Marks
+
+4)Aspect Oriented Programming(AOP) in Spring :-
+ - AOP as the name suggests uses aspects in programming
+ - It can be defined as the breaking of code into different modules, also known as modularisation, where the aspect is the key 
+   unit of modularity. 
+ - Enable the implementation of crosscutting concerns such as- transaction, logging not central to business logic without 
+   cluttering the code core to its functionality
+
+ Dominant Framework In AOP :-
+ - AOP includes programming methods and frameworks on which modularisation of code is supported and implemented
+                                        AOP
+                              Dominant Framework In AOP
+                      AspectJ          JBoss        Spring 
+
+ 1)AspectJ :- 
+ - Extension for Java programming created at PARC research centre. 
+ - Uses Java syntax and included IDE integrations for displaying crosscutting structure. 
+ - It has its own compiler and weaver, on using it enables the use of full AspectJ language.
+
+ 2)JBoss :- 
+ - Open source Java application server developed by JBoss, used for Java development.
+
+ 3)Spring :- 
+ - Uses XML based configuration for implementing AOP, also it uses annotations which are interpreted by using a library supplied 
+   by AspectJ for parsing and matching
+
+
+ How AOP Works :- 
+ - Spring uses proxy based mechanism i.e. it creates a proxy Object which will wrap around the original object and will take up the advice 
+   which is relevant to the method call. 
+ - Proxy objects can be created either manually through proxy factory bean or through auto proxy configuration in the XML file and get 
+   destroyed when the execution completes. 
+ - Proxy objects are used to enrich the Original behaviour of the real object.
+
+
+ Common Technologies in AOP :- 
+ 1)Aspect :-
+ - The class which implements the JEE application cross-cutting concerns(transaction, logger etc) is known as the aspect. 
+ - It can be normal class configured through XML configuration or through regular classes annotated with @Aspect.
+
+ 2)Weaving :- 
+ - The process of linking Aspects with an Advised Object. 
+ - It can be done at load time, compile time or at runtime time. 
+ - Spring AOP does weaving at runtime.
+ - Let’s write our first aspect class but before that have a look at the jars required and the Bean configuration file for AOP.
+
+ 3)Advice :- 
+ - The job which is meant to be done by an Aspect or it can be defined as the action taken by the Aspect at a particular point. 
+  
+  Types :-
+  1)Before :- 
+  - Runs before the advised method is invoked denoted by @Before annotation
+  
+  2)After :- 
+  - Runs after the advised method completes regardless of the outcome, whether successful or not denoted by @After annotation
+
+  3)AfterReturning :- 
+  - Runs after the advised method successfully completes ie without any runtime exceptions denoted by @AfterReturning annotation
+
+  4)Around :- 
+  - This is the strongest advice among all the advice since it wraps around and runs before and after the advised method
+  - This type of advice is used where we need frequent access to a method or database like- caching
+  - It is denoted by @Around annotation
+
+  5)AfterThrowing :- 
+  - Runs after the advised method throws a Runtime Exception denoted by @AfterThrowing annotation
+
+
+ 4)JoinPoints :- 
+ - An application has thousands of opportunities or points to apply Advice
+ - These points are known as join points
+ - For example – Advice can be applied at every invocation of a method or exception be thrown or at various other points
+ - But Spring AOP currently supports only method execution join points (advising the execution of methods on Spring beans)
+
+ 
+ 5)Pointcut :- 
+ - Since it is not feasible to apply advice at every point of the code, therefore, the selected join points where advice is finally 
+   applied are known as the Pointcut
+ - Often you specify these pointcuts using explicit class and method names or through regular expressions that define a matching class 
+   and method name patterns
+ - It helps in reduction of repeating code by writing once and use at multiple points
+
+
+
+5)Strcut Framework Architecture :-
+ - Struct develop robust web application with the help of MVC architecture.
+
+  Components Of Architecture :-
+  Request     :- Provided by the application developer that is used to be mapped to a particular URI
+  Response    :- Used to transfer the control to another resource which will be responsible for completing the response
+  Tag library :- Helps developers to create the interactive form based applications with server pages
+
+ 
+  Struts Controller Components :-
+  - User send http request which ActionServlet receives it intercepts the URL based on the Struts Configuration files, 
+  - It gives handling of the request to the Action class. 
+  - Action class is a part of the controller and is responsible for communicating with the model layer.
+
+  Struts View Components :-
+  - Responsible for accepting the input from them and displaying information to the user with the help of the model components. 
+  - Mostly we use the JavaServer Pages (JSP) for the view presentation. 
+  - To extend the capability of the view we can use the Custom tags, java script etc.
+
+  Struts Model Component :-
+  - Model component provides a model of the business logic behind a Struts program
+  - Model components are generally a java class
+  - It provides interfaces to databases or back-ends systems
+
+  Diagram :- https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
