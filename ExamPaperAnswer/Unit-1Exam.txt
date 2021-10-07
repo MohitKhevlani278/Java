@@ -1,15 +1,15 @@
 ------------------------------------------QuestionPaper-1------------------------------------------------------------------------------
- *Q-1 : A 1 Marks                                 
- 1)List Out Various JDBC Driver :-
+Q-1 : A 1 Marks                                 
++1)List Out Various JDBC Driver :-
  - JDBC-ODBC bridge driver
  - Native-API driver (partially java driver)
  - Network Protocol driver (fully java driver)
  - Thin driver (fully java driver)
 
- 2)JDBC Stands for :-
+2)JDBC Stands for :-
  - Java Database connectivity
 
- 3)ODBC Stands for :-
+3)ODBC Stands for :-
  - Open Database connectivity
 
 
@@ -36,112 +36,120 @@ Q-1 : B 3 Marks
  2)Explain Thin and Thick Client :-
 
  1)Thick Client :- 
- - A thick client is one of the components in client-server computing architecture that is connected to the server through a network 
-   connection and doesn’t consume any of the server's computing resources to execute applications.
- - A thick client may also be known as a heavy, fat or rich client
- - If Driver require some extra Component such Type of Driver is called Thick Driver.
+ - Thick client is connected to the server through  network connection and doesn’t consume any of the 
+   server's computing resources to execute applications
+ - A thick client also known as a heavy, fat or rich client
+ - If Driver require some extra Component such Type of Driver is called Thick Driver
  Ex :-  Type-1, Type-2 and Type-3 Drivers 
  
 
  2)Thin Client :-
- - A thin client is a networked computer with few locally stored programs and a heavy dependence on network resources. 
- - It have very limited resources of its own, perhaps operating without auxiliary drives, CD-R/W/DVD drives or even 
-   software applications.
- - If Driver won’t require any extra Component to communicate with Database, such type of Driver is called Thin Driver.
+ - Thin client is a networked computer with few locally stored programs and a heavy dependence on network 
+   resources
+ - It have very limited resources of its own
+ - If Driver not require any extra component to communicate with Database, such type of Driver is called 
+   Thin Driver
  Ex :- Type-4 Driver 
 
 
 
  3)Explain JDBC Architecture :-
 
- - A Standard java api for database-independent connectivity between java applications and a wide range of databases
- - Provide complete set of interfaces that allows for portable access to an underlying database
+ - Standard java api for database-independent connectivity between java applications and a wide range of 
+   databases
+ - Provide complete set of interfaces that allows portable access to an underlying database
   
  Architecture :-
- 1)Application : It is a Java application which communicates with a data source
- 
- 2)JDBC API    : JDBC API use DriverManager and databse-specific driver to provide transparent connectivity to database
- Important classes and interfaces :-  DriverManager, Driver, Connection, Statement, PreparedStatement, 
-                                      CallableStatement, ResultSet, SQL data
- 
- 3)DriverManager :- Manages List of databases drivers 
-                  - Ensure that correct driver is used to access each data source
- 
- 4)JDBC drivers :- To communicate with a data source need a JDBC driver that intelligently communicates with the respective data source.
- 
-
- Diagram :-                     Java Application
+  Diagram :-                    Java Application
                                    JDBC API
                               JDBC Driver-Manager
-                      JDBC Driver   JDBC Driver   JDBC Driver  
+                      Driver         Driver       Driver  
                       Oracle         Mysql        MSAccess   (Database)
 
- Component :- 4 main 
- 1)JDBC API :-  It provides various methods and interfaces for easy communication with the database.
-   		          Package :- 1)java.sql.*;  2)javax.sql.*;   
- 
- 2)Driver manager :- Manages List of databases drivers 
-                   - Ensure that correct driver is used to access each data source
+  Component :- 4 main 
   
- 3)JDBC Test suite :- Used to test the operation(such as insertion, deletion, updation) being performed by JDBC Drivers.
+  1)JDBC API :-  
+  - Provides various methods and interfaces for communication between java application and database
+  - Package that used are :-1)java.sql.*;  2)javax.sql.*;   
  
- 4)JDBC-ODBC Bridge Drivers :- Connects database drivers to the database
-                             - This bridge translates JDBC method call to the ODBC function call
-  			                     - Includes native library to access odbc characteristics
+  2)Driver manager :- 
+  - Manages List of databases drivers ensure that correct driver used to access data-source
+  
+  3)JDBC Test-suite :- 
+  - Used to test the database connection using JDBC Drivers
+ 
+  4)JDBC-ODBC Bridge Drivers :- 
+  - Connects database drivers to the database
+  - Translates JDBC method to the ODBC method
+  - Includes native library to access odbc characteristics
 
- 5)Connection :- All Connection with databse is through the connection object only
+  5)Connection :- 
+  - All Connection with databse is through connection object only  
 
- 6)Statement :- Use this object ot submit the sql statement to the database
+  6)Statement :- 
+  - Use this object to submit sql statement to the database
 
- 7)ResultSet :- Hold the data retrieved from the database after ther execute query using the statement object
+  7)ResultSet :- 
+  - Hold the retrieved data from the database using the statement object 
 
- 8)SQLException :- Handles database related errors
+  8)SQLException :- 
+  - Handles database related errors
 
 
 
  4)What is container? Explain types of container? :-
 
- - Containers are the interface between a component that supports platform-specific functionality to the component
- - Container settings customize which support provided by the Java EE server, including such services as security, transaction 
-   management, JNDI and remote connectivity. 
+ - Container, in the context of Java development, refer server that is responsible for managing lifecycle 
+   of Web applications.
+ - Container is a kind of component that holds and manages other components
+ - Container settings customizable which provided by the Java EE server such services like security, transaction 
+   management, JNDI and remote connectivity
  - Also manages nonconfigurable services
  - J2EE server a runtime portion which provides EJB And Web Container to process requests
   
-  Diagram :- https://docs.oracle.com/cd/E17802_01/j2ee/j2ee/1.4/docs/tutorial-update6/doc/images/overview-serverAndContainers.gif
+ Diagram :- https://docs.oracle.com/cd/E17802_01/j2ee/j2ee/1.4/docs/tutorial-update6/doc/images/overview-serverAndContainers.gif
 
-  Types of containers :-
-  1)Application-Client Container :- Manages the execution of application client components on the client side
+ Types of containers :-
+  1)Application-Client Container :- 
+  - Manages the execution of application client components on the client side
   
-  2)Web Container :- Manages the execution of web pages, servlets, JSP, EJB and URL Mapping for Java EE applications.
+  2)Web Container :- 
+  - Manages the execution of web pages, servlets, JSP, EJB and URL Mapping for Java EE applications
  
-  3)EJB Container :- Consists of server components that contain business logic 
-                   - Manages the execution of enterprise beans with binding to the naming service
-                   - Perform transaction actions 
+  3)EJB Container :- 
+  - Consists server components that contain business logic 
+  - Manages the execution of enterprise beans with binding to the naming service
+  - Perform transaction actions 
 		             
-  4)Applet Container :- Manages the execution of applets
+  4)Applet Container :- 
+  - Manages the execution of applets
 
   Extra :-
-  Tomcat as Container :- Long-lived, Open-source java servlet container that implement core JAVAEE such as servlet, Jsp and WebSocket
-                      -  First released in 1998 by Apache Software Foundation Project
-                      -  After 4 years java own    
-'=
+  Tomcat as Container :- 
+  - Open-source java servlet container that implement core JAVA EE such as servlet, Jsp and WebSocket
+  - First released in 1998 by Apache Software Foundation 
+  - After 4 years java own it  
+
 
 Q-3 : C 
 
- 1)Exaplin database metadata interface :-
+ 1)Exaplin DatabaseMetadata Interface :-
 
- - DatabaseMetaData interface provides methods to get meta data of a database such as database product name, database product version, 
-   driver name, name of total number of tables, name of total number of views etc. 
+ - DatabaseMetaData interface provides methods to get metadata of a database such as database product name, 
+   database product version, driver name, name of total number of tables, name of total number of views etc. 
  
-  Commonly used methods of DatabaseMetaData interface :-
+  Methods :-
   1)public String getDriverName()    : it returns the name of the JDBC driver.
   2)public String getDriverVersion() : it returns the version number of the JDBC driver.
   3)public String getUserName()      : it returns the username of the database.
   4)public String getDatabaseProductName() : it returns the product name of the database.
   5)public String getDatabaseProductVersion() : it returns the product version of the database.
   6)public ResultSet getTables(String catalog, String schemaPattern, String tableNamePattern, String[] types) : 
-    it returns the description of the tables of the specified catalog. 
-    The table type can be TABLE, VIEW, ALIAS, SYSTEM TABLE, SYNONYM etc
+    - it returns the description of the tables of the specified catalog. 
+    - Table type can be TABLE, VIEW, ALIAS, SYSTEM TABLE, SYNONYM etc
+  
+  How to get the object of DatabaseMetaData :-
+  Syntax: public DatabaseMetaData getMetaData() throws SQLException  
 
   Example :-
 			DatabaseMetaData dbmd=con.getMetaData();  
@@ -149,34 +157,34 @@ Q-3 : C
 
  //Optional 
  Explain ResultsetMetadata interface :-
- - The metadata means data about data 
- - If you have to get metadata of a table like total number of column, column name, column type etc. ,
- - ResultSetMetaData interface is useful because it provides methods to get metadata from the ResultSet object
+ - ResultSetMetaData interface is used to get metadata about database table from the ResultSet object
+   such as total number of column, column name, column type etc
 
- Commonly used methods of ResultSetMetaData interface :-
-   Method						Description
-   public int    getColumnCount()			       - Returns the total number of columns in the ResultSet object
-   public String getColumnName(int index)	   - Returns the column name of the specified column index
-   public String getColumnTypeName(int index)- Returns the column type name for the specified index
-   public String getTableName(int index)	   - Returns the table name for the specified column index
+  Method :-
+  public int    getColumnCount()			       - Returns total number of columns in the ResultSet object
+  public String getColumnName(int index)	   - Returns column name of the specified column index
+  public String getColumnTypeName(int index) - Returns column type name of the specified index
+  public String getTableName(int index)	     - Returns table name for the specified column index
 
   How to get the object of ResultSetMetaData :-
-  Syntax: public ResultSetMetaData getMetaData()throws SQLException  
+  Syntax: public ResultSetMetaData getMetaData() throws SQLException  
 
  Example of ResultSetMetaData interface :
       PreparedStatement ps=con.prepareStatement("select * from emp");  
-			ResultSet rs=ps.executeQuery();  
-			ResultSetMetaData rsmd=rs.getMetaData();  
+			ResultSet rs = ps.executeQuery();  
+			ResultSetMetaData rsmd = rs.getMetaData();  
       System.out.println("Total columns: "+rsmd.getColumnCount());  
 
 
 
 2)Explain Method Of ResultSet Interface :-
  - Used to retrieve data from the database
- - The object of ResultSet maintains a cursor pointing to a row of a table Initially, cursor points to before the first row.
- - To move forward and backward direction by passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE in createStatement(int,int)
-   method  
-   Syntax :- Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);  
+ - Object of ResultSet maintains a cursor pointing to a row of a table 
+ - Initially, cursor points to before the first row.
+ - To move forward and backward direction by passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE
+   in createStatement(int,int) method  
+ 
+ Syntax :- Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);  
  
  Methods :-
  1)public boolean next() 
@@ -211,38 +219,43 @@ Q-1 :- A
  1)DSN stand for :-
  - Data Source Name
  
+ 2)JDBC Stands for :-
+ - Java Database connectivity
+
+ 3)ODBC Stands for :-
+ - Open Database connectivity
+
  4)What is J2EE :-
- - J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used for configuring web-based enterprise applications
- - It contains several API, protocols, and run time environment for the development of network-based web services
- - It creates multi-tiered applications, large scale, reliable, and secure network applications
-
-
+ - J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used for develop 
+   multi-tiered large scale, reliable, and secure web-based enterprise applications
+ 
 
 Q-1 :- B 2 Marks
 
-
  1)What is N-tier Architecture :-
- - N-tier architecture is a client-server architecture concept in software engineering where the presentation, processing and 
-   data management functions are both logically and physically separated
+ - N-tier architecture is a client-server architecture concept in software engineering where the presentation, 
+   processing and data management functions are both logically and physically separated
  - In N-tier, 'N' refers to a number of tiers or layers are being used like – 2-tier, 3-tier or 4-tier, etc.
  - So it is also called 'Multi-Tier Architecture'
- - The n-tier architecture is an industry-proven software architecture model. 
- - Suitable to support enterprise level client-server applications by providing solutions to scalability, security, reusability and 
-   maintainability which helps developers to create flexible and reusable applications.
+ - N-tier architecture is an industry-proven software architecture model
+ - Suitable to enterprise level client-server applications by providing scalability, security, reusability
+   and maintainability which helps developers to create flexible and reusable applications.
 
 
  2)Explain commit and rollback method of connection interface :-
  - A Connection is the session between java application and database.
  
-  1)public void commit(): saves the changes made since the previous commit/rollback permanent.
-  2)public void rollback(): Drops all changes made since the previous commit/rollback
+  1)public void commit() :- 
+  - Saves the changes made since the previous commit/rollback permanent
+  
+  2)public void rollback() :- 
+  - Drops all changes made since the previous commit/rollback
 
 
-
-Q-1 :- C Alerdy in QuestionPaper-1 3marks
+Q-1 :- C  3marks
  
- 1)Explain Thin and Thick client :-
- 2)Explain JDBC Architecture :-
+ 1)Explain Thin and Thick client :- Alerdy in QuestionPaper-1
+ 2)Explain JDBC Architecture     :- Alerdy in QuestionPaper-1
 
 
 Q-1 :- D 5Marks
@@ -250,55 +263,59 @@ Q-1 :- D 5Marks
 1)Explain various J2EE api in brief :-
 
   1)Enterprise JavaBeans Technology(EJB) :-
-  - An Enterprise JavaBeans component, or enterprise bean, is a body of code having fields and methods to implement modules of 
-    business logic. 
-  - You can think of an enterprise bean as a building block that can be used alone or with other enterprise beans to execute 
-    business logic on the J2EE ofserver.
+  - Enterprise JavaBeans component, or enterprise bean, is a body of code having fields and methods to 
+    implement modules of business logic
+  - You can think of an enterprise bean as a building block that can be used alone or with other enterprise
+    beans to execute business logic on the J2EE ofserver
 
   2)Servlet :-
-  - A servlet class extends the capabilities of servers that host applications that are accessed by way of a request-response 
-    programming model. 
+  - Servlet class extends the capabilities of servers that host applications that are accessed by way of a
+    request-response programming model.
 
   3)JavaServer Pages (JSP) :-
-  - lets you put snippets of servlet code directly into a text-based document
+  - Used to display dynamically generated pages
 
   4)Java Message Service(JMS) :-
-  - allows J2EE application components to create, send, receive, and read messages. 
+  - Allows J2EE application components to create, send, receive, and read messages
   - It enables distributed communication that is loosely coupled, reliable, and asynchronous
 
   5)Java Transaction API(JTA) :-
-  - The Java Transaction API (JTA) provides a standard interface for demarcating transactions. 
-  - The J2EE architecture provides a default auto commit to handle transaction commits and rollbacks
+  - Java Transaction API (JTA) provides a standard interface for demarcating transactions 
+  - J2EE architecture provides a default auto commit to handle transaction commits and rollbacks
 
   6)JavaMail API :-
-  - The JavaMail API send email notifications 
-  - has two parts: an application-level interface used by the application components to send mail, and a service provider interface. 
+  - JavaMail API send email notifications 
+  - JavaMails has two parts :- 
+    - Application-level interface 
+    - Service provider interface 
  
   7)Java Database Connectivity (JDBC):-
   -  invoke SQL commands from Java programing language methods
   
   8)Java Naming and Directory Interface :-(JNDI)
-  -  provides applications with methods for performing standard directory operations, such as associating attributes with objects 
-     and searching for objects using their attributes
+  - Provides applications with methods for performing standard directory operations, such as associating 
+    attributes with objects and searching objects using their attributes
 
   9)Java Authentication and Authorization Service :-(JAAS)
-  -  JAAS is a Java programing language version of the standard Pluggable Authentication Module (PAM) framework, which extends the 
-     Java 2 Platform security architecture to support user-based authorization
+  - JAAS is a Java programing language version of the standard Pluggable Authentication Module (PAM) framework, 
+    which extends the Java 2 Platform security architecture to support user-based authorization
 
-  10)JavaBeans Activation Framework :-
-  - JAF provides standard services to determine the type of an arbitrary piece of data, encapsulate access to it, discover the 
-    operations available on it, and create the appropriate JavaBeans component to perform those operations.
+  10)JavaBeans Activation Framework(JAF) :-
+  - JAF provides standard services to determine the type of an arbitrary piece of data, encapsulate access to it,
+    discover the operations available on it, and create the appropriate JavaBeans component to perform 
+    those operations.
 
-  11)Java API for XML Processing :-
-  - JAXP enables applications to parse and transform XML documents independent of a particular XML processing implementation.
+  11)Java API for XML Processing(JAXP):-
+  - Enables applications to parse and transform XML documents independent of a particular XML processing 
+    implementation.
  
-  12)Java API for XML BASED RPC  (XML Web Services (JAX-WS)) Fullform :- Java Architecture for XML Binding (JAXB)
-  -  uses the SOAP(standard object access protocol)standard and HTTP, so client programs can make XML-based remote procedure calls(RPCs)
-     over the Internet.
-  -  also support wsdl(web service descriptor language) and provide authentication
+  12)Java API for XML BASED RPC  (XML Web Services (JAX-WS)) Fullform :- Java Architecture for XML Binding(JAXB)
+  -  Use the SOAP(standard object access protocol)standard and HTTP, so client programs can make XML-based 
+     remote procedure calls(RPCs) over the Internet
+  -  Also support WSDL(web service descriptor language) and provide authentication
 
   13)SOAP with Attachments API for Java :-
-  -  a low-level API on which JAX-RPC depends
+  -  Low-level API on which JAX-RPC depends
   -  SAAJ enables the production and consumption of messages that conform to the SOAP with attachments note
 
   14)Java API for XML Registries(JAXR):-
@@ -306,11 +323,9 @@ Q-1 :- D 5Marks
   -  JAXR supports the ebXML Registry and Repository standards and the emerging UDDI specifications
 
   15)J2EE Connector Architecture :-
-  - used by J2EE tools vendors and system integrators to create resource adapters that support access to enterprise information systems 
-    that can be plugged in to any J2EE product.
+  - Used by J2EE tools vendors and system integrators to create resource adapters that support access to 
+    enterprise information systems that can be plugged in to any J2EE product.
   
-
-
 
  2)Explain Database Metadata Interface :- Alerdy in QuestionPaper-1
 
@@ -319,7 +334,7 @@ Q-1 :- D 5Marks
 
 Q-1 : A
 
- 1)What is J2EE :- Alerdy Discuss QuestionPaper-2
+ 1)What is J2EE     :- Alerdy Discuss QuestionPaper-2
  
  2)________ class holds the list of all registered database drivers,which are used for connection
  - DriverManager class
@@ -332,16 +347,19 @@ Q-1 : A
  
 Q-1 : B 2Marks 
 
- 1)What is Enterprise-Application? List Out its Characteristics :-
- - Enterprise Application software, is computer software used to satisfy the needs of an organization rather than individual users
+1)What is Enterprise-Application? List Out its Characteristics :-
+ - Enterprise Application software, is computer software used to satisfy the needs of an organization rather
+   than individual users
   
- Characteristics :- 
- - Widesprad performance 
- - Scalability
- - Performance
+   Characteristics :- 
+   - Scalability
+   - Security
+   - High Performance
+   - Maintainability
 
- 2)Differnce between Statement, PreparedStatement and CallableStatement :-
- 
+
+2)Differnce between Statement, PreparedStatement and CallableStatement :-
+
   1)Statement :-
   - Used to execute DDL queries statement like create, alter, drop 
   - Can't pass parameters to sql query at runtime
@@ -364,58 +382,59 @@ Q-1 : B 2Marks
 Q-1 : C 3Marks
  
  1)Differnce between execute, executeQuery and executeUpdate :- Alerdy in QuestionPaper-1
- 2)What is container? Explain Type of J2EE Container :- Alerdy in QuestionPaper-1
+ 2)What is container? Explain Type of J2EE Container         :- Alerdy in QuestionPaper-1
 
 
 Q-1 : D 5Marks
 
  1)Explain ResultSet Interface Method :- Alerdy in QuestionPaper-1
- 2)Explain Various J2EE Api :- Alerdy in QuestionPaper-2
+ 2)Explain Various J2EE Api           :- Alerdy in QuestionPaper-2
 
 
 
 ----------------------------------------------------IMP Question ----------------------------------------------------------------
 
-#1)Explain connection interface :- 
+1)Explain connection interface :- 
 - Connection is the session between java application and database
 - Connection interface is a factory of Statement, PreparedStatement, and DatabaseMetaData
 
  Method :-
  1)public Statement createStatement() :- 
- - creates a statement object that can be used to execute SQL queries.
+ - createsStatement object used to execute SQL queries
  
  2)public Statement createStatement(int resultSetType,int resultSetConcurrency) :- 
- - Creates a Statement object that will generate ResultSet objects with the given type and concurrency.
+ - Creates a Statement object that will generate ResultSet objects with the given type and concurrency
   
- 3) public void setAutoCommit(boolean status) :- Used to set the commit status.By default it is true.
- 4) public void commit()   : saves the changes made since the previous commit/rollback permanent.
- 5) public void rollback() : Drops all changes made since the previous commit/rollback.
- 6) public void close()    : closes the connection and Releases a JDBC resources immediately. 
+ 3) public void setAutoCommit(boolean status) :- Used to set the commit status.By default it is true
+ 4) public void commit()   : Saves the changes made since the previous commit/rollback permanent
+ 5) public void rollback() : Drops all changes made since the previous commit/rollback
+ 6) public void close()    : Closes the connection and Releases a JDBC resources immediately
 
 
-#2)Types Of Drivers :- 
+2)Types Of Drivers :- 
 
  Type 1: JDBC-ODBC Bridge Driver :-
  - Utilize the ODBC driver to connect to database
  - Acts as a bridge between JDBC and another database connectivity mechanism such as ODBC
- - Translates the JDBC API calls to ODBC API calls and sends them via native API calls directly to the ODBC driver.
- - Implemented in the sun.jdbc.odbc.JdbcOdbcDriver class.
+ - Translates the JDBC API calls to ODBC API calls and sends them via native API calls directly to the ODBC 
+   driver
+ - Implemented in the sun.jdbc.odbc.JdbcOdbcDriver class
  
 
  Type 2: JDBC-Native API :-
- - JDBC API calls are converted into native C/C++ API calls, which are unique to the database. 
- - Provided by the database vendors and used in the same manner as the JDBC-ODBC Bridge. 
- - Vendor-specific driver must be installed on each client machine.
- - Oracle Call Interface (OCI) driver is an example of a Type 2 driver.
+ - JDBC API calls are converted into native C/C++ API calls, which are unique to the database
+ - Provided by the database vendors and used in the same manner as the JDBC-ODBC Bridge
+ - Vendor-specific driver must be installed on each client machine
+ - Oracle Call Interface (OCI) driver is an example of a Type 2 driver
 
  
  Type 3: JDBC-Net pure Java :-
  - Three-tier approach is used to access databases 
  - JDBC clients use standard network sockets to communicate with a middleware application server
- - The socket information is then translated by the middleware application server into the call format required by the DBMS, and 
-   forwarded to the database server
- - This kind of driver is extremely flexible, since it requires no code installed on the client and a single driver can actually 
-   provide access to multiple databases
+ - The socket information is then translated by the middleware application server into the call format required
+   by the DBMS, and forwarded to the database server
+ - This kind of driver is extremely flexible, since it requires no code installed on the client and a single 
+   driver can actually provide access to multiple databases
  
 
  Type 4: 100% Pure Java :-
@@ -428,10 +447,9 @@ Q-1 : D 5Marks
 
  Which Driver should be Used?
  - If you are accessing one type of database, such as Oracle, Sybase, or IBM, the preferred driver type is 4
- - If your Java application is accessing multiple types of databases at the same time, type 3 is the preferred driver
- - Type 2 drivers are useful in situations, where a type 3 or type 4 driver is not available yet for your database
- - The type 1 driver is not considered a deployment-level driver, and is typically used for development and testing purposes only
-
+ - Accessing multiple databases at the same time, type 3 is the preferred driver
+ - Type 2 drivers are useful in situations, where a type3 or type4 driver is not available database
+ - type 1 driver is not considered at deployment level but used for development and testing purposes only
  
 
 3)Explain J2EE Architecture :- 

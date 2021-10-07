@@ -420,6 +420,9 @@ QuestionPaper3
 
 
 --------------------------------------------------Optional----------------------------------------------------------------
+What Is a Spring Context?
+- Spring contexts are also called Spring IoC containers, which are responsible for instantiating, configuring, and assembling beans 
+  by reading configuration metadata from XML, Java annotations, and/or Java code in the configuration files.
 
 1)What is Spring Bean :-
  - Bean is an object that the Spring container instantiates, assembles, and manages.

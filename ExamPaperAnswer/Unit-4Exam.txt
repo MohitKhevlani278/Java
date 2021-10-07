@@ -155,11 +155,13 @@ Q- 4 : B 3Marks
  
 
 4)Explain Annotation? :-
- - Java annotation is a form of metadata that can be added to Java source code. 
- - Hibernate is the most popular implement of JPA specification annotation and provides some additional annotations.
+ - Hibernate Annotations is the powerful way to provide the metadata for the Object and Relational Table mapping. 
  - JPA annotations are used in mapping java objects to the database tables, columns etc
  - All the metadata is clubbed into the POJO java file along with the code, this helps the user to understand the table structure 
    and POJO simultaneously during the development
+ - Hibernate annotations is the newest way to define mappings without a use of XML file.
+ - You can use annotations in addition to or as a replacement of XML mapping metadata.
+
 
   Hibernate Annotation :-
   @Entity :- 
@@ -206,7 +208,39 @@ Q- 4 : C 5Marks
 - 
 
 2)Explain Inheritance Annotation :-
-- 
+ - In the previous page, we have mapped the inheritance hierarchy with one table only using xml file. 
+ - Here, we are going to perform this task using annotation. 
+ - You need to use @Inheritance(strategy=InheritanceType.SINGLE_TABLE), @DiscriminatorColumn and @DiscriminatorValue annotations 
+   for mapping table per hierarchy strategy. 
+ - In case of table per hierarchy, only one table is required to map the inheritance hierarchy. 
+ - Here, an extra column (also known as discriminator column) is created in the table to identify the class.
+
+ Example :-
+ import javax.persistence.*; 
+ @Entity  
+
+ @Table(name = "employee101")
+
+ @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+
+ @DiscriminatorColumn(name="type",discriminatorType=DiscriminatorType.STRING) 
+
+ @DiscriminatorValue(value="employee")
+ 
+ public class Employee {  
+    @Id  
+    
+    @GeneratedValue(strategy=GenerationType.AUTO)    
+    
+    @Column(name = "id")  
+    private int id;
+    
+    @Column(name = "name")  
+    private String name;    
+    
+    //setters and getters  }  
+
+
 
 --------------------------------------------------Question Paper-2----------------------------------------------------------------
 
@@ -283,7 +317,44 @@ Q- 4 : C 3Marks
 
 Q- 4 : D 5Marks
 1)Explain Hibernate Session :-
-- 
+ - A Session is used to get a physical connection with a database. 
+ - The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database.
+ - Persistent objects are saved and retrieved through a Session object.
+ - The session objects should not be kept open for a long time because they are not usually thread safe and they should be created 
+   and destroyed them as needed.
+ - The main function of the Session is to offer create, read and delete operations for instances of mapped entity classes.
+ - Instances may exist in one of the following three states at a given point in time:
+ - A Session instance is serializable if its persistent classes are serializable. 
+
+ 1)transient :- 
+ - A new instance of a persistent class which is not associated with a Session and has no representation in the database and no 
+   identifier value is considered transient by Hibernate.
+
+ 2)persistent :- 
+ - You can make a transient instance persistent by associating it with a Session. 
+ - A persistent instance has a representation in the database, an identifier value and is associated with a Session.
+ 
+ 3)detached :-
+ - Once we close the Hibernate Session, the persistent instance will become a detached instance
+  
+ Example:- Session session = factory.openSession(); 
+           Transaction tx = null; 
+           try { 
+                    tx = session.beginTransaction(); // do some work ... 
+                    tx.commit(); 
+                }
+            catch (Exception e) 
+            { 
+                if (tx!=null) tx.rollback(); 
+                e.printStackTrace(); 
+            }
+            finally 
+            { session.close(); } 
+    
+ - If the Session throws an exception, the transaction must be rolled back and the session must be discarded.
+
+ 
+
 
 2)Explain implementation of MVC Architecture                :- Alerdy in QuestionPaper-1
 
