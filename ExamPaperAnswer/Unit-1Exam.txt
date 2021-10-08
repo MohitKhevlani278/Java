@@ -36,16 +36,16 @@ Q-1 : B 3 Marks
  2)Explain Thin and Thick Client :-
 
  1)Thick Client :- 
- - Thick client is connected to the server through  network connection and doesn’t consume any of the 
-   server's computing resources to execute applications
+ - Thick client is connected to the server through  network connection that doesn’t consume server's 
+   computing resources to execute applications
  - A thick client also known as a heavy, fat or rich client
  - If Driver require some extra Component such Type of Driver is called Thick Driver
  Ex :-  Type-1, Type-2 and Type-3 Drivers 
  
 
  2)Thin Client :-
- - Thin client is a networked computer with few locally stored programs and a heavy dependence on network 
-   resources
+ - Thin client is a networked connected computer with few locally stored programs and a heavy dependence 
+   on network resources
  - It have very limited resources of its own
  - If Driver not require any extra component to communicate with Database, such type of Driver is called 
    Thin Driver
@@ -111,7 +111,7 @@ Q-1 : B 3 Marks
 
  Types of containers :-
   1)Application-Client Container :- 
-  - Manages the execution of application client components on the client side
+  - Manages the execution of application components on the client side
   
   2)Web Container :- 
   - Manages the execution of web pages, servlets, JSP, EJB and URL Mapping for Java EE applications
@@ -180,8 +180,8 @@ Q-3 : C
 2)Explain Method Of ResultSet Interface :-
  - Used to retrieve data from the database
  - Object of ResultSet maintains a cursor pointing to a row of a table 
- - Initially, cursor points to before the first row.
- - To move forward and backward direction by passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE
+ - Initially, cursor points before the first row
+ - To move forward and backward direction passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE
    in createStatement(int,int) method  
  
  Syntax :- Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);  
@@ -226,8 +226,8 @@ Q-1 :- A
  - Open Database connectivity
 
  4)What is J2EE :-
- - J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used for develop 
-   multi-tiered large scale, reliable, and secure web-based enterprise applications
+ - J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used to develop 
+   multi-tiered, large scale, reliable, robust and secure web-based enterprise applications
  
 
 Q-1 :- B 2 Marks
@@ -469,13 +469,14 @@ Q-1 : D 5Marks
  - Where user interface dynamically generated which requires Servlet, Jsp and static content 
 
  3)Business Logic/Layer :- 
- - Component like EJB that contain business rules and other business functions are encapsulated within this layer
+ - Component like EJB that contain business rules and other business functions are encapsulated within this 
+   layer
   
    Types Of EJB Component :- 
    
    1)SessionBean :-
-   - A bean which can be invoked by a client over local, remote or web service client views, programmatically and encapsulates 
-     business logic is known as a session bean.  
+   - A bean which can be invoked by a client over local, remote or web service client views, programmatically 
+     and encapsulates business logic is known as a session bean.  
      
      Types :- 
      1)Stateful :-
@@ -485,14 +486,16 @@ Q-1 : D 5Marks
      - A conversational state with the client is not maintained by a stateless session bean.
 
      3)Singleton :-
-     - A bean which is instantiated once per application and exists throughout the lifecycle of the developed application 
+     - A bean which is instantiated once per application and exists throughout the lifecycle of the developed 
+       application 
 
    2)EntityBean :-
     - Used to manage data which is persistent, to perform complex business logic and can be uniquely 
       identified by making use of primary key is known as an entity bean
 
    3)Message-Driven Bean :- 
-   - allowed to process messages asynchronously by making use of message driven beans with the help of JMS(Java Message Service)
+   - Allowed to process messages asynchronously by making use of message driven beans with the help of 
+     JMS(Java Message Service)
 
 
  4)DataAccess Layer :-
@@ -501,7 +504,8 @@ Q-1 : D 5Marks
 
  Advantage :-
  - Enterprise applications are reliable, secure, and scalable
- - It increases the productivity of a programmer as it is easy to learn and use with the help of the Java language
+ - It increases the productivity of a programmer as it is easy to learn and use with the help of the Java 
+   language
  - It can operate on multiple platforms
  - It is portable across different machines, vendors, and servers
 
