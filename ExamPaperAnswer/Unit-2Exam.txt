@@ -223,16 +223,17 @@ Q-2 : D 5Marks
 Q-3 : A
 
 1)What is RMI :-
-- RMI is an API which allows an object to invoke a method on an object that exists in another address space, which could be on the 
+- RMI is an API which allows object to invoke method on object that exists in another address space, which could be on the 
   same machine or on a remote machine.
 
 2)List of Servlet Lifecycle Method :- Alerdy in QuestionPaper-1
 
 3)Which method used to read Servlet Initalization Parameters? 
-- getInitParameter(String name) method from the parent javax.servlet.GenericServlet class.
+- getInitParameter()
 
 4)To Define Remote method interface in rmi, we should extend _____ class
 - UnicastRemoteObject class of java.rmi package
+
 
 Q-3 : B 2Marks
 
