@@ -1,5 +1,4 @@
------------------------------------------------- Question Paper-1 ----------------------------------------------------------
-
+-------------------------------------------------------- Question Paper-1 --------------------------------------------------------------
 Q-1 : A
 
 1)RMI stands for :-
@@ -14,142 +13,108 @@ Q-1 : A
   3)destroy
 
 
-Q-2 : B 3Marks
+Q-1 : B 3Marks
 
-1)Explain skeleton class of RMI :-
-
- - The skeleton is an object, acts as a gateway for the server side object
- - All the incoming requests are routed through it.
- - Available in java.rmi.server class and interface Skeleton 
- - Skeleton interface is used solely by the RMI implementation.
+1)Explain Skeleton Class of RMI :-
+ - Skeleton is an object, acts as a gateway for the server side object
+ - All incoming requests are routed through it.
+ - Available in java.rmi.server package.
  
-
  Performs following tasks :-
- - It reads the parameter for the remote method
- - It invokes the method on the actual remote object, and
- - It writes and transmits (marshals) the result to the caller.
-
- Task :-
- - Unmarshalling the parameters
- - Invoking the real object’s required method which on the server
- - Capturing the value returned or exception returned by the invoked call on the server.]
+ - Unmarshalling parameters.
+ - Reads parameter for remote method. 
+ - Invokes method, writes and transmits on it.
  - Marshaling this value.
- - Sending the package along with the value in the form of marshaled back to the stub on the client on the machine
-
+ - Sending back to stub(caller) on client machine.
  
 
 2)Explain HttpSession :-
- - A Session is limited interval of time in which two systems communicate with each other.
- - Web applications use session tracking to maintaining the state of the user inorder to recongize client
- - Servlet provide an interface called HttpSession that used to create sessions
- - HttpSession object is used to store entire session with a specific client
- - We can store, retrieve and remove attribute from HttpSession object
- - getSession() method of the HttpServletRequest object use to access session object
- - setAttribute() create sesssion scope of one servlet and getAttribute() method fetch that attribute session scope from another servlet
-
+ - Session is limited interval of time in which two systems communicate with each other.
+ - Use to maintaining state of the user. 
+ - Servlet provide an HttpSession interface create session.
+ - WebContainer generate session ID.
+ 
  Syntax :- Httpsession session = request.getSession(); 
 
- Methods			                Description
- 1)getCreationTime()		    returns the time when the session was created, measured in milliseconds 
- 2)getId()			            returns a string containing the unique identifier assigned to the session.
- 3)getLastAccessedTime()	  returns the last time the client sent a request associated with the session
- 4)etMaxInactiveInterval()	returns the maximum time interval, in seconds.
- 5)invalidate()		          destroy the session
- 6)boolean isNew()		      returns true if the session is new else false
- 7)setMaxInactiveInterval(int interval) Specifies the time, in seconds,after servlet container will invalidate the session. 
+  Methods			                Description
+  getSession()              Returns current session associated with this request, if not create new session.
+  setAttribute()            Create session scope 
+  getAttribute()            Fetch session scope from another servlet.
+  getCreationTime()		      Returns time when Session created, measured in milliseconds.
+  getId()			              Returns string containing unique session id.
+  getLastAccessedTime()	    Returns last time when clientsent request with associated session.
+  invalidate()		          Destroy the session
+  boolean isNew()		        Returns true if the session is new else false
+  setMaxInactiveInterval(int interval) : Specifies time in seconds, after servlet container will invalidate session. 
   
 
- Works :-
-  - On client's first request, the Web Container generates a unique session ID and gives it back to the client with response. 
-  - This is a temporary session created by web container.
-  - Client sends back the session ID with each request. 
-  - Web container identify from where the request is coming
-  - Web Container uses this ID, finds the matching session ID and associates the session with the request
-
- 
- //Optional
- Advantages :-
- - Any kind of object can be stored in the session like text or database etc. 
- - Usage of the session is not dependent on the client's browser
- - Secure and Transparent
-
- Disadvantage :- 
- - Performance overhead because session objects stored on the server
- - Overhead due to seralization and deserialization data
-
 3)Explain Servlet Lifecycle :- 
- - Servlet Lifecycle can be defined as the entire process from its creation till the destruction
- - Entier Lifecycle managed by servlet container which uses the javax.servlet.Servlet interface
+ - Servlet Lifecycle can be defined entire process from its creation to the destruction which managed by servlet container.
+ - Use javax.servlet.Servlet interface.
  
  Stages in Lifecycle :-
  1)Loading Servlet :-
- - Load the servlet class and create a new instance of the servlet
+ - Load the servlet class and create a new instance of the servlet.
  
  2)Initalizing Servlet :-
- - Initalizing Servlet object by using Servlet.init(ServletConfig) method
+ - Initalizing Servlet object by using init() method
  - Invoke this method only one time if fails thorws ServletException or UnavailableException
  
  3)Handling Servlet Requests :-
  - Create ServletRequest and ServletResponse objects if Http request than create HttpServletRequest and HttpServletResponse objects
- - Servlet.service(ServletRequest,ServletResponse) method invoke
- - Service method process request may thorws ServletException, UnavailableException or IOException
- - GET, POST, PUT, DELETE method use in handling request
+ - service() method handling request may thorws ServletException, UnavailableException or IOException
+ - GET, POST, PUT, DELETE method use in handling http request
 
  4)Destroying Servlet :-
- - After currently thread complete their jobs, Container calls the destroy() method
- - destroy() method release all the reference of this servlet instance so it become eligible for garbage collector
- - Invoke this method only one time
+ - After current thread complete their jobs, Container calls the destroy() method once.
+ - destroy() method release all the reference of this servlet instance so it become eligible for garbage collector.
+ 
 
-
-4)Explain RollOf UnicastRemoteObject class in RMI :-
- - The UnicastRemoteObject class defines a non-replicated remote object whose references are valid only while the server process is alive. 
+4)Explain Roll Of UnicastRemoteObject class in RMI :-
+ - UnicastRemoteObject class defines  non-replicated remote object whose references are valid only while the server process is alive. 
  - Provides support for point-to-point active object references using TCP streams.
- - Objects that require remote behavior should extend RemoteObject, typically via UnicastRemoteObject. 
- - If UnicastRemoteObject is not extended, the implementation class must then assume the responsibility for the correct semantics 
-   of the hashCode, equals, and toString methods inherited from the Object class, so that they behave appropriately for remote objects.
+ 
+ Methods :-
+ clone()              :- Returns a clone of the remote object that is distinct from the original.
+ exportObject(Remote) :- Export the remote object to make it available to receive incoming calls.
 
 
-Q-3 : C 5Marks
+
+Q-1 : C 5Marks
+
 
 1)Explain Handling ServletRequest and ServletResponse :-
-
- - The HttpServlet class provides specialized methods that handle the various types of HTTP requests. 
- - A servlet developer typically overrides one of these methods. 
+ - HttpServlet class provides specialized methods that handle the various types of HTTP requests. 
  - These methods are doDelete( ), doGet( ), doHead( ), doOptions( ), doPost( ), doPut( ), and doTrace( ).
  
  Handling HTTP POST Requests :-
-
- - Here we will develop a servlet that handles an HTTP POST request
- - The example contains two files
- - A web page is defined in ColorPost.html, and a servlet is defined in ColorPostServlet.java
+ - In this example we pick color from dropdown menu
+ - We contains two files web page is defined in ColorPost.html, and a servlet is defined in ColorPostServlet.java
 
  ColorPost.html:-
-  <html>
-  <body>
-  <form method="post" action="http://localhost/servlet/ColorPostServlet">
+  <form method="post" action="ColorPostServlet">
     <B>Color:</B>
      <select name="color" size="1"> 
       <option value="Red">Red</option> 
       <option value="Green">Green</option> 
       <option value="Blue">Blue</option> 
      </select>
-    <input type=submit value="Submit"> 
+    <input type="submit" value="Submit"> 
   </form>
-  </body>
-  </html>
-
+ 
   ColorPostServlet.java :- 
   import java.io.*; 
   import javax.servlet.*;
   import javax.servlet.http.*;
-	public class ColorPostServlet extends HttpServlet {		
+	public class ColorPostServlet extends HttpServlet 
+  {		
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
         response.setContentType("text/html"); 
-  	    String color = request.getParameter("color"); 
+  	    String color = request.getParameter("color"); wd = request.getParameter("")
 		
 		    PrintWriter pw = response.getWriter(); 
-		    pw.println("<B>The selected color is: "); pw.println(color);
+		    pw.println("The selected color is: " + color); 
 		    pw.close(); 
 		}
 	}
@@ -157,41 +122,35 @@ Q-3 : C 5Marks
 
 
 2)Explain Servlet With JDBC :-
- - The HttpServlet class provides specialized methods that handle the various types of HTTP requests. 
- - A servlet developer typically overrides one of these methods. 
+ - HttpServlet class provides specialized methods that handle the various types of HTTP requests. 
  - These methods are doDelete( ), doGet( ), doHead( ), doOptions( ), doPost( ), doPut( ), and doTrace( ).
 
-  Handling HTTP POST Requests :-
+ Handling HTTP POST Requests :-
  - Here we will develop a servlet that handles an HTTP POST request with Database
- - The example contains two files
- - A web page is defined in Login.html, and a servlet is defined in LoginServlet.java
+ - The example contains two files web page is defined in Login.html, and servlet defined in LoginServlet.java
 
   Login.html :-
-	<html>
-  <body>
-  <form method="post" action="http://localhost/servlet/LoginServlet">
+  <form method="POST" action="LoginServlet">
     Name : <input type="text" name="nm">
     Password : <input type="password" name="pw">
-    <input type=submit value="Submit"> 
+    <input type="submit" value="Submit"> 
   </form>
-  </body>
-  </html>
 
   LoginServlet.java :-
   import java.io.*; 
   import javax.servlet.*;
   import javax.servlet.http.*;
-	public class LoginServlet extends HttpServlet {		
+	public class LoginServlet extends HttpServlet 
+  {		
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
         response.setContentType("text/html"); 
   	    PrintWriter pw = response.getWriter(); 
         String name = request.getParameter("nm"); 
         String password = request.getParameter("pw"); 
-		
+
 		    try
         {
-
           Class.forName("com.mysql.jdbc.Driver");
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","root","");
           PreparedStatement pst = con.prepareStatement("insert into dbname values('"+name+"','"+password+"')");
@@ -211,7 +170,8 @@ Q-3 : C 5Marks
 ------------------------------------------------ Question Paper-2 ----------------------------------------------------------
 
 Q-2 : A 
-1)RMI Stands for :- Remote Method Invocation
+1)RMI Stands for :- 
+- Remote Method Invocation
 
 2)An Object on another computer known as
 - Remote object
@@ -220,15 +180,14 @@ Q-2 : A
 - 
 
 4)What is Servlet :-
-- Servlets are the Java programs that runs on the Java-enabled web server or application server. 
-- Used to handle the request obtained from the web server, process the request, produce the response, then send response back to the
-  web server.
+- Servlet is a Java class that used to extend the capabilities of servers that host applications accessed by means of a 
+  request-response programming model.
 
 
 Q-2 : B 2Marks
 
 1)What is HiddenForm Field :-
- - Hidden Form Field a hidden (invisible) textfield is used for maintaining the state of an user.
+ - HiddenForm Field a hidden textfield is used for maintaining the state of an user.
  - It is widely used in comment form of a website In such case, we store page id or page name in the hidden field so that each page
    can be uniquely identified.
 
@@ -237,24 +196,23 @@ Q-2 : B 2Marks
 
  Disadvantage :-
  - It is maintained at server side
- - Extra form submission is required on each pages
+ - Extra form submission required on each pages
  - Only textual information can be used
  
 
-2)What is Skeleton Class in rmi :- 
-- skeleton for a remote object is a server-side entity that dispatches calls to the actual remote object implementation.
+2)What is Skeleton Class in rmi :-  Alerdy in QuestionPaper-1
 
 
 Q-2 : C 3Marks
 
-1)Explain HttpSession :- Alerdy in QuestionPaper-1
+1)Explain HttpSession       :- Alerdy in QuestionPaper-1
 2)Explain Servlet Lifecycle :- Alerdy in QuestionPaper-1
 
 
 Q-2 : D 5Marks
 
-1)Explain the handline servlet request and response :- Alerdy in QuestionPaper-1
-2)Explain Servlet with JDBC :- Alerdy in QuestionPaper-1
+1)Explain Handling ServletRequest and ServletResponse :- Alerdy in QuestionPaper-1
+2)Explain Servlet with JDBC                           :- Alerdy in QuestionPaper-1
 
 
 
@@ -262,11 +220,11 @@ Q-2 : D 5Marks
 ------------------------------------------------ Question Paper-3 ----------------------------------------------------------
 	
 
-Q-2 : A
+Q-3 : A
 
 1)What is RMI :-
-- Remote Method Invocation (RMI) is an API which allows an object to invoke a method on an object that exists in another address 
-   space, which could be on the same machine or on a remote machine.
+- RMI is an API which allows an object to invoke a method on an object that exists in another address space, which could be on the 
+  same machine or on a remote machine.
 
 2)List of Servlet Lifecycle Method :- Alerdy in QuestionPaper-1
 
@@ -276,38 +234,39 @@ Q-2 : A
 4)To Define Remote method interface in rmi, we should extend _____ class
 - UnicastRemoteObject class of java.rmi package
 
-Q-2 : B 2Marks
+Q-3 : B 2Marks
 
-1)What is stub class in rmi :-
- - A stub for a remote object acts as a client's local representative or proxy for the remote object. 
- - The caller invokes a method on the local stub which is responsible for carrying out the method call on the remote object. 
+1)What is Stub Class in rmi :-
+ - A stub is object acts as a client proxy for the remote object. 
  - In RMI, a stub for a remote object implements the same set of remote interfaces that a remote object implements.
   
-  Processing Steps:-
- - initiates a connection with the remote JVM containing the remote object
- - marshals the parameters to the remote JVM
- - waits for the result of the method invocation,
- - unmarshals (reads) the return value or exception returned, and returns the value to the caller.
+ How Stub Works :-
+ - Initiates connection with remote JVM that containing remote object.
+ - Marshals parameters for the remote JVM.
+ - Waits for the result of method invocation.
+ - Unmarshals(reads) return value or exception and returns the value to the caller.
 
-2)Explain rols of servlet web.xml file :-
- - Web.xml file provides configuration and deployment information for the web components that comprise a web application
- - Web.xml defines mappings between URL paths and the servlets that handle requests with those paths
- - The web server uses this configuration to identify the servlet to handle a given request and call the class method that 
-   corresponds to the request method
- - Servlet specification defines the web.xml deployment descriptor file in terms of an XML schema document
- - Web.xml file must reside in the WEB-INF directory under the context of the hierarchy of directories that exist for a web application
 
-Q-2 : C 3Marks
+2)Explain Rols of servlet web.xml file :-
+ - Web.xml file provides configuration and deployment information for the web components of a web application.
+ - Defines mappings between URL paths and the servlets that handle requests with those paths.
+ - WebServer uses this configuration to identify the servlet to handle given request and call class method that corresponds request method.
+ - Servlet defines web.xml in terms of an XML schema document.
+ - Web.xml file reside in the WEB-INF directory under the context of the hierarchy of directories that exist for a web application.
+
+
+Q-3 : C 3Marks
  
-1)Explain Servlet Lifecycle
-2)Explain Roll Of UnicastRemoteObject class in RMI
+1)Explain Servlet Lifecycle                         :- Alerdy in QuestionPaper-1
+2)Explain Roll Of UnicastRemoteObject class in RMI  :- Alerdy in QuestionPaper-1
 
-Q-2 : D 5Marks
+
+Q-3 : D 5Marks
 
 1)Explain RMI Architecture :-
  - RMI stands for Remote Method Invocation. 
- - It is a mechanism that allows an object residing in one system (JVM) to access/invoke an object running on another JVM.
- - RMI is used to build distributed applications which provides remote communication between Java programs. 
+ - It is a mechanism that allows an object residing in one JVM to access/invoke an object running on another JVM.
+ - Used to build distributed applications which provides remote communication between Java programs. 
  - Available in the java.rmi package
  
  Diagram :-  
@@ -316,109 +275,97 @@ Q-2 : D 5Marks
  RRL            --Virtual Connection -- RRL (Remote Reference Layer)    Session
  TransportLayer --Network Connection -- Transport Layer                 Transport Layer
 
+
  Architecture of an RMI Application :-
- - In an RMI application, we write two programs, a server program (resides on the server) and a client program (resides on the client).
- - Inside the server program, a remote object is created and reference of that object is made available for the client (using the registry).
- - The client program requests the remote objects on the server and tries to invoke its methods.	
+ - In RMI application, we write two programs server program and client program. 
+ - Inside server program, a remote object is created and reference of that object is made available for the client (using the registry).
+ - Client program requests remote objects on the server and tries to invoke its methods.	
 
-
-  Component Of Architecture :-
+  Component Of RMI Architecture :-
   
   1)Transport Layer :-
-  - This layer connects the client and the server 
-  - Manages the existing connection and also sets up new connections
+  - This Layer connects client and server .
+  - Manages existing connection otherwise sets up new connection.
   
   2)Stub :- 
-  - A stub is a representation (proxy) of the remote object at client
-  - Resides in the client system acts as a gateway for the client program
+  - A stub is a representation(proxy) of the remote object at client.
+  - Resides in the client system acts as a gateway for the client program.
   
   3)Skeleton :- 
-  - Resides on the server side. 
-  - stub communicates with this skeleton to pass request to the remote object
+  - A Skeleton is a representation(proxy) of the remote object at server side. 
+  - stub communicates with this skeleton to pass request to the remote object.
   
   4)RRL(Remote Reference Layer) :- 
-  - It is the layer which manages the references made by the client to the remote object
+  - It is the layer which manages the references made by the client to the remote object.
 
-
-  Working of an RMI Application :-
-  - When the client makes a call to the remote object, it received by the stub which eventually passes this request to the RRL.
-  - When the client-side RRL receives the request, it invokes a method called invoke() of the object remoteRef. 
-  - It passes the request to the RRL on the server side.
-  - The RRL on the server side passes the request to the Skeleton (proxy on the server) which finally invokes the required object
-    on the server. 
+  How RMI Works :-
+  - When client makes a call to the remote object, it received by the stub which eventually passes this request to the RRL.
+  - When client-side RRL receives the request, it invokes a method called invoke() of the object remoteRef. 
+  - Passes this request to the RRL on the server side.
+  - RRL on the server side passes the request to the Skeleton which finally invokes the required object on the server. 
   - The result is passed all the way back to the client.
-
-
-  Goals of RMI :-
-  - Minimize the complexity of the application
-  - To preserve type safety
-  - Distributed garbage collection
-  - Minimize the difference between working with local and remote objects
 
 
 
 2)Count Visitior Using Session Program :-
+ - In this program we use httpservlet class with session to count visitor with every request. 
+ - CounterServlet.java is our servlet file which processes the request
 
-CounterServlet.java :-
+Code :- CounterServlet.java
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+ import java.io.*;
+ import javax.servlet.*;
+ import javax.servlet.http.*;
 
-public class CounterServlet extends HttpServlet
-{
-     //Instance variable used for counting hits on this servlet
-     private int iHitCounter;
-
-     //init method just initializes the hitCounter to zero
-     public void init() throws ServletException
-     {
-          iHitCounter = 0;
-     }
-     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-     {
-          PrintWriter out =  response.getWriter();
-          out.println("<form><fieldset style='width:15%'>");
-          out.println("<h3>Welcome to my website !</h3><hr>");
-          out.println("You are visitor number: "+ (++iHitCounter));
-          out.println("</fieldset></form>");
-     }
-     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-     {
-          doGet(request, response);
-     }
+ public class CounterServlet extends HttpServlet{
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+  {
+    HttpSession session = request.getSession(true);
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+    Integer count = new Integer(0);
+    String head;
+    if (session.isNew()){
+        head = "This is the New Session";
+    } 
+    else 
+    {
+      head = "This is the old Session";
+      Integer oldcount =(Integer)session.getValue("count"); 
+      if (oldcount != null) {
+        count = new Integer(oldcount.intValue() + 1);
+      }
+    }
+    session.putValue("count", count);
+    out.println(head + "\nSession Count : " + "\nTotal Session Accesses : " + count );
+  }
 }
 
 
 ----------------------------------------------------------------IMP Question ------------------------------------------------------------
 
 1)Explain Servlet Interface :-
-- Servlet interface provides methods to initialize servlet, receive request and get response to client request and destroy servlet
-- Servlet typically implement by genericServlet or HttpServlet
-- RMI and CORBA direclty implement thit interface
+- Servlet interface provides methods to initialize servlet, process request and get response to client request and destroy servlet.
+- Servlet typically implement by genericServlet or HttpServlet.
+- RMI and CORBA direclty implement this interface.
 
  Method :- 
- init() - Initialize the servlet
+ init()             - Initialize the servlet
  getServletInfo()   - return the string about the servlet such as author, version, copyright, etc.
  getServletConfig() - return a servlet config object
  service(ServletRequest req,ServletResponse res) - Carries out request from the client such as doPost, doGet, etc.
- destroy() - cleanup servlet resources
-
+ destroy()          - cleanup servlet resources
 
 
 2)Explain Servlet Collbaration :-
-- Exchange information among servlet of a particular java web application is known as Servlet Collbaration
+- Exchange information among servlet of a particular java web application is known as Servlet Collbaration.
 
  Interface :-
  1)javax.servlet.RequestDispatcher;
  2)javax.servlet.http.HttpServletResponse;
 
-
  1)javax.servlet.RequestDispatcher; :-
- - Dispatching the client request to the another web source which could be an htmlPage, another Servlet or JSP
+ - Dispatching the client request to the another web source which could be an htmlPage, another Servlet or JSP.
  
  Method :-
  1)public void forward(ServletRequest req,ServletResponse res) throws ServletException, IOException 
@@ -430,10 +377,13 @@ public class CounterServlet extends HttpServlet
   Client                                                    |   Response Generated
             Response sent back to the client  <--------Response
 
+  Syntax :-
+  RequestDispatcher rd =  getRequestDispatcher("servlet2"); 
+  rd.forward(req,res);  
           
  2)public void include(ServletRequest req,ServletResponse res) throws ServletException, IOException 
  - Include the content of the calling resource into the called one
- - Control still remain with the calling resource but includes the processsed output of the calling resources transfer into the called one
+ - Control remain with the calling resource but includes the processed output of the calling resources into the called resource
  
   Diagram :- 
            Request    ->   Servlet 1 -> include()    -> Servlet 2 
@@ -442,9 +392,8 @@ public class CounterServlet extends HttpServlet
     
 
   Syntax :-
-    RequestDispatcher rd =  getRequestDispatcher("servlet2"); 
-    rd.forward(req,res);
-    rd.include(req,res);
+  RequestDispatcher rd =  getRequestDispatcher("servlet2"); 
+  rd.include(req,res);
 
   
  2)HttpServletResponse Interface :-
@@ -457,12 +406,11 @@ public class CounterServlet extends HttpServlet
  Syntax :- response.sendRedirect("URL Address")
 
  Differnce :-
-        Forward                                    SendRedirect 
+        Forward                           SendRedirect 
   - Works on server side             - Works on client side
   - Sends same request and response  - Send a new request
     Object to the another resource
   - Works only within the server     - Used within client side and outside the Server
-
 
 
 3)Marshalling and Unmarshalling :-
@@ -476,20 +424,20 @@ public class CounterServlet extends HttpServlet
 - A namespace on which all server side objects are placed 
 - Each time server create object,it register with the RMI registry using bind() or rebind() methods
 - Object registered with unique name is known as bind name
-- To invoke a remote object the client need a reference of that object
+- To invoke a remote object client need reference of that object
 - Client fetch that object using lookup() method using its bind name 
 
 
 5)Cookie in Servlet :-
-- Cookie are text file stored on client machine which are used to tracking user activites
-- Each Request considered as a new request 
+- Cookie are text file stored on client machine which are used to tracking user activites.
 - javax.servlet.http.Cookie class provides the functionality of using cookies. 
-
+- Cookies are maintained at client side.
+- We can store textual information in Cookie object.
 
  Syntax :-
  Cookie cookieObj = new Cookie("key", "value") / Cookie()
- response.addCookie(cookieObj) #add cookie in the Response 
- request.getCookies() #method which return an array of cookie Object
+ response.addCookie(cookieObj) //Add cookie in the Response 
+ request.getCookies()          //Return an array of cookie Object
 
  Types of Cookie :-
  1)Non-Persistent Cookie :
@@ -499,16 +447,6 @@ public class CounterServlet extends HttpServlet
  2)Persistent Cookie :
  - Valid for multiple-session 
  - It removed only when the user logout or signout not removed when close the browser
-
-
- Advantage of Cookies :-
- - Simplest technique of maintaining the state.
- - Cookies are maintained at client side.
-
- Disadvantage of Cookies :-
- - It will not work if cookie is disabled from the browser.
- - Only textual information can be set in Cookie object.
-
 
  Method :-
  getDomain(Pattern String) 
@@ -520,23 +458,21 @@ public class CounterServlet extends HttpServlet
  setComment() /  getComment()
 
 
- Working On Cookie :-
+ How Cookie Works :-
  - Server-Side Script send a set of cookies to the browser with the client response
  - Cookie store in the browser cache
- - When next time use send request to the same server cookie send with those request to the server
- - Server receive cookie and process for evaluation of user activites
+ - When next time user send request to the same server cookie send with those request to the server
+ - Server receive cookie and process cookies for evaluation of user activites
  - Cookie are usually set in Http header
  - Header contains the name, value, pair, data, path and domain
- - Name and value will be in URL encoded format
- - Cookie expires in the given time 
+ - Cookie expires in the given time and no more availabel in client browser
 
 
 //Optional
-
 6)URL Rewritting :-
 - In URL rewriting, we append a token or identifier to the URL of the next Servlet or the next resource
-- We can send parameter name/value pairs 
-- From a Servlet, we can use getParameter() method to obtain a parameter value
+- We can send parameters in name/value pairs 
+- Use getParameter() method to obtain a parameter value
 
 Ex:- url?name1=value1&name2=value2&??
 
@@ -560,17 +496,13 @@ Diagram :-
  - It will work only with particular links
 
 
-
 7)Servlet Config Interface :-
-- An object of ServletConfig is created by the web container for each servlet used to get configuration information from web.xml file
-- You don't need to edit the servlet file if information is modified from the web.xml file.
+- Servlet Container creates ServletConfig object for each Servlet during initialization, to pass information to the Servlet. 
+- This object can used to get configuration information such as parameter name and values from deployment descriptor file(web.xml).
 - getServletConfig() method of Servlet interface returns the object of ServletConfig
 
  Syntax :-
- ServletConfig config = getServletConfig();  
- String driver=config.getInitParameter("driver");  
- out.print("Driver is: "+driver);  
-
+ ServletConfig config = getServletConfig(); 
 
  Methods :-
  public String getInitParameter(String name) : Returns the parameter value for the specified parameter name
@@ -579,117 +511,43 @@ Diagram :-
  public ServletContext getServletContext()   : Returns an object of ServletContext
 
  Web.xml :-
- <web-app>
+  <web-app>
 	<servlet>  
 	<servlet-name>DemoServlet</servlet-name>  
 	<servlet-class>DemoServlet</servlet-class>  
-
-    <init-param> #used to specify the initialization parameter for a servlet
+    <init-param> #Specify the initialization parameter for a servlet
         <param-name>driver</param-name>  
         <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>  
-    </init-param>  
-
-	</servlet>  
-  
-  	<servlet-mapping>  
-	    <servlet-name>DemoServlet</servlet-name>  
-	    <url>/servlet1</url>  
-	  </servlet-mapping>  
- </web-app>  
-
+    </init-param> 
+	</servlet> 
+  <servlet-mapping>  
+	  <servlet-name>DemoServlet</servlet-name>  
+	  <url>/servlet1</url>  
+	 </servlet-mapping>   
+  </web-app>  
 
 
 8)Explain Servlet Context :-
-- An object of ServletContext is created by the web container at time of deploying the project
-- used to get configuration information from web.xml file
-- only one ServletContext object per web application
-- getServletContext() method of ServletConfig interface returns the object of ServletContext
-- context-param element, subelement of web-app, is used to define the initialization parameter in the application scope.
+ - Servlet Context used to get configuration information from web.xml file.
+ - Object of ServletContext is created by the web container at time of deploying the project.
+ - Only one ServletContext object available per web application.
+ - getServletContext() method of ServletConfig interface returns the object of ServletContext.
+ - Provides interface between the container and servlet.
+ - Provide inter-application communication.
 
  Syntax :-
- - ServletContext application=getServletConfig().getServletContext();  
- - ServletContext application=getServletContext();  
-
- Usage :-
- - provides an interface between the container and servlet
- - get configuration information from the web.xml file
- - set, get or remove attribute from the web.xml file
- - provide inter-application communication
-
- Methods :-
- String getInitParameter(String name)    : Returns the parameter value for the specified parameter name.
- Enumeration getInitParameterNames()     : Returns the names of the context's initialization parameters.
- void setAttribute(String name,Object object):sets the given object in the application scope.
- Object getAttribute(String name)        :Returns the attribute for the specified name.
- void removeAttribute(String name)       :Removes the attribute with the given name from the servlet context.
-
-
-	
-                                                  Question All :-
-
-                                        1 Marks
-
-QuestionPaper1 :-
-1)RMI stands for :-
-2)which method is used to identify remote object :-
-3)list out servlet life cycle method :-
-
-QuestionPaper2 :-
-1)RMI Stands for :-
-2)An Object on another computer known as
-3)Which Method Identify Remote Object :-
-4)What is Servlet :-
-
-QuestionPaper3 :- 
-1)What is RMI :-
-2)List of Servlet Lifecycle Method :-
-3)Which method used to read Servlet Initalization Parameters? 
-4)To Define Remote method interface in rmi, we should extend _____ class
-
-                                  
-                                              3 Marks :-
-QuestionPaper1 :-
-1)Explain skeleton class of RMI :-
-2)Explain HttpSession :-
-3)Explain Servlet Lifecycle :-
-4)Explain RollOf UnicastRemoteObject class in RMI :-
-
-
-QuestionPaper2
-1)What is HiddenForm Field :-   2Marks
-2)What is Skeleton Class in rmi :- 2Marks
-1)Explain HttpSession :- Alerdy in QuestionPaper-1
-2)Explain Servlet Lifecycle :- Alerdy in QuestionPaper-1
-
-QuestionPaper3
-1)What is stub class in rmi :- 2Marks
-2)Explain rols of servlet web.xml file :- 2Marks
-1)Explain Servlet Lifecycle :- 3Marks
-2)Explain Roll Of UnicastRemoteObject class in RMI :- 3Marks
-
-                                              5 Marks :-
-
-QuestionPaper1 :- 
-1)Explain Handling ServletRequest and ServletResponse :-
-2)Explain Servlet With JDBC :-
-
-QuestionPaper2 :-
-1)Explain the handling servlet request and response :- Alerdy in QuestionPaper-1
-2)Explain Servlet with JDBC :-                         Alerdy in QuestionPaper-1
-
-
-QuestionPaper3 :-
-1)Explain RMI Architecture :- 
-2)Count Visitior Using Session Program :-	
-
-
-Other :-
-Servlet Interface
-Servlet Collbaration
-Servlet Cookie
-Marshalling and Unmarshalling
-RMI Registry
-
+  ServletContext application = getServletConfig().getServletContext();  
  
+ Methods :-
+ String getInitParameter(String name)    : Returns the value of given parameter or null if the parameter doesn’t exist.
+ Enumeration getInitParameterNames()     : Returns an enumeration of context parameters names.
+ void setAttribute(String name,Object object) : Sets the attribute value for the given attribute name.
+ Object getAttribute(String name)        : Returns attribute value for the given name or null if the attribute doesn’t exist.
+ void removeAttribute(String name)       : Removes attribute with the given name from the servlet context.
+ String getContextPath()                 : Returns context path of the web application. 
 
-
+ In Web.xml :- 
+ <context-param>
+   <param-name>username</param-name>
+   <param-value>ChaitanyaSingh</param-value>
+ </context-param>

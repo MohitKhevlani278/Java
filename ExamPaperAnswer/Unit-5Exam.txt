@@ -2,8 +2,8 @@
 
 Q- 5 : A 1Marks
 1)What is Spring Framework :-
-- Spring is an open source lightweight framework that allows Java EE 7 developers to build simple, reliable, and scalable 
-  enterprise applications written by Rod johnson first released in June,2003 under apache license.
+- Spring is an open source lightweight framework that allows to build enterprise applications which is written by Rod johnson 
+  first released in June,2003 under apache license.
 
 2)OXM Stands for :-
 - Object XML Mapping 
@@ -14,20 +14,18 @@ Q- 5 : A 1Marks
 
 Q- 5 : B 3Marks
 1)Explain Struct Flow of control :-
-- Struts Frame work is the implementation of Model-View-Controller (MVC) design pattern for the JSP.
+- Struts Framework is the implementation of MVC design pattern for the JSP.
  
  Flow Of Control :-
- - Request is first sent from the browser to the server Then the server loads the web.xml and if the request pattern matches then 
+ - Request is first sent from browser to server Then server loads web.xml and if the request pattern matches then 
    it is forwarded to the FilterDispatcher
- - In struts 2 the FilterDispatcher is the Front Controller
- - Based on the request url and it’s mapping in the struts.xml the appropriate action class to be executed is decided
+ - Based on the request url and it mapping in the struts.xml appropriate action class to be executed 
  - Before the Action class is executed the request is passed through the interceptors
- - Action method of the action class (controller)  is executed
- - Action class calls the business logic function
+ - Action method of the action class is executed and calls business logic
  - Business Logic class works with the database and gets data from the database
- - Processed data from bushiness logic is sent back to the Action class or the controller
- - Depending on the result the Controller identifies the view to be rendered
- - Before the response is  generated the interceptors are executed again
+ - Processed data sent back to the Action class or the controller
+ - Depending on the result Controller identifies the view to be rendered
+ - Response is sent to 808/
 
 
 2)Explain Inversion of control(IOC) in spring Framework :-

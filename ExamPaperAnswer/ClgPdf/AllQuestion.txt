@@ -1,0 +1,69 @@
+------------------------------------------------------- Unit - 2 ---------------------------------------------------------------------
+
+--------------------------------------------------------1 Marks------------------------------------------------------------------------
+
+
+QuestionPaper1 :-
+1)RMI stands for :-
+2)which method is used to identify remote object :-
+3)list out servlet life cycle method :-
+
+QuestionPaper2 :-
+1)RMI Stands for :-
+2)An Object on another computer known as :-
+3)Which Method Identify Remote Object    :-
+4)What is Servlet                        :-
+
+QuestionPaper3 :- 
+1)What is RMI :-
+2)List of Servlet Lifecycle Method :-
+3)Which method used to read Servlet Initalization Parameters? 
+4)To Define Remote method interface in rmi, we should extend _____ class
+
+                                  
+--------------------------------------------------------3 Marks------------------------------------------------------------------------
+
+
+QuestionPaper1 :-
+1)Explain Skeleton Class of RMI :-
+2)Explain HttpSession :-
+3)Explain Servlet Lifecycle :-
+4)Explain RollOf UnicastRemoteObject class in RMI :-
+
+
+QuestionPaper2
+1)What is HiddenForm Field        :- 2Marks
+2)What is Skeleton Class in rmi   :- 2Marks
+1)Explain HttpSession             :- Alerdy in QuestionPaper-1
+2)Explain Servlet Lifecycle       :- Alerdy in QuestionPaper-1
+
+QuestionPaper3
+1)What is stub class in rmi                        :- 2Marks
+2)Explain Rols of servlet web.xml file             :- 2Marks
+1)Explain Servlet Lifecycle                        :- Alerdy in QuestionPaper-1
+2)Explain Roll Of UnicastRemoteObject class in RMI :- 3Marks
+
+--------------------------------------------------------5 Marks------------------------------------------------------------------------
+
+
+QuestionPaper1 :- 
+1)Explain Handling ServletRequest and ServletResponse :-
+2)Explain Servlet With JDBC :-
+
+QuestionPaper2 :-
+1)Explain Handling ServletRequest and ServletResponse :- Alerdy in QuestionPaper-1
+2)Explain Servlet with JDBC                           :- Alerdy in QuestionPaper-1
+
+QuestionPaper3 :-
+1)Explain RMI Architecture :- 
+2)Count Visitior Using Session Program :-	
+
+
+Other :-
+Servlet Interface
+Servlet Collbaration
+Servlet Cookie
+Marshalling and Unmarshalling
+RMI Registry
+Servlet Config
+Servlet Context
