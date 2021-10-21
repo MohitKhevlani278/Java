@@ -14,31 +14,27 @@ Q- 5 : A 1Marks
 
 Q- 5 : B 3Marks
 1)Explain Struct Flow of control :-
-- Struts Framework is the implementation of MVC design pattern for the JSP.
+- Struts Framework is allows to build enterprise applications.
  
  Flow Of Control :-
- - Request is first sent from browser to server Then server loads web.xml and if the request pattern matches then 
-   it is forwarded to the FilterDispatcher
- - Based on the request url and it mapping in the struts.xml appropriate action class to be executed 
- - Before the Action class is executed the request is passed through the interceptors
+ - Request first sent from browser to server Then server loads web.xml and if request pattern matches then forwarded to FilterDispatcher.
+ - Based on request url and it mapping in the struts.xml appropriate action class to be executed 
+ - Before Action class is executed the request is passed through the interceptors
  - Action method of the action class is executed and calls business logic
  - Business Logic class works with the database and gets data from the database
  - Processed data sent back to the Action class or the controller
  - Depending on the result Controller identifies the view to be rendered
- - Response is sent to 808/
 
 
 2)Explain Inversion of control(IOC) in spring Framework :-
-
- - Spring IoCContainer is the core of Spring Framework. 
+ - Spring IoC Container is the core of Spring Framework. 
  - It creates the objects, configures and assembles their dependencies, manages their entire life cycle.
- - It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class.
+ - It gets information about object from a configuration file(XML) or Java Code or Java Annotations and Java POJO class.
  - These objects are called Beans
- - The IoC container contains assembler code that handles the configuration management of application objects.
- - The interfaces BeanFactory and ApplicationContext represent the Spring IoC container. 
+ - IoC container contains assembler code that handles configuration management of application objects.
+ - BeanFactory and ApplicationContext interfaces represent Spring IoC container. 
 
   Types of container :- 
-  
   1)BeanFactory Container
   - XmlBeanFactory is the implementation class for the BeanFactory interface
   Ex :- Resource resource=new ClassPathResource("applicationContext.xml");  
@@ -106,8 +102,7 @@ Q- 5 : B 3Marks
  
  
 4)Explain Processing Request with action object in Struct:-
- 
- - Action objects handle the request from and responds to the client (generally a web browser). 
+ - Action objects handle request from and responds to the client (generally a web browser). 
  - ActionServlet receives the request
  - Requests from the client are sent to the controller in the form of Actions defined in the struts-config.xml configuration file
  - Action objects have access to the applications controller servlet and also access to the servlet’s methods. 
@@ -222,10 +217,7 @@ Q- 5 : C 5Marks
  5)Test            :- Provides testing using TestNG or the JUnit Framework 
 
 
-
-
 --------------------------------------------------Question Paper-2----------------------------------------------------------------
-
 Q- 5 : A 1Marks
 
 1)What are the components of struct framework :-
@@ -277,9 +269,8 @@ Q- 5 : D 5Marks
 - Need to write this diagram for 5 marks
 - https://secureservercdn.net/160.153.137.14/97i.128.myftpupload.com/wp-content/uploads/2019/12/jee04.png
 
+
 --------------------------------------------------Question Paper-3----------------------------------------------------------------
-
-
 Q- 5 : A 1Marks
 1)What is Spring Framework   :- Alerdy in QuestionPaper-1
 2)Define Struct Framework    :- Alerdy in QuestionPaper-1 
@@ -288,9 +279,8 @@ Q- 5 : A 1Marks
 
 
 Q- 5 : B 2Marks
-1)Explain IOC in Spring Framework   :-2Marks    - Alerdy in QuestionPaper-1
-2)Differnce between BeanFactory and Application Context IOC Container :- 2Marks
-- Alerdy in QuestionPaper-1 In IOC Question  
+1)Explain IOC in Spring Framework                                     :-2 Marks - Alerdy in QuestionPaper-1
+2)Differnce between BeanFactory and Application Context IOC Container :-2 Marks - Alerdy in QuestionPaper-1 In IOC Question  
 
 Q- 5 : C 3Marks 
 1)Explain Spring Framework Module :-
@@ -350,71 +340,6 @@ Q- 5 : C 3Marks
 Q- 5 : D 5Marks
 1)Explain Advantage Of Struct Framework :- Alerdy in QuestionPaper-1
 2)Explain Advantage Of Spring Framework :- Alerdy in QuestionPaper-1 in B Q-3 3Marks
-
-
-
-
-
-
---------------------------------------------------QuestionAll----------------------------------------------------------------
-
-                                                    1 Marks
-QuestionPaper1 
-1)What is Spring Framework :-
-2)OXM Stands for :-
-3)AOP Stands for :-
-
-QuestionPaper2
-1)What are the components of struct framework :-
-2)__file is used by controller to get mapping information for request routing  :-
-3)What is Spring Framework              :- Alerdy in QuestionPaper-1
-4)What is Struct Framework              :-
-
-QuestionPaper3
-1)What is Spring Framework              :- Alerdy in QuestionPaper-1
-2)What is Struct Framework              :- Alerdy in QuestionPaper-2
-3)Give Fullform Of OGNL, AOP            :-
-4)Is Struct is ORM Based Framework? Yes Or No? :-
-
-
--------------------------------------------------- 3Marks ----------------------------------------------------------------
-
-
-QuestionPaper1
-1)Explain Struct Flow of control                          :-
-2)Explain Inversion of control(IOC) in spring Framework   :-
-3)Explain Advantage Of Spring Framework                   :-
-4)Explain Processing Request with action object in Struct :-
-
-
-QuestionPaper2
-1)What is Inversion Of Control(IOC) in Spring Framework :- Alerdy in QuestionPaper-1    2Marks
-2)What is Spring Context Defination                     :-                              2Marks
-1)Explain Advantage Of Spring Framework                 :- Alerdy in QuestionPaper-1
-2)Explain Processing Request with action object         :- Alerdy in QuestionPaper-1
-
-
-QuestionPaper3
-1)Explain Inversion Of Control(IOC) in Spring Framework               :- Alerdy in QuestionPaper-1                  2Marks     
-2)Differnce between BeanFactory and Application Context IOC Container :- Alerdy in QuestionPaper-1 In IOC Question  2Marks
-1)Explain Spring Framework Module           :-  
-2)Explain Strcut Flow of control            :- Alerdy in QuestionPaper-1
-
-
--------------------------------------------------- 5Marks  ---------------------------------------------------------------
-
-QuestionPaper1
-1)Explain Advantage Of Struct Framework  :-
-2)Explain Spring Architecture            :-
-
-QuestionPaper2
-1)Explain Spring Architecture            :- Alerdy in QuestionPaper-1
-2)Explain Struct Flow of control         :- Alerdy in QuestionPaper-1 in B Q-2 In this draw diagram
-
-QuestionPaper3
-1)Explain Advantage Of Struct Framework :- Alerdy in QuestionPaper-1
-2)Explain Advantage Of Spring Framework :- Alerdy in QuestionPaper-1 in B Q-3 3Marks
-
 
 
 --------------------------------------------------Optional----------------------------------------------------------------
@@ -493,7 +418,6 @@ What Is a Spring Context?
    transactional test management with default rollback semantics.
 
 
-
 3)Spring MVC Framework :-
  - Spring Support MVC architecture which helps to develop flexible and loosely coupled web applications
 
@@ -538,7 +462,6 @@ What Is a Spring Context?
  - A defined service method can return a String, which contains the name of the view to be used to render the model.
 
 
-
 4)Aspect Oriented Programming(AOP) in Spring :-
  - AOP as the name suggests uses aspects in programming
  - It can be defined as the breaking of code into different modules, also known as modularisation, where the aspect is the key 
@@ -564,14 +487,12 @@ What Is a Spring Context?
  - Uses XML based configuration for implementing AOP, also it uses annotations which are interpreted by using a library supplied 
    by AspectJ for parsing and matching
 
-
  How AOP Works :- 
  - Spring uses proxy based mechanism i.e. it creates a proxy Object which will wrap around the original object and will take up the advice 
    which is relevant to the method call. 
  - Proxy objects can be created either manually through proxy factory bean or through auto proxy configuration in the XML file and get 
    destroyed when the execution completes. 
  - Proxy objects are used to enrich the Original behaviour of the real object.
-
 
  Common Technologies in AOP :- 
  1)Aspect :-
@@ -605,13 +526,11 @@ What Is a Spring Context?
   5)AfterThrowing :- 
   - Runs after the advised method throws a Runtime Exception denoted by @AfterThrowing annotation
 
-
  4)JoinPoints :- 
  - An application has thousands of opportunities or points to apply Advice
  - These points are known as join points
  - For example – Advice can be applied at every invocation of a method or exception be thrown or at various other points
  - But Spring AOP currently supports only method execution join points (advising the execution of methods on Spring beans)
-
  
  5)Pointcut :- 
  - Since it is not feasible to apply advice at every point of the code, therefore, the selected join points where advice is finally 
@@ -619,7 +538,6 @@ What Is a Spring Context?
  - Often you specify these pointcuts using explicit class and method names or through regular expressions that define a matching class 
    and method name patterns
  - It helps in reduction of repeating code by writing once and use at multiple points
-
 
 
 5)Strcut Framework Architecture :-

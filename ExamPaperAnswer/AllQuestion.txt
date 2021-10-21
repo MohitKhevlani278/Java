@@ -208,3 +208,128 @@ Others :-
 6)MVC in JSP 
 7)Difference between JSP and Servlet
 8)Beans in details
+
+
+--------------------------------------------------Unit - 4----------------------------------------------------------------------------
+
+-------------------------------------------------- 1 Marks -------------------------------------------------------------------------
+QuestionPaper1 
+1)________invented Hibernate framework
+2)ORM Stands for :-
+3)EJB Stands for :-
+
+QuestionPaper2
+1)Hibernate.cfg.xml file is a ______ file :-
+2)Define MVC :-
+3)What is ORM :- 
+4)What is EJB :-
+
+QuestionPaper3  
+1)Define MVC                              :- Alerdy in QuestionPaper-2
+2)Give Fullform Of EJB & ORM              :- Alerdy in QuestionPaper-1
+3)List-Out types of EJB                   :- 
+4)________invented Hibernate framework    :- Alerdy in QuestionPaper-1
+
+
+-------------------------------------------------- 3Marks ----------------------------------------------------------------
+QuestionPaper1
+1)Explain Session in EJB                                   :-
+2)Explain rols of model in mvc design pattern              :-
+3)Explain Hibernate Configuration File and Properties File :- 
+4)Explain Annotation?Explain It?                           :-
+
+QuestionPaper2
+1)What is EntityBean                                       :- 2Marks
+2)List-Out types of EJB                                    :- 2Marks
+1)Explain Message driven beans                             :-
+2)What is Annotation?Explain It?                           :- Alerdy in QuestionPaper-1
+
+QuestionPaper3
+1)Explain rols of model in mvc design pattern              :- Alerdy in QuestionPaper-1 2Marks
+2)Explain Message driven beans                             :- Alerdy in QuestionPaper-2 2Marks
+1)Explain Hibernate Configuration File and Properties File :- Alerdy in QuestionPaper-1
+2)Explain Session in EJB                                   :- Alerdy in QuestionPaper-1
+
+
+-------------------------------------------------- 5Marks  ---------------------------------------------------------------
+
+QuestionPaper1
+1)Explain implementation of MVC Architecture :-
+2)Explain Inheritance Annotation             :-
+
+QuestionPaper2
+1)Explain Hibernate Session                  :- 
+2)Explain implementation of MVC Architecture :- Alerdy in QuestionPaper-1
+
+QuestionPaper3
+1)Explain MVC Architecture                   :-
+2)Explain Inheritance Annotation             :- Alerdy in QuestionPaper-1
+
+
+--------------------------------------------------Unit - 5----------------------------------------------------------------
+
+                                                    1 Marks
+QuestionPaper1 
+1)What is Spring Framework :-
+2)OXM Stands for :-
+3)AOP Stands for :-
+
+QuestionPaper2
+1)What are the components of struct framework :-
+2)__file is used by controller to get mapping information for request routing  :-
+3)What is Spring Framework              :- Alerdy in QuestionPaper-1
+4)What is Struct Framework              :-
+
+QuestionPaper3
+1)What is Spring Framework              :- Alerdy in QuestionPaper-1
+2)What is Struct Framework              :- Alerdy in QuestionPaper-2
+3)Give Fullform Of OGNL, AOP            :-
+4)Is Struct is ORM Based Framework? Yes Or No? :-
+
+
+-------------------------------------------------- 3Marks ----------------------------------------------------------------
+
+
+QuestionPaper1
+1)Explain Struct Flow of control                          :-
+2)Explain Inversion of control(IOC) in spring Framework   :-
+3)Explain Advantage Of Spring Framework                   :-
+4)Explain Processing Request with action object in Struct :-
+
+
+QuestionPaper2
+1)What is Inversion Of Control(IOC) in Spring Framework :- Alerdy in QuestionPaper-1    2Marks
+2)What is Spring Context Defination                     :-                              2Marks
+1)Explain Advantage Of Spring Framework                 :- Alerdy in QuestionPaper-1
+2)Explain Processing Request with action object         :- Alerdy in QuestionPaper-1
+
+
+QuestionPaper3
+1)Explain Inversion Of Control(IOC) in Spring Framework               :- Alerdy in QuestionPaper-1                  2Marks     
+2)Differnce between BeanFactory and Application Context IOC Container :- Alerdy in QuestionPaper-1 In IOC Question  2Marks
+1)Explain Spring Framework Module           :-  
+2)Explain Strcut Flow of control            :- Alerdy in QuestionPaper-1
+
+
+-------------------------------------------------- 5Marks  ---------------------------------------------------------------
+
+QuestionPaper1
+1)Explain Advantage Of Struct Framework  :-
+2)Explain Spring Architecture            :-
+
+QuestionPaper2
+1)Explain Spring Architecture            :- Alerdy in QuestionPaper-1
+2)Explain Struct Flow of control         :- Alerdy in QuestionPaper-1 in B Q-2 In this draw diagram
+
+QuestionPaper3
+1)Explain Advantage Of Struct Framework :- Alerdy in QuestionPaper-1
+2)Explain Advantage Of Spring Framework :- Alerdy in QuestionPaper-1 in B Q-3 3Marks
+
+Others :-
+1)What is Spring Bean :-
+2)Introduction to Spring Framework :-
+3)Spring MVC Framework :-
+4)AOP in Spring Framework :-
+5)Struct Framework Architecture :-
+6)
+
