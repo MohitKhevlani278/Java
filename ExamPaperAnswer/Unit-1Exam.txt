@@ -33,7 +33,7 @@ Q-1 : B 3 Marks
  - True returned ResultSet object and False returned either int value or nothing.
  
 
- 2)Explain Thin and Thick Client :-
+2)Explain Thin and Thick Client :-
  Thick Client :- 
  - Thick client is connected to server through network connection that doesn’t consume server computing resources to execute application.
  - A thick client also known as a heavy, fat or rich client
@@ -47,17 +47,16 @@ Q-1 : B 3 Marks
  Ex :- Type-4 Driver 
 
 
- 3)Explain JDBC Architecture :-
- - JDBC is Standard java api for database-independent connectivity between java applications and a wide range of databases
-  
- Architecture :-
-  Diagram :-                    Java Application
-                                   JDBC API
-                              JDBC Driver-Manager
-                      Driver         Driver       Driver  
-                      Oracle         Mysql        MSAccess   (Database)
+3)Explain JDBC Architecture :-
+- JDBC is Standard java api for database-independent connectivity between java applications and wide range of databases.
 
- 
+ Architecture :-                    
+          Java Application
+          JDBC API
+          JDBC Driver-Manager
+  Driver    Driver       Driver  
+  Oracle    Mysql        MSAccess   (Database)
+
   Component :- 4 main 
   1)JDBC API :-  
   - Provides various methods and interfaces for communication between java application and database.
@@ -91,7 +90,7 @@ Q-1 : B 3 Marks
   - Handles database related exceptions
 
 
- 4)What is container? Explain types of container? :-
+4)What is container? Explain types of container? :-
  - Container, in the context of Java development, refer server that is responsible for managing Web applications.
  - Container is a kind of component that holds and manages other components.
  - Container settings customizable which provided by the Java EE server such services like security, transaction management, 
@@ -109,20 +108,20 @@ Q-1 : B 3 Marks
   - Manages the execution of Servlets, JSP for Java EE applications.
  
   3)EJB Container :- 
-  - Contain business logic 
-  - Manages the execution of enterprise beans with binding to the naming service
+  - Contain business logic.
+  - Manages the execution of enterprise beans with binding to the naming service.
   	             
   4)Applet Container :- 
-  - Manages the execution of applets
+  - Manages the execution of applets.
 
   Extra :-
   Tomcat as Container :- 
-  - Open-source java servlet container that implement core JAVA EE such as servlet, Jsp and WebSocket
-  - First released in 1998 by Apache Software Foundation After 4 years java own it  
+  - Open-source java servlet container that implement core JAVA EE such as servlet, Jsp and WebSocket.
+  - First released in 1998 by Apache Software Foundation After 4 years java own it.  
 
 
 Q-3 : C 
- 1)Exaplin DatabaseMetadata Interface :-
+1)Exaplin DatabaseMetadata Interface :-
  - DatabaseMetaData interface provides methods to get metadata of a database such as database product name, database product version, 
    driver name, name of total number of tables, name of total number of views etc. 
  - To get the object of DatabaseMetaData public DatabaseMetaData getMetaData() method is used.
@@ -140,25 +139,25 @@ Q-3 : C
   - Returns description of tables with the specified catalog. 
   - Table type can be TABLE, VIEW, ALIAS, SYSTEM TABLE, SYNONYM etc
   
-  //Optional 
-  Explain ResultsetMetadata interface :-
-  - ResultSetMetaData interface is used to get metadata about database table from the ResultSet object such as total number of column, 
-    column name, column type etc.
-  - To get the object of ResultSetMetaData public ResultSetMetaData getMetaData() is used.
-  Syntax :- ResultSetMetaData rsmd = rs.getMetaData(); 
+//Optional 
+Explain ResultsetMetadata interface :-
+ - ResultSetMetaData interface is used to get metadata about database table from the ResultSet object such as total number of column, 
+   column name, column type etc.
+ - To get the object of ResultSetMetaData public ResultSetMetaData getMetaData() is used.
+ Syntax :- ResultSetMetaData rsmd = rs.getMetaData(); 
 
-  Method :-
-  public int    getColumnCount()			       - Returns total number of columns in the ResultSet object
-  public String getColumnName(int index)	   - Returns column name of the specified column index
-  public String getColumnTypeName(int index) - Returns column type name of the specified index
-  public String getTableName(int index)	     - Returns table name for the specified column index
+ Method :-
+ public int    getColumnCount()			         - Returns total number of columns in the ResultSet object
+ public String getColumnName(int index)	     - Returns column name of the specified column index
+ public String getColumnTypeName(int index)  - Returns column type name of the specified index
+ public String getTableName(int index)	     - Returns table name for the specified column index
 
 
 2)Explain Method Of ResultSet Interface :-
- - Used to retrieve data from the database
- - Object of ResultSet maintains a cursor pointing to a row of a table 
- - Initially, cursor points before the first row
- - To move forward and backward direction passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE in createStatement() method  
+ - Used to retrieve data from the database.
+ - Object of ResultSet maintains a cursor pointing to a row of a table .
+ - Initially, cursor points before the first row.
+ - To move forward and backward direction passing either TYPE_SCROLL_INSENSITIVE or TYPE_SCROLL_SENSITIVE in createStatement() method.  
  
  Syntax :- Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);  
            ResultSet rst = stmt.executeQuery(SqlQuery);
@@ -193,21 +192,22 @@ Q-3 : C
 
 Q-1 :- A
 
- 1)DSN stand for :-
- - Data Source Name
+1)DSN stand for :-
+- Data Source Name
  
- 2)JDBC Stands for :-
- - Java Database connectivity
+2)JDBC Stands for :-
+- Java Database connectivity
 
- 3)ODBC Stands for :-
- - Open Database connectivity
+3)ODBC Stands for :-
+- Open Database connectivity
 
- 4)What is J2EE :-
- - J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used to develop java web-based enterprise applications.
+4)What is J2EE :-
+- J2EE (Java 2 Platform Enterprise Edition) is a platform-independent environment used to develop java web-based enterprise applications.
  
 
 Q-1 :- B 2 Marks
- 1)What is N-tier Architecture :-
+ 
+1)What is N-tier Architecture :-
  - N-tier architecture is a concept in software engineering where the presentation, processing and data management functions are 
    logically and physically separated.
  - In N-tier, 'N' refers to a number of layers are being used like – 2-tier, 3-tier or 4-tier, etc.
@@ -217,7 +217,7 @@ Q-1 :- B 2 Marks
    which helps developers to create flexible and reusable applications.
 
 
- 2)Explain commit and rollback method of connection interface :-
+2)Explain commit and rollback method of connection interface :-
  - A Connection is the session between java application and database.
  
   1)public void commit() :- 
@@ -296,6 +296,7 @@ Q-1 :- D 5Marks
   
 
 2)Explain Database Metadata Interface :- Alerdy in QuestionPaper-1
+
 
 --------------------------------------------------- QuestionPaper-3 --------------------------------------------
 

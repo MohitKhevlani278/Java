@@ -1,4 +1,4 @@
--------------------------------------------------Question Paper-1----------------------------------------------------------------
+---------------------------------------------------Question Paper-1----------------------------------------------------------------
 
 Q- 5 : A 1Marks
 1)What is Spring Framework :-
@@ -14,7 +14,7 @@ Q- 5 : A 1Marks
 
 Q- 5 : B 3Marks
 1)Explain Struct Flow of control :-
-- Struts Framework is allows to build enterprise applications.
+- Struts is open source lightweight framework allows to build enterprise applications.
  
  Flow Of Control :-
  - Request first sent from browser to server Then server loads web.xml and if request pattern matches then forwarded to FilterDispatcher.
@@ -103,8 +103,7 @@ Q- 5 : B 3Marks
  
 4)Explain Processing Request with action object in Struct:-
  - Action objects handle request from and responds to the client (generally a web browser). 
- - ActionServlet receives the request
- - Requests from the client are sent to the controller in the form of Actions defined in the struts-config.xml configuration file
+ - ActionServlet receives request and sent to the controller in the form of Actions defined in the struts-config.xml configuration file
  - Action objects have access to the applications controller servlet and also access to the servlet’s methods. 
  - Bundles all the request values into a JavaBean class which extends Struts ActionForm class
  - Decides which action class to invoke to process the request

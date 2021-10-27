@@ -1,4 +1,4 @@
---------------------------------------------------Question Paper-1----------------------------------------------------------------
+------------------------------------------------------Question Paper-1----------------------------------------------------------------
 Q- 4 : A 1Marks
 
 1)________invented Hibernate framework
@@ -14,12 +14,10 @@ Q- 4 : A 1Marks
 Q- 4 : B 3Marks
 
 1)Explain Session in EJB :-
- - Session is limited interval of time in which two systems communicate with each other.
- - Use to maintaining state of the user. 
+ - Session is limited interval of time in which two systems communicate with each other to maintaining state of the user. 
  
- SessionBean :-
- - Session bean encapsulates business logic that can be invoked programmatically by a client over local, remote, or web service 
-   client views.
+ Session Bean :-
+ - Session bean encapsulates business logic that can be invoked programmatically by client over local, remote, or web service.
      
  Types Of SessionBean :-
  1)Stateless :- 
@@ -254,9 +252,6 @@ Q- 4 : C 3Marks
  - EJB Timer Service is a service provided by Ejb container which helps to create timer and to schedule callback when timer expires. 
 
 
-2)What is Annotation?Explain It?  :- Alerdy in QuestionPaper-1
-
-
 Q- 4 : D 5Marks
 1)Explain Hibernate Session :-
  - A Session is used to get a physical connection with a database. 
@@ -295,31 +290,13 @@ Q- 4 : D 5Marks
     
  - If the Session throws an exception, the transaction must be rolled back and the session must be discarded.
 
-
-2)Explain implementation of MVC Architecture                :- Alerdy in QuestionPaper-1
-
-
 --------------------------------------------------Question Paper-3----------------------------------------------------------------
 
 Q - 4 : A 1Marks
-1)Define MVC                              :- Alerdy in QuestionPaper-2
-2)Give Fullform Of EJB & ORM              :- Alerdy in QuestionPaper-1
-3)List-Out types of EJB                   :- 
+3)List-Out types of EJB     :- 
  - Session Bean
  - Entity Bean
  - Message-Driven Bean
 
-4)________invented Hibernate framework    :- Alerdy in QuestionPaper-1
-
-
-Q- 4 : B 2Marks
-1)Explain rols of model in mvc design pattern              :- Alerdy in QuestionPaper-1 2Marks
-2)Explain Message driven beans                             :- Alerdy in QuestionPaper-2 2Marks
-
-Q- 4 : C 3Marks 
-1)Explain Hibernate Configuration File and Properties File :- Alerdy in QuestionPaper-1
-2)Explain Session in EJB                                   :- Alerdy in QuestionPaper-1
-
 Q- 4 : D 5Marks
 1)Explain MVC Architecture  :-
-2)Explain Inheritance Annotation             :- Alerdy in QuestionPaper-1
