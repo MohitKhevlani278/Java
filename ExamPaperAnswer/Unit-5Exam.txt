@@ -63,8 +63,8 @@ Q- 5 : B 3Marks
   
 
 3)Explain Advantage Of Spring Framework :-
--
- 1)Light Weight :- 
+- Open Source / AOP Support
+ 1)Lightweight :- 
  - Spring is a lightweight framework because of its POJO(Plain Old Java Object) implementation. 
  
  2)Flexible :- 
@@ -84,7 +84,7 @@ Q- 5 : B 3Marks
  6)Portable :- 
  - We can use server-side in web/EJB app, client-side in swing app business logic is completely portable.
 
- 7)Cross-cutting behavior :- 
+ 7)Cross-cutting behavior(Resuability) :- 
  - Resource management is a cross-cutting concern, easy to copy and paste everywhere.
 
  8)Configuration :- 
@@ -223,21 +223,12 @@ Q- 5 : C 5Marks
 Q- 5 : A 1Marks
 
 1)What are the components of struct framework :-
- - Action Classes
- - ActionInnvocation 
- - Interceptors 
- - Result Page
- - ValueStack 
- - OGNL(Object Graph Navigation Language) 
-
- ----------------------------------
-  Filter Dispatcher
-  Action
-  Result
-  Configuration file
-  Interceptors
-  Deployment descriptor
-  Tag Library
+ - JSP Programs              
+ - web.xml                   
+ - FormBean Class            
+ - Action Servlet            
+ - Action Class              
+ - Struts Configuration File (XML File) 
 
 2)____file is used by controller to get mapping information for request routing  :- struts-config.xml
 
@@ -245,7 +236,7 @@ Q- 5 : A 1Marks
 
 4)What is Struct :-
 - Struts is an open source framework that extends the Java Servlet API and support MVC architecture to build web application.
-
+  created by Craig McClanahan and donated to Apache Foundation in May, 2000 and Struts 1.0 was released in June 2001.
 
 Q- 5 : B 2Marks
 1)What is Inversion Of Control in Spring Framework :- 2Marks Alerdy in QuestionPaper-1
@@ -304,9 +295,8 @@ Q- 5 : C 3Marks
                      [Spring Core]
   
  Spring Core module :- 
- - Provides the IoC container and DI.
- - Two types of implementations are BeanFactory and ApplicationContext. 
-
+ - Provides IoC container and DI.
+ 
  Spring Web DAO Module :-
  - DAO package provides data access technologies such as JDBC, Hibernate, or JDO. 
  - This module eliminating needs of tedious coding. 
@@ -324,8 +314,8 @@ Q- 5 : C 3Marks
  - Provide MVC architecture for creating spring web mvc applications. 
  
  Spring Web Flow Module :-
- - Extension of the Spring Web MVC module provides form controllers, such as class SimpleFormController and AbstractWizardFormController
-   class, to implement predefined workflow. 
+ - Extension of the Spring Web MVC module provides form controllers such as SimpleFormController and AbstractWizardFormController
+   class to implement predefined workflow. 
  - Defining in XML file or Java Class that manages workflow between different pages of a Web application. 
 
  Spring ORM Module :-
@@ -395,7 +385,7 @@ What is interceptor :-
  
  5)Spring Web Services :- 
  - Provides layered-based approaches that are separately managed by Extensible Markup Language (XML) parsing.
- - Spring provides effective mapping for transmitting incoming XML message request to an object and the developer to easily 
+ - Spring provides effective mapping for transmitting incoming XML message r equest to an object and the developer to easily 
    distribute XML message (object) between two machines.
 
  6)JDBC abstraction layer :-
@@ -431,16 +421,8 @@ What is interceptor :-
  - Once view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser.
  - Above component parts of WebApplicationContext which is an extension of the plainApplicationContext with some extra features 
    necessary for web applications.
- - @RequestMapping annotation is used to map a URL to either an entire class or a particular handler method
-
- Required Configuration :-
- - You need to map requests by using a URL mapping in the web.xml file
- - The [servlet-name]-servlet.xml file will be used to create the beans defined, overriding the definitions of any beans defined with
-   the same name in the global scope.
- - The <context:component-scan...> tag will be use to activate Spring MVC annotation scanning capability which allows to make use of 
-   annotations like @Controller and @RequestMapping etc.
- - The InternalResourceViewResolver will have rules defined to resolve the view names. 
-
+ - @RequestMapping annotation is used to map a URL to either an entire class or a particular handler method.
+  
 
 4)Aspect Oriented Programming(AOP) in Spring :-
  - Similar to OOP which breaks applications into hierarchy of objects, AOP breaks down the programs into aspects or concerns. 
