@@ -10,16 +10,13 @@ Q- 4 : A 1Marks
 3)EJB Stands for :-
 - Enterprise JavaBeans
 
-
 Q- 4 : B 3Marks
 
 1)Explain Session in EJB :-
- - Session is limited interval of time in which two systems communicate with each other to maintaining state of the user. 
- 
- Session Bean :-
- - Session bean encapsulates business logic that can be invoked programmatically by client over local, remote, or web service.
+- Session is limited interval of time in which two systems communicate with each other and maintaining state of the user. 
+- Session bean encapsulates business logic that can be invoked programmatically by client over local, remote, or web service.
      
- Types Of SessionBean :-
+ Types Of Session Bean :-
  1)Stateless :- 
  - Doesn't maintain state of a client between multiple requests.
 
@@ -27,10 +24,10 @@ Q- 4 : B 3Marks
  - Maintains state of a client across multiple requests.
  
  3)Singleton :- 
- - One instance per application, it is shared between clients and supports concurrent access
+ - One instance per application, it is shared between clients and supports concurrent access.
 
 
-2)Explain rols of model in mvc design pattern :-
+2)Explain Rols of model in mvc design pattern :-
  - Model View Controller (MVC) is latest design pattern in software development that specifies application consist of a data model, 
    presentation information, and control information. 
  
@@ -42,34 +39,34 @@ Q- 4 : B 3Marks
 
 
 3)Explain Hibernate Configuration File and Properties File :- 
- - Hibernate Configuration File(cfg file) is the uses to establish connection to the database server.
+ - Hibernate Configuration File is uses to establish connection to database server.
  - It is an XML file which name is hibernate.cfg.xml.
- - There must be one configuration file for each database used in the application
- - We can acquire the Configuration class instance by instantiating it directly and specifying mappings in the configuration file. 
- - Use the addResource() method, if the mapping files are present in the classpath.
- Syntax :- Configuration cfg = new Configuration().addResource("employee.hbm.xml")  
+ - There must be one configuration file for each database used in the application.
+ - We can accquire Configuration class instance by instantiating it directly and specifying mappings in the configuration file. 
+ - Use addResource() method if the mapping files are present in the classpath.
 
- Files :-
+ Syntax :- Configuration cfg = new Configuration().addResource("ConfigurationDemo.hbm.xml")  
+
+ File Structure :-
  <?xml>  :- 
- - Defines the version and encoding type used for the XML document.
+ - Defines version and encoding type for XML file.
  
  <DOCTYPE> :- 
- - Specifies the Document Type Definition (DTD) for the XML  elements. 
- - DTD specifies the grammar rule for the XML document. For  example, DTD for hibernate.cfg.xml file is specified as  
-   http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd.
+ - Specifies Document Type Definition (DTD) for XML elements. 
+ - DTD specifies grammar rule for XML File. 
 
  <hibernate-configuration> :-  
- - Specifies all the configuration details  that the application uses to communicate with the underlying database.
+ - Specifies all configuration details that application uses to communicate with database.
  
  <session-factory> :- 
- - Contains the database and application specific  properties that a Session object uses to establish a communication link  
-   between the application and the database.
+ - Contains database and application specific properties that Session object uses to establish a communication link  
+   between application and database.
 
  <property> :- 
- - Defines the various properties that are required to connect  with the database.
+ - Defines various properties that are required to connect with database.
  
  <mapping> :- 
- - Specifies the name of the Hibernate mapping file that defines the mapping of a database table to a class.
+ - Specifies name of the Hibernate mapping file that defines mapping of a database table to a class.
 
  Example :-
  <?xml version="1.0" encoding="utf-8"?>
@@ -86,97 +83,68 @@ Q- 4 : B 3Marks
         <property name="hibernate.connection.password"> root123 </property>
         
         <!-- List of XML mapping files -->
-        <mapping resource="Employee.hbm.xml"/>
+        <mapping resource="ConfigurationDemo.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
  
 
 4)Explain Annotation? :-
- - Hibernate Annotations is the powerful way to provide the metadata for the Object and Relational Table mapping. 
- - JPA annotations are used in mapping java objects to the database tables, columns etc
- - All the metadata is clubbed into the POJO java file along with the code, this helps the user to understand the table structure 
-   and POJO simultaneously during the development
+ - Hibernate Annotations is the powerful way to provide metadata for the Object and Relational Table mapping. 
+ - JPA annotations are used for mapping java objects to the database tables, columns etc..
+ - All the metadata is clubbed into POJO java file along with the code, this helps to understand table structure and POJO 
+   simultaneously during development.
  - Hibernate annotations is the newest way to define mappings without a use of XML file.
  - You can use annotations in addition to or as a replacement of XML mapping metadata.
 
-
   Hibernate Annotation :-
   @Entity :- 
-  - Is used to specify a class as an entity bean. It is contained inside the javax.persistence package.
+  - Used to specify class as an entity bean available in javax.persistence package.
 
   @Table :- 
-  - Used to specify the name of the table. 
+  - Used to specify name of the table. 
 
   @Column :- 
-  - used to specify the column name. 
+  - Used to specify column name. 
   - It contains the following attributes:
-     name     : Specifies the name of the column.
-     length   : Specifies the length of the column.
-     nullable : Specifies the column to be NOT NULL.
-     unique   : Specifies the column to contain unique values.
+     name     : Specifies name of the column.
+     length   : Specifies length of the column.
+     nullable : Specifies column to be NOT NULL.
+     unique   : Specifies column to contain unique values.
 
   @Id :- 
-  -Used to define the column as an identifier or a primary key.
+  - Used to define column as an identifier or a primary key.
 
   @GeneratedValue :- 
-  - Specify the identifier generation  strategy. 
+  - Specify the identifier generation strategy. 
+    
     Types :-
       AUTO
       IDENTITY
       SEQUENCE
       TABLE
   
-  @OrderBy :- Sort your data using @OrderBy annotation
+  @OrderBy :- Sort your data using @OrderBy annotation.
  
-  @Transient :- Every non static and non-transient property of an entity is considered persistent, unless you annotate it as @Transient
+  @Transient :- Every non static and non-transient property of an entity is considered persistent, unless you annotate it as @Transient.
 
-  @Lob :- Large objects are declared with @Lob
+  @Lob :- Large objects are declared with @Lob.
  
   Annotations for Mapping between tables :-
   - @OneToOne 
   - @ManyToOne
   - @OneToMany
-  - @PrimaryKeyJoinColumn
   - @JoinColumn 
+  - @PrimaryKeyJoinColumn
 
 
 Q- 4 : C 5Marks
+//Baki Bey
 1)Explain implementation of MVC Architecture :-
 - 
 
+
 2)Explain Inheritance Annotation :-
- - In the previous page, we have mapped the inheritance hierarchy with one table only using xml file. 
- - Here, we are going to perform this task using annotation. 
- - You need to use @Inheritance(strategy=InheritanceType.SINGLE_TABLE), @DiscriminatorColumn and @DiscriminatorValue annotations 
-   for mapping table per hierarchy strategy. 
- - In case of table per hierarchy, only one table is required to map the inheritance hierarchy. 
- - Here, an extra column (also known as discriminator column) is created in the table to identify the class.
-
- Example :-
- import javax.persistence.*; 
- @Entity  
-
- @Table(name = "employee101")
-
- @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-
- @DiscriminatorColumn(name="type",discriminatorType=DiscriminatorType.STRING) 
-
- @DiscriminatorValue(value="employee")
- 
- public class Employee {  
-    @Id  
-    
-    @GeneratedValue(strategy=GenerationType.AUTO)    
-    
-    @Column(name = "id")  
-    private int id;
-    
-    @Column(name = "name")  
-    private String name;    
-    
-    //setters and getters  }  
 
 
 
@@ -188,27 +156,26 @@ Q- 4 : A 1Marks
 
 2)Define MVC :-
 - Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: 
-  the model, the view, and the controller. 
+  model, view, and the controller. 
 
 3)What is ORM :-
-- ORM stands for Object-Relational Mapping (ORM) is a programming technique for converting data between relational databases 
+- ORM stands for Object-Relational Mapping is a programming technique for converting data between relational databases 
   and object oriented programming languages such as Java, C#, etc. 
 
 4)What is EJB :-
-- Enterprise JavaBeans (EJB) is a specification for developing large-scale, distributed business applications on the Java platform.
+- Enterprise JavaBeans (EJB) is a specification for developing large-scale, distributed business applications on Java platform.
 
 Q- 4 : B 2Marks
-1)What is EntityBean        :- 
- - Used to manage data which is persistent, to perform complex business logic and can be uniquely identified by making use of 
-   primary key is known as an entity bean
- - An “entity bean” is a business encodes persistent object which forms and integral part of JAVA Enterprise edition. 
+1)What is EntityBean :- 
+ - Entity bean is a business encodes persistent object which is integral part of JAVA Enterprise edition. 
+ - Used to manage persistent data to perform complex business logic and can be uniquely identified by making it primary key.
  - They can persistent independently or can delegate this to the container. 
- - A container is used to host the EJB Services and in case container or server crashes, then also beans survive the crash as 
+ - Container is used to host EJB Services and in case container or server crashes, then also beans survive the crash as 
    these are linked to primary keys present in the database.
   
   Types :- 
   1)Container Managed Persistence (CMP) 
-  2)Bean-Managed Persistence (BMP). 
+  2)Bean-Managed Persistence (BMP)
 
 
 2)List-Out types of EJB     :- 
@@ -217,8 +184,7 @@ Q- 4 : B 2Marks
  Types Of EJB :- 
   
   1)SessionBean :-
-  - Session bean encapsulates business logic that can be invoked programmatically by a client over local, remote, or web service 
-    client views.
+  - Session bean encapsulates business logic that can be invoked programmatically by a client over local, remote, or web service.
      
    Types Of SessionBean :-
     1)Stateless :- 
@@ -231,72 +197,161 @@ Q- 4 : B 2Marks
     - One instance per application, it is shared between clients and supports concurrent access
 
   2)EntityBean :-
-  - Used to manage data which is persistent, to perform complex business logic and can be uniquely identified by making use of 
-    primary key is known as an entity bean
+  - Used to manage persistent data to perform complex business logic and can be uniquely identified by making it primary key.
 
   3)Message-Driven Bean :- 
-  - allowed to process messages asynchronously by making use of message driven beans with the help of JMS(Java Message Service)
+  - Allowed to process messages asynchronously by making use of message driven beans with the help of JMS(Java Message Service).
 
 
 Q- 4 : C 3Marks
 1)Explain Message driven beans    :-
- - A message-driven bean combines features of a session bean and a Java Message Service (JMS) message listener, allowing a business 
+ - Message-driven bean combines features of session bean and Java Message Service (JMS) message listener, allowing a business 
    component to receive JMS. 
- - message-driven bean enables asynchronous clients to access the business logic in the EJB tier. 
+ - Message-driven bean enables asynchronous to access the business logic in the EJB tier. 
 
  Timer Service :-
- - Timer Service is a mechanism using which scheduled application can be build. 
+ - Timer Service is a mechanism used to which scheduled application can be build. 
  - EJB 3.0 specification has specified @Timeout annotation which helps in programming the ejb service in a stateless or message 
    driven bean. 
- - EJB Container calls the method which is annotated by @Timeout.
- - EJB Timer Service is a service provided by Ejb container which helps to create timer and to schedule callback when timer expires. 
+ - EJB Container calls method which is annotated by @Timeout.
+ - EJB Timer Service is a service provided by EJB container which helps to create timer and to schedule callback when timer expires. 
+
+2)What is Annotation?Explain It? :- Alerdy in QuestionPaper-1
 
 
 Q- 4 : D 5Marks
 1)Explain Hibernate Session :-
- - A Session is used to get a physical connection with a database. 
- - The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database.
- - Persistent objects are saved and retrieved through a Session object.
+ - Session is limited interval of time in which two systems communicate with each other to maintaining state of the user.
+ - Session object is lightweight and designed to be instantiated each time an interaction is needed with the database.
+ 
+ - To create Session object in hibernate :-
+   Syntax :- Session session = factory.openSession();
+
  - The session objects should not be kept open for a long time because they are not usually thread safe and they should be created 
    and destroyed them as needed.
- - The main function of the Session is to offer create, read and delete operations for instances of mapped entity classes.
- - Instances may exist in one of the following three states at a given point in time:
- - A Session instance is serializable if its persistent classes are serializable. 
+ - Main function of the Session is to offer create, read and delete operations for instances of mapped entity classes.
+ - Persistent objects are saved and retrieved through a Session object.
+ - Session instance is serializable if its persistent classes are serializable. 
+ 
 
- 1)transient :- 
- - A new instance of a persistent class which is not associated with a Session and has no representation in the database and no 
+ Instances may exist in one of the following three states at a given point in time :-
+ 1)Transient :- 
+ - New instance of a persistent class which is not associated with Session and has no representation in the database and no 
    identifier value is considered transient by Hibernate.
 
- 2)persistent :- 
- - You can make a transient instance persistent by associating it with a Session. 
+ 2)Persistent :- 
  - A persistent instance has a representation in the database, an identifier value and is associated with a Session.
+ - You can make a transient instance persistent by associating it with a Session. 
  
- 3)detached :-
- - Once we close the Hibernate Session, the persistent instance will become a detached instance
+ 3)Detached :-
+ - Once we close the Hibernate Session, the persistent instance will become a detached instance.
   
- Example:- Session session = factory.openSession(); 
-           Transaction tx = null; 
-           try { 
-                    tx = session.beginTransaction(); // do some work ... 
-                    tx.commit(); 
-                }
-            catch (Exception e) 
-            { 
-                if (tx!=null) tx.rollback(); 
-                e.printStackTrace(); 
-            }
-            finally 
-            { session.close(); } 
+ Example:- 
+ 
+  Session session = factory.openSession(); 
+  Transaction tx = null; 
+  try 
+  { 
+    tx = session.beginTransaction(); // do some work ... 
+    tx.commit(); 
+  }
+  catch (Exception e) 
+  { 
+    if (tx!=null) tx.rollback(); 
+    e.printStackTrace(); 
+  }
+  finally 
+  { 
+    session.close(); 
+  } 
     
- - If the Session throws an exception, the transaction must be rolled back and the session must be discarded.
+ - If Session throws an exception, the transaction must be rolled back and the session must be discarded.
+
 
 --------------------------------------------------Question Paper-3----------------------------------------------------------------
 
 Q - 4 : A 1Marks
-3)List-Out types of EJB     :- 
+
+3)List-Out Types of EJB     :- 
  - Session Bean
  - Entity Bean
  - Message-Driven Bean
 
+Q- 4 : B and C are Alerdy in QuestionPaper-1,2
+
 Q- 4 : D 5Marks
 1)Explain MVC Architecture  :-
+- MVC Pattern stands for Model-View-Controller Pattern used to separate application's concerns.
+
+ Model - Model represents an object or JAVA POJO carrying data to perform complex business logic. 
+ View  - View represents the visualization of the data that model contains.
+ Controller - Controller acts on both model and view and keeps separate. 
+            - Controls data flow into model object and updates view whenever data changes. 
+  
+
+ Implementation :-
+ - We create a Student object acting as a model.
+ - StudentView will be a view class which can print student details on console. 
+ - StudentController is the controller class responsible to store data in Student object and update view StudentView accordingly.
+ - MVCPatternDemo, our demo class, will use StudentController to demonstrate use of MVC pattern.
+ 
+ 
+ Step - 1 : Create Model (Student.java)
+ public class Student {
+  private String name;
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; } }
+
+
+ Step - 2 : Create View (StudentView.java)
+ public class StudentView {
+   public void printStudentDetails(String studentName){
+      System.out.println("Student: ");
+      System.out.println("Name: " + studentName);
+   }
+ }
+
+ Step - 3 : Create Controller (StudentController.java)
+ public class StudentController {
+   private Student model;
+   private StudentView view;
+
+   public StudentController(Student model, StudentView view){
+      this.model = model;
+      this.view = view;
+   }
+
+   public void setStudentName(String name){ model.setName(name); }
+
+   public String getStudentName(){ return model.getName();	}
+
+   public void updateView(){ view.printStudentDetails(model.getName()); }	
+ }
+
+ Step - 4 : Use the StudentController methods to demonstrate MVC design pattern usage. (MVCPatternDemo.java)
+  public class MVCPatternDemo {
+  public static void main(String[] args) {
+
+  //fetch student record based on his roll no from the database
+  Student model  = retriveStudentFromDatabase();
+
+  //Create a view : to write student details on console
+  StudentView view = new StudentView();
+
+  StudentController controller = new StudentController(model, view);
+  controller.updateView();
+
+  //update model data
+  controller.setStudentName("John");
+
+  controller.updateView();
+
+  }
+  
+  private static Student retriveStudentFromDatabase(){
+    Student student = new Student();
+    student.setName("Robert");
+    return student;
+   }
+
+  }
