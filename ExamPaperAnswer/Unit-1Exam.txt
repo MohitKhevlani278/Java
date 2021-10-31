@@ -139,6 +139,7 @@ Q-3 : C
   - Returns description of tables with the specified catalog. 
   - Table type can be TABLE, VIEW, ALIAS, SYSTEM TABLE, SYNONYM etc
   
+
 //Optional 
 Explain ResultsetMetadata interface :-
  - ResultSetMetaData interface is used to get metadata about database table from the ResultSet object such as total number of column, 
@@ -212,7 +213,7 @@ Q-1 :- B 2 Marks
    logically and physically separated.
  - In N-tier, 'N' refers to a number of layers are being used like – 2-tier, 3-tier or 4-tier, etc.
  - It can also called 'Multi-Tier Architecture'
- - N-tier architecture is an industry-proven software architecture model
+ - N-tier architecture is an industry-proven software architecture model.
  - Suitable to enterprise level applications by providing scalability, security, reusability and maintainability 
    which helps developers to create flexible and reusable applications.
 
@@ -303,7 +304,7 @@ Q-1 :- D 5Marks
 Q-1 : A
 1)What is J2EE     :- Alerdy Discuss QuestionPaper-2
 
-2)________ class holds the list of all registered database drivers,which are used for connection
+2)________ class holds the list of all registered database drivers,which are used for connection.
 - DriverManager class
 
 3)In JDBC PreparedStatement interface is used to call stored procedures.True or False
@@ -448,3 +449,4 @@ Q-1 : D 5Marks
    3)Message-Driven Bean :- 
    - Allowed to process messages asynchronously by making use of message driven beans with the help of 
      JMS(Java Message Service)
+
